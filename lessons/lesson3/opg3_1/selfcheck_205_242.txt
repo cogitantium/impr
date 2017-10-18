@@ -1,0 +1,6 @@
+a:6 b:9 c:14 flag:1
+
+a: c==a+b || !flag = 0 non-short
+b: a!=7 && flag || c>=6 = 1 non-short
+c: !(b<=12) && a%2==0 = 0 short circuit
+d: !(a>5 || c<a+b) = non-short
