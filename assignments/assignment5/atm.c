@@ -7,7 +7,7 @@
 #define TWENTY 20
 #define TEN 10
 
-/* prototyping functions */
+/* prototyping functions for calculations */
 void calculateBillAmount(int requestWithdraw, int *billsHundred, int *billsFifty, int *billsTwenty, int *billsTen);
 int calculateSingleAmount(int *remainder, int sizeBill);
 void separator(int *withdrawnBills);
@@ -29,16 +29,16 @@ int main(void) {
 
   printf("You've requested a withdrawal of $%d, we'll give you: ",requestWithdraw);
   if (billsHundred) {
-    printf("%d %s",billsHundred,billsHundred>1?"hundred dollar bills":"hundred dollar bill");
+    printf("%d hundred dollar %s",billsHundred,billsHundred>1?"bills":"bill");
     separator(&withdrawnBills);
   } if (billsFifty) {
-    printf("%d %s",billsFifty,billsFifty>1?"fifty dollar bills":"fifty dollar bill");
+    printf("%d fifty dollar %s",billsFifty,billsFifty>1?"bills":"bill");
     separator(&withdrawnBills);
   } if (billsTwenty) {
-    printf("%d %s",billsTwenty,billsTwenty>1?"twenty dollar bills":"twenty dollar bill");
+    printf("%d twenty dollar %s",billsTwenty,billsTwenty>1?"bills":"bill");
     separator(&withdrawnBills);
   } if (billsTen) {
-    printf("%d %s",billsTen,billsTen>1?"ten dollar bills":"ten dollar bill");
+    printf("%d ten doller%s",billsTen,billsTen>1?"bills":"bill");
     separator(&withdrawnBills);
   }
   return EXIT_SUCCESS;
