@@ -15,11 +15,11 @@ void separator(int *withdrawnBills);
 int main(void) {
   int requestWithdraw, withdrawnBills, billsHundred, billsFifty, billsTwenty, billsTen;
 
-  /* keeps scanning for input, until user requests a withdrawal divisible by 10 */
+  /* keeps scanning for input, until user requests a non-legative withdrawal amount divisible by 10 */
   do {
     printf("Input non-negative amount divisible with 10, please: ");
     scanf(" %d",&requestWithdraw);
-  } while(!requestWithdraw%10);
+  } while(requestWithdraw<0 || !requestWithdraw%10);
 
   /* calls function for calculating the amount of individual bills for each category */
   calculateBillAmount(requestWithdraw, &billsHundred, &billsFifty, &billsTwenty, &billsTen);
@@ -38,7 +38,7 @@ int main(void) {
     printf("%d twenty dollar %s",billsTwenty,billsTwenty>1?"bills":"bill");
     separator(&withdrawnBills);
   } if (billsTen) {
-    printf("%d ten doller%s",billsTen,billsTen>1?"bills":"bill");
+    printf("%d ten dollar %s",billsTen,billsTen>1?"bills":"bill");
     separator(&withdrawnBills);
   }
   return EXIT_SUCCESS;
