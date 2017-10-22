@@ -1,3 +1,4 @@
+/* graded 3/3 by Anders Mariegaard with comment on coding style expansion for legibility and inconsistency with whitespace around operators */
 #include <stdio.h>
 /* importing stdio library for printf and scanf functions */
 #include <stdlib.h>
