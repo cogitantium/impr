@@ -1,3 +1,4 @@
+/* graded 2/3 by McCollin with comment on coding style, unsure what is meant as indentation seems correct */
 /* this program calculates the greatest common dividor between two integers */
 /* necessary libraries are imported for printf(), scanf() and return-definitions */
 #include <stdio.h>
