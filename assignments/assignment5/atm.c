@@ -1,3 +1,4 @@
+/* graded 3/3 with no comments */ 
 #include <stdio.h>
 #include <stdlib.h>
 
