@@ -1,3 +1,4 @@
+/* graded 3/3 by Michael Christensen with no comments */
 /* we import libraries needed */
 #include <stdio.h>
 #include <stdlib.h>
