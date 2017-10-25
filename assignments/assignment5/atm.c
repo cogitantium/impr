@@ -1,4 +1,4 @@
-/* graded 3/3 with no comments */ 
+/* graded 3/3 with no comments */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -43,6 +43,8 @@ int main(void) {
   } if (billsTen) {
     printf("%d ten dollar %s",billsTen,billsTen>1?"bills":"bill");
     separator(&withdrawnBills);
+  } else {
+    printf("No dolla dolla bills y'all!\n");
   }
   return EXIT_SUCCESS;
 }
