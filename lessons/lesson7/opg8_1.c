@@ -20,9 +20,6 @@ void maaltid() {
   int i;
   for (i=0;i<=24;i++) {
     printf("Menu: %2d ",i+1);
-    /*if (i<=8) {
-      printf(" ");
-    }*/
     printf("Forret: %s ",transForret(randForret()));
     printf("Hovedret: %s ",transHovedret(randHovedret()));
     printf("Dessert: %s\n",transDessert(randDessert()));
