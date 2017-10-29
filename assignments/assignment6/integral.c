@@ -15,7 +15,7 @@ int main(void) {
     printf("When using n = %3d, the area of g(x) is: %.4lf\n", n, trap(0, 3.14159, n, g));
   }
 
-  printf("\nCalculating the area of f(x)=sqrt(4-x^2) in the interval [-2,2]\n");
+  printf("\nCalculating the area of h(x)=sqrt(4-x^2) in the interval [-2,2]\n");
   for (n=2; n<=128; n*=2) {
     printf("When using n = %3d, the area of h(x) is: %.4lf\n", n, trap(-2, 2, n, h));
   }
