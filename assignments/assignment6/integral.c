@@ -1,3 +1,4 @@
+/* graded 2/3 by Lasse Würtz with comments on creating additional functions for further compartmentalization, minor print-error and praise for good naming convention and utilization of learned material */
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
