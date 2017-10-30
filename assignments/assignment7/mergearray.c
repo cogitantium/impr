@@ -52,7 +52,7 @@ double* mergeArray(double *arrFirst, double *arrSecond, int worstCase, int arrFi
       /* count up both indexes, as we've reached a duplicate */
       m++; n++;
     }
-    /* count tempMerge-array index up, as this element has been handled */
+    /* count tempMerge-array index up, as current element has been handled */
     p++;
   }
   /* allocate memory for resulting array, as number of elements are now known */
