@@ -5,20 +5,27 @@
 double* mergeArray(double *arrFirst, double *arrSecond);
 
 int main(void) {
+  int i;
   /* create and initialize sorted arrays */
   double arrFirst[5] = {-10.5, -1.8, 3.5, 6.3, 7.2};
   double arrSecond[3] = {-1.8, 3.1, 6.3};
 
   /* double *arrMerge = (double*)malloc(worstCase); */
-  mergeArray(arrFirst, arrSecond);
+  double *arrMerge = mergeArray(arrFirst, arrSecond);
   /* */
+  for (i=sizeof(arrMerge)/sizeof(double); i>0; i--) {
+    printf("%f\n", arrMerge[i]);
+  }
   return EXIT_SUCCESS;
 }
 
 double* mergeArray(double *arrFirst, double *arrSecond) {
   int i, m = 0, n = 0, p = 0;
-  int worstCase = (sizeof(arrFirst) + sizeof(arrSecond)) / sizeof(double);
-  double *tempMerge = (double*)malloc(worstCase);
+  printf("%d\n", sizeof(arrFirst));
+  int worstCase = ((sizeof(arrFirst) + sizeof(arrSecond)) / sizeof(double));
+  /* ISSUE HERE */
+  double *tempMerge = (double*)malloc(worstCase * sizeof(double));
+  double *arrMerge;
   int arrFirstSize = sizeof(arrFirst) / sizeof(double);
   int arrSecondSize = sizeof(arrSecond) / sizeof(double);
 
@@ -38,15 +45,16 @@ double* mergeArray(double *arrFirst, double *arrSecond) {
       tempMerge[p] = arrSecond[n];
       n++;
     } else if (arrFirst[m] == arrSecond[n]){
-      /* put arrFirst place m into temp merge */
+      /* put arrFirst place m into tempMerge */
       tempMerge[p] = arrFirst[m];
       m++; n++;
     }
-    /* create pointer-array with tempMerge elements*/
-    double arrMerge[p];
-    for (i=p; i<=0; i--) {
-      arrMerge[i] = tempMerge[i];
-    }
-    return arrMerge;
+    p++;
   }
+  /* create pointer-array with tempMerge elements*/
+  arrMerge = (double*)malloc(p*sizeof(double));
+  for (i=p; i<=0; i--) {
+    arrMerge[i] = tempMerge[i];
+  }
+  return arrMerge;
 }
