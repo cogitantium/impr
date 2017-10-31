@@ -16,7 +16,8 @@ int main(void) {
   int arrMergeSize;
   /* assigning resulting array from function to arrMerge */
   double *arrMerge = mergeArray(arrFirst, arrSecond, worstCase, arrFirstSize, arrSecondSize, &arrMergeSize);
-  /* testing array-print - array-printing should optimally be in separate function */
+  /* array-printing with conditional statements for proper notation
+  optimally array-printing should be in separate function */
   printf("For given arrays, merged array is: ");
   for (i=0; i<=(arrMergeSize); i++) {
     printf("%s",(i==0)?"{":"");
