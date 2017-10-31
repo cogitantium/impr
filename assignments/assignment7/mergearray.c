@@ -15,7 +15,7 @@ int main(void) {
   /* assigning resulting array from function to arrMerge */
   double *arrMerge = mergeArray(arrFirst, arrSecond, worstCase, arrFirstSize, arrSecondSize);
   /* testing print - should be handled in separate function */
-  for (i=sizeof(arrMerge)/sizeof(double); i>0; i--) {
+  for (i=sizeof(arrMerge)/sizeof(double); i>=0; i--) {
     printf("%f\n", arrMerge[i]);
   }
   return EXIT_SUCCESS;
@@ -25,6 +25,7 @@ double* mergeArray(double *arrFirst, double *arrSecond, int worstCase, int arrFi
   int i, m = 0, n = 0, p = 0;
   /* dynamically allocating memory for temporary merging-array,
   as the number of resulting elements aren't known beforehand */
+  printf("worstCase: %d\n", worstCase);
   double *tempMerge = (double*)malloc(worstCase * sizeof(double));
   /* prototyping resulting array for later memory allocation */
   double *arrMerge;
@@ -35,24 +36,36 @@ double* mergeArray(double *arrFirst, double *arrSecond, int worstCase, int arrFi
     if (m > arrFirstSize) {
       tempMerge[p] = arrSecond[n];
       n++;
+      printf("m > firstSize\n");
     } else if (n > arrSecondSize) {
       tempMerge[p] = arrFirst[m];
       m++;
-    } else if (arrFirst[m] < arrSecond[n]) {
+      printf("n > secondSize\n");
+    } else if (arrFirst[m] < arrSecond[n] && !(m >= arrFirstSize)) {
       /* assign arrFirst at index m to tempMerge at index p */
       tempMerge[p] = arrFirst[m];
       m++;
-    } else if (arrFirst[m] > arrSecond[n]) {
+      printf("arrFirst < arrSecond\n");
+    } else if (arrFirst[m] > arrSecond[n] && !(n >= arrSecondSize)) {
       /* assign arrSecond at index n to tempMerge at index p */
       tempMerge[p] = arrSecond[n];
       n++;
+      printf("arrFirst > arrSecond\n");
     } else if (arrFirst[m] == arrSecond[n]) {
       /* assign arrFirst at index m to tempMerge at index p */
       tempMerge[p] = arrFirst[m];
       /* count up both indexes, as we've reached a duplicate */
       m++; n++;
+      printf("arrFirst == arrSecond\n");
+    } else if (p>100) {
+
+    } else {
+      p++;
+      printf("ELSE\n");
+      break;
     }
     /* count tempMerge-array index up, as current element has been handled */
+    printf("At p: %d, m: %d, n: %d\nCurrent element: %2.2f\n\n", p, m, n, tempMerge[p]);
     p++;
   }
   /* allocate memory for resulting array, as number of elements are now known */
@@ -60,6 +73,7 @@ double* mergeArray(double *arrFirst, double *arrSecond, int worstCase, int arrFi
   /* for each element in tempMerge, assign respective value to arrMerge to copy */
   for (i=p; i<=0; i--) {
     arrMerge[i] = tempMerge[i];
+    printf("Current read arrMerge[i]: %f\n", tempMerge[i]);
   }
   return arrMerge;
 }
