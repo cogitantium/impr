@@ -20,6 +20,7 @@ int main(void) {
   printf("Merging first array:\t"); printArray(arrFirst, arrFirstSize);
   printf("\nand second array:\t"); printArray(arrSecond, arrSecondSize);
   printf("\nyields merged array:\t"); printArray(arrMerge, arrMergeSize); printf("\n");
+  free(arrMerge);
   return EXIT_SUCCESS;
 }
 
