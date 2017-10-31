@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-/* prototyping merge function */
+/* prototyping functions */
 double* mergeArray(double *arrFirst, double *arrSecond, int worstCase, int arrFirstSize, int arrSecondSize, int *arrMergeSize);
+void printArray(double *arr, int arrSize);
 
 int main(void) {
-  int i;
   /* create and initialize sorted arrays */
   double arrFirst[5] = {-10.5, -1.8, 3.5, 6.3, 7.2};
   double arrSecond[3] = {-1.8, 3.1, 6.3};
@@ -16,13 +16,10 @@ int main(void) {
   int arrMergeSize;
   /* assigning resulting array from function to arrMerge */
   double *arrMerge = mergeArray(arrFirst, arrSecond, worstCase, arrFirstSize, arrSecondSize, &arrMergeSize);
-  /* array-printing with conditional statements for proper notation
-  optimally array-printing should be in separate function */
-  printf("For given arrays, merged array is: ");
-  for (i=0; i<=(arrMergeSize); i++) {
-    printf("%s",(i==0)?"{":"");
-    printf("%2.2f%s", arrMerge[i], (i==arrMergeSize)?"}\n":", ");
-  }
+  /* printArray function is invoked in conjunction with explanatory and structural printf-statements */
+  printf("Merging first array:\t"); printArray(arrFirst, arrFirstSize);
+  printf("\nand second array:\t"); printArray(arrSecond, arrSecondSize);
+  printf("\nyields merged array:\t"); printArray(arrMerge, arrMergeSize); printf("\n");
   return EXIT_SUCCESS;
 }
 
@@ -60,7 +57,7 @@ double* mergeArray(double *arrFirst, double *arrSecond, int worstCase, int arrFi
     p++;
   }
   /* assigning resulting array-size to arrMergeSize for printing */
-  *arrMergeSize = p-1;
+  *arrMergeSize = p;
   /* allocate memory for resulting array, as number of elements are now known */
   arrMerge = (double*)malloc(p*sizeof(double));
   /* for each element in tempMerge, assign respective value to arrMerge to copy */
@@ -69,4 +66,12 @@ double* mergeArray(double *arrFirst, double *arrSecond, int worstCase, int arrFi
   }
   free(tempMerge);
   return arrMerge;
+}
+void printArray(double *arr, int arrSize) {
+  int i;
+  /* prints elements in array with mathematical notation through conditional statements */
+  for (i=0; i<=(arrSize-1); i++) {
+    printf("%s",(i==0)?"{":"");
+    printf("%2.2f%s", arr[i], (i==arrSize-1)?"}":", ");
+  }
 }
