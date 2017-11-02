@@ -1,3 +1,4 @@
+/* graded 2/3 by Anders Mariegaard with comments on readability due to lack of whitespace */
 #include <stdio.h>
 #include <stdlib.h>
 /* prototyping functions */
