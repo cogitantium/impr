@@ -1,0 +1,12 @@
+Dette er opgaven om produktkoder fra Millie's Mail-Order Catalog.
+
+Hoved-formålet med opgaven er at træne dig i brugen af streng kopieringsfunktionerne, strcpy og strncpy, fra string.h biblioteket.
+
+Som en del af problemløsningen skal du skrive en funktion som tager følgende parametre:
+
+    Produktkoden - en input parameter
+    Tre output parametre: warehouse, id, og qualifiers
+
+Kald den programmerede funktion på en fast produktkode, som optræder som en del af programmet, og udskriv de tre resultater på simpel vis. Du skal ikke bruge kræfter på at programmere en dialog med brugeren i main funktionen.
+
+/KN
