@@ -1,3 +1,4 @@
+/* graded 2/3 by Anders Mariegaard with notes on returning errors for invalid codes */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
