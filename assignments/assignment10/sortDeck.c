@@ -34,14 +34,14 @@ int initializeDeck(void) {
     for (v=0; v<=VALUESIZE; v++) {
       deck[s*VALUESIZE+v].suit = s;
       deck[s*VALUESIZE+v].value = v;
-
-      printf("Card number: %2d \thas .value=%2d \t\tand .suit=%d\n", i, deck[s*VALUESIZE+v].value, deck[s*VALUESIZE+v].suit);
+      printf("Card number: %2d \thas .value=%2d \t\tand .suit=%d\n", i+1, deck[s*VALUESIZE+v].value, deck[s*VALUESIZE+v].suit); /* debug */
       i++;
     }
   }
+
   for (n=i; n<=DECKSIZE; n++) {
     deck[n].suit = 4;
-    printf("Card number: %d\t\thas .suit:%d\n", n, deck[n].suit);
+    printf("Card number: %d\t\thas .value:%d \t\tand .suit:%d\n", n+1, deck[n].value, deck[n].suit);
   }
   return EXIT_SUCCESS;
 }
@@ -52,7 +52,6 @@ int initializeDeck(void) {
 int printDeck(void) {
   int i;
   for (i=0; i<=DECKSIZE; i++) {
-
     if (deck[i].suit == 4)
       printf("J");
     else {
@@ -67,20 +66,17 @@ int printDeck(void) {
       printf("K");
     else if (deck[i].value == 12)
       printf("A");
-    else
-      printf("Invalid value!");
 
     switch (deck[i].suit) {
-      case 0: printf("c");
-      case 1: printf("d");
-      case 2: printf("h");
-      case 3: printf("s");
+      case 0: printf("c"); break;
+      case 1: printf("d"); break;
+      case 2: printf("h"); break;
+      case 3: printf("s"); break;
+    }
     }
 
-
-
-    }
-    printf(" - ");
-  }
+    if (i%12 == 0 && i>0)
+      printf("\n");
+  } printf("\n");
   return EXIT_SUCCESS;
 }
