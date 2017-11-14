@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <time.h>
+/* specifying each characteristica of deck individually for portability */
 #define JOKERS 3
 #define DECKSIZE 52
 #define SUITSIZE 4
@@ -10,60 +12,69 @@ struct card {
   int value;
   int suit;
 };
-struct card deck[DECKSIZE+JOKERS];
 
-/* clubs -> diamonds -> hearts -> spades */
-/* 0=2->8=10, 9=J, 10=Q, 11=K, 12=A */
-
-int initializeDeck(void);
-void printDeck(void);
-void shuffleDeck();
+int initializeDeck(struct card deck[]);
+void printDeck(struct card deck[], char *printType);
+void shuffleDeck(struct card deck[]);
 int sortDeck();
 int compareCards();
 
 int main(void) {
-  initializeDeck();
-  printf("Printing initialized deck nicely\n");
-  printDeck();
-  shuffleDeck();
+  struct card deck[DECKSIZE+JOKERS];
+  char printType[25];
+
+  initializeDeck(deck);
+  strcpy(printType, "initialized");
+  printDeck(deck, printType);
+
+  shuffleDeck(deck);
+  strcpy(printType, "shuffled");
+  printDeck(deck, printType);
+
+/*  sortDeck(); */
+  strcpy(printType, "sorted");
+  printDeck(deck, printType);
   return EXIT_SUCCESS;
 }
 
-int initializeDeck(void) {
-  int s, v, n;
-  /* for each suit {0..3} assigning {0.12} to all cards in suit */
-  for (s=0; s<SUITSIZE; s++) {
+int initializeDeck(struct card deck[]) {
+  int n, v;
+  /* for each suit {0..3} assigning {0.12} to all cards in given suit */
+  for (n=0; n<SUITSIZE; n++) {
     for (v=0; v<VALUESIZE; v++) {
-      deck[s*VALUESIZE+v].suit = s;
-      deck[s*VALUESIZE+v].value = v;
+      deck[n*VALUESIZE+v].suit = n;
+      deck[n*VALUESIZE+v].value = v;
     }
   }
-  /* assigning deck.suit to "4" for last three cards to represent jokers */
+  /* assigning deck.suit to "4" for last cards to represent jokers */
   for (n=DECKSIZE; n<DECKSIZE+JOKERS; n++) {
     deck[n].suit = 4;
   }
   return EXIT_SUCCESS;
 }
 
-void printDeck(void) {
+/* printing with format of uppercase value, herein also joker, and lowercase suit */
+void printDeck(struct card deck[], char *printType) {
   int i;
+  /* handling grammar for different decks being printed */
+  printf("Printing %s deck nicely\n", printType);
   for (i=0; i<DECKSIZE+JOKERS; i++) {
 
+    /* handling jokers first */
     if (deck[i].suit == 4)
-      printf("J ");
+      printf("J");
     else {
-
+      /* using arithmetic for numeral cards */
       if(deck[i].value<=8 && deck[i].suit<4)
         printf("%d", deck[i].value+2);
-      else if (deck[i].value == 9)
-        printf("J");
-      else if (deck[i].value == 10)
-        printf("Q");
-      else if (deck[i].value == 11)
-        printf("K");
-      else if (deck[i].value == 12)
-        printf("A");
 
+      /* using switch-statment for face cards and suits */
+      switch (deck[i].value) {
+        case  9: printf("J"); break;
+        case 10: printf("Q"); break;
+        case 11: printf("K"); break;
+        case 12: printf("A"); break;
+      }
       switch (deck[i].suit) {
         case 0: printf("c"); break;
         case 1: printf("d"); break;
@@ -76,25 +87,19 @@ void printDeck(void) {
     if ((i+1)%VALUESIZE == 0 && i>0)
       printf("\n");
   }
-  printf("\n");
+  printf("\n\n");
 }
 
-void shuffleDeck () {
-  /*  To shuffle an array a of n elements (indices 0..n-1):
-  for i from 0 to n−2 do
-  n ← random integer such that i ≤ n < n
-  exchange a[i] and a[n]
-
-  rand() % (max_number + 1 - minimum_number) + minimum_number */
+void shuffleDeck(struct card deck[]) {
   srand(time(NULL));
   struct card temp;
   int i, n;
-
+  /* implementing Fisher-Yates algorithm for shuffling deck */
   for (i=0; i<=DECKSIZE+JOKERS-2; i++) {
-    n = rand() % ((DECKSIZE+JOKERS-2) + 1 - i) + i;
+    /* issue with smaller than i - seems resolved */
+    n = rand() % ((DECKSIZE+JOKERS-2) + 1 - i) + i + 1;
     temp = deck[n];
     deck[n] = deck[i];
     deck[i] = temp;
   }
-  printDeck();
 }
