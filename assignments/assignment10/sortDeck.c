@@ -13,6 +13,9 @@ struct card {
   int suit;
 };
 
+enum value {TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, J, K, Q, A};
+enum suit {CLUBS, HEARTS, DIAMONDS, SPADES, JOKER};
+
 int initializeDeck(struct card deck[]);
 void printDeck(struct card deck[], char *printType);
 void shuffleDeck(struct card deck[]);
@@ -21,7 +24,7 @@ int compareFunc(const void * card1, const void * card2);
 
 int main(void) {
   struct card deck[DECKSIZE];
-  char printType[25];
+  char printType[20];
   srand(time(NULL));
 
   initializeDeck(deck);
