@@ -4,9 +4,9 @@
 #include <time.h>
 /* specifying each characteristica of deck individually for portability */
 #define JOKERS 3
-#define DECKSIZE 52
 #define SUITSIZE 4
 #define VALUESIZE 13
+#define DECKSIZE (SUITSIZE * VALUESIZE + JOKERS)
 
 struct card {
   int value;
@@ -16,12 +16,13 @@ struct card {
 int initializeDeck(struct card deck[]);
 void printDeck(struct card deck[], char *printType);
 void shuffleDeck(struct card deck[]);
-int sortDeck();
-int compareCards();
+void sortDeck(struct card deck[]);
+int compareFunc(const void * card1, const void * card2);
 
 int main(void) {
-  struct card deck[DECKSIZE+JOKERS];
+  struct card deck[DECKSIZE];
   char printType[25];
+  srand(time(NULL));
 
   initializeDeck(deck);
   strcpy(printType, "initialized");
@@ -31,7 +32,7 @@ int main(void) {
   strcpy(printType, "shuffled");
   printDeck(deck, printType);
 
-/*  sortDeck(); */
+  sortDeck(deck);
   strcpy(printType, "sorted");
   printDeck(deck, printType);
   return EXIT_SUCCESS;
@@ -47,7 +48,7 @@ int initializeDeck(struct card deck[]) {
     }
   }
   /* assigning deck.suit to "4" for last cards to represent jokers */
-  for (n=DECKSIZE; n<DECKSIZE+JOKERS; n++) {
+  for (n=SUITSIZE * VALUESIZE; n<DECKSIZE; n++) {
     deck[n].suit = 4;
   }
   return EXIT_SUCCESS;
@@ -58,7 +59,7 @@ void printDeck(struct card deck[], char *printType) {
   int i;
   /* handling grammar for different decks being printed */
   printf("Printing %s deck nicely\n", printType);
-  for (i=0; i<DECKSIZE+JOKERS; i++) {
+  for (i=0; i<DECKSIZE; i++) {
 
     /* handling jokers first */
     if (deck[i].suit == 4)
@@ -91,15 +92,29 @@ void printDeck(struct card deck[], char *printType) {
 }
 
 void shuffleDeck(struct card deck[]) {
-  srand(time(NULL));
   struct card temp;
   int i, n;
   /* implementing Fisher-Yates algorithm for shuffling deck */
-  for (i=0; i<=DECKSIZE+JOKERS-2; i++) {
+  for (i=0; i<=DECKSIZE-2; i++) {
     /* issue with smaller than i - seems resolved */
-    n = rand() % ((DECKSIZE+JOKERS-2) + 1 - i) + i + 1;
+    n = rand() % ((DECKSIZE-2) + 1 - i) + i + 1;
     temp = deck[n];
     deck[n] = deck[i];
     deck[i] = temp;
   }
+}
+
+void sortDeck(struct card deck[]) {
+  qsort(deck, DECKSIZE, sizeof(struct card), compareFunc);
+}
+
+int compareFunc(const void * card1, const void * card2) {
+  struct card * a = (struct card *) card1;
+  struct card * b = (struct card *) card2;
+
+  if ( (* a).suit < (* b).suit ) return -1;
+  else if ( (* a).suit > (* b).suit ) return 1;
+  else if ( (* a).value < (* b).value ) return -1;
+  else if ( (* a).value > (* b).value ) return 1;
+  else return 0;
 }
