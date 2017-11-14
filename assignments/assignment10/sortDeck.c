@@ -13,9 +13,6 @@ struct card {
   int suit;
 };
 
-enum value {TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, J, K, Q, A};
-enum suit {CLUBS, HEARTS, DIAMONDS, SPADES, JOKER};
-
 int initializeDeck(struct card deck[]);
 void printDeck(struct card deck[], char *printType);
 void shuffleDeck(struct card deck[]);
@@ -57,27 +54,23 @@ int initializeDeck(struct card deck[]) {
   return EXIT_SUCCESS;
 }
 
-/* printing with format of uppercase value, herein also joker, and lowercase suit */
+/* printing with format of uppercase value, herein also jokers, and lowercase suit */
 void printDeck(struct card deck[], char *printType) {
   int i;
   /* handling grammar for different decks being printed */
   printf("Printing %s deck nicely\n", printType);
   for (i=0; i<DECKSIZE; i++) {
-
     /* handling jokers first */
     if (deck[i].suit == 4)
       printf("J");
     else {
-      /* using arithmetic for numeral cards */
-      if(deck[i].value<=8 && deck[i].suit<4)
-        printf("%d", deck[i].value+2);
-
-      /* using switch-statment for face cards and suits */
+      /* using switch for face cards and suits and arithmetic for numerals */
       switch (deck[i].value) {
-        case  9: printf("J"); break;
+        case 9: printf("J"); break;
         case 10: printf("Q"); break;
         case 11: printf("K"); break;
         case 12: printf("A"); break;
+        default: printf("%d", (i%13)+2);
       }
       switch (deck[i].suit) {
         case 0: printf("c"); break;
@@ -99,7 +92,6 @@ void shuffleDeck(struct card deck[]) {
   int i, n;
   /* implementing Fisher-Yates algorithm for shuffling deck */
   for (i=0; i<=DECKSIZE-2; i++) {
-    /* issue with smaller than i - seems resolved */
     n = rand() % ((DECKSIZE-2) + 1 - i) + i + 1;
     temp = deck[n];
     deck[n] = deck[i];
