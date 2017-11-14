@@ -2,16 +2,13 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-/* specifying each characteristica of deck individually for portability */
+/* defining each characteristic of deck individually for flexibility */
 #define JOKERS 3
 #define SUITSIZE 4
 #define VALUESIZE 13
 #define DECKSIZE (SUITSIZE * VALUESIZE + JOKERS)
 
-struct card {
-  int value;
-  int suit;
-};
+struct card { int value; int suit; };
 
 int initializeDeck(struct card deck[]);
 void printDeck(struct card deck[], char *printType);
@@ -21,20 +18,16 @@ int compareFunc(const void * card1, const void * card2);
 
 int main(void) {
   struct card deck[DECKSIZE];
-  char printType[20];
   srand(time(NULL));
 
   initializeDeck(deck);
-  strcpy(printType, "initialized");
-  printDeck(deck, printType);
+  printDeck(deck, "initialized");
 
   shuffleDeck(deck);
-  strcpy(printType, "shuffled");
-  printDeck(deck, printType);
+  printDeck(deck, "shuffled");
 
   sortDeck(deck);
-  strcpy(printType, "sorted");
-  printDeck(deck, printType);
+  printDeck(deck, "sorted");
   return EXIT_SUCCESS;
 }
 
@@ -47,7 +40,7 @@ int initializeDeck(struct card deck[]) {
       deck[n*VALUESIZE+v].value = v;
     }
   }
-  /* assigning deck.suit to "4" for last cards to represent jokers */
+  /* assigning 4 to deck.suit for last cards to represent jokers */
   for (n=SUITSIZE * VALUESIZE; n<DECKSIZE; n++) {
     deck[n].suit = 4;
   }
