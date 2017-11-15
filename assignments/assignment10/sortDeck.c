@@ -7,6 +7,14 @@
 #define VALUESIZE 13
 #define DECKSIZE (SUITSIZE * VALUESIZE + JOKERS)
 
+#define COLOR_RED     "\x1b[31m"
+#define COLOR_GREEN   "\x1b[32m"
+#define COLOR_YELLOW  "\x1b[33m"
+#define COLOR_BLUE    "\x1b[34m"
+#define COLOR_MAGENTA "\x1b[35m"
+#define COLOR_CYAN    "\x1b[36m"
+#define COLOR_RESET   "\x1b[0m"
+
 struct card { int value; int suit; };
 
 int initializeDeck(struct card deck[]);
@@ -54,7 +62,7 @@ void printDeck(struct card deck[], char *printType) {
   for (i=0; i<DECKSIZE; i++) {
     /* handling jokers first */
     if (deck[i].suit == 4)
-      printf("J");
+      printf(COLOR_YELLOW "J" COLOR_RESET);
     else {
       /* using switch for face cards and suits and arithmetic for numerals */
       switch (deck[i].value) {
@@ -65,10 +73,10 @@ void printDeck(struct card deck[], char *printType) {
         default: printf("%d", deck[i].value + 2);
       }
       switch (deck[i].suit) {
-        case 0: printf("c"); break;
-        case 1: printf("d"); break;
-        case 2: printf("h"); break;
-        case 3: printf("s"); break;
+        case 0: printf(COLOR_CYAN "c" COLOR_RESET); break;
+        case 1: printf(COLOR_RED "d" COLOR_RESET); break;
+        case 2: printf(COLOR_RED "h" COLOR_RESET); break;
+        case 3: printf(COLOR_CYAN "s" COLOR_RESET); break;
       }
     }
     /* printing deck sequentially, linebreaking each 13th card */
