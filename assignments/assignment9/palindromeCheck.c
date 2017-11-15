@@ -1,3 +1,4 @@
+/* graded 3/3 by McCollin with comments on good naming, abstracting functions and readability */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
