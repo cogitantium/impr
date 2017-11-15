@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <time.h>
 /* defining each characteristic of deck individually for flexibility */
 #define JOKERS 3
@@ -63,7 +62,7 @@ void printDeck(struct card deck[], char *printType) {
         case 10: printf("Q"); break;
         case 11: printf("K"); break;
         case 12: printf("A"); break;
-        default: printf("%d", (i%13)+2);
+        default: printf("%d", deck[i].value + 2);
       }
       switch (deck[i].suit) {
         case 0: printf("c"); break;
@@ -84,8 +83,8 @@ void shuffleDeck(struct card deck[]) {
   struct card temp;
   int i, n;
   /* implementing Fisher-Yates algorithm for shuffling deck */
-  for (i=0; i<=DECKSIZE-2; i++) {
-    n = rand() % ((DECKSIZE-2) + 1 - i) + i + 1;
+  for (i=0; i < DECKSIZE - 1; i++) {
+    n = rand() % (DECKSIZE - i) + i;
     temp = deck[n];
     deck[n] = deck[i];
     deck[i] = temp;
