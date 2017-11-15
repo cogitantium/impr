@@ -19,6 +19,7 @@ struct card { int value; int suit; };
 
 int initializeDeck(struct card deck[]);
 void printDeck(struct card deck[], char *printType);
+char * printDeckValue(struct card deck[], int i);
 void shuffleDeck(struct card deck[]);
 void sortDeck(struct card deck[]);
 int compareFunc(const void * card1, const void * card2);
@@ -64,19 +65,12 @@ void printDeck(struct card deck[], char *printType) {
     if (deck[i].suit == 4)
       printf(COLOR_YELLOW "J" COLOR_RESET);
     else {
-      /* using switch for face cards and suits and arithmetic for numerals */
-      switch (deck[i].value) {
-        case 9: printf("J"); break;
-        case 10: printf("Q"); break;
-        case 11: printf("K"); break;
-        case 12: printf("A"); break;
-        default: printf("%d", deck[i].value + 2);
-      }
+      /* using switch for printing and ANSI-colouring for card suit */
       switch (deck[i].suit) {
-        case 0: printf(COLOR_CYAN "c" COLOR_RESET); break;
-        case 1: printf(COLOR_RED "d" COLOR_RESET); break;
-        case 2: printf(COLOR_RED "h" COLOR_RESET); break;
-        case 3: printf(COLOR_CYAN "s" COLOR_RESET); break;
+        case 0: printf(COLOR_CYAN "%sc" COLOR_RESET, printDeckValue(deck, i)); break;
+        case 1: printf(COLOR_RED "%sd" COLOR_RESET, printDeckValue(deck, i)); break;
+        case 2: printf(COLOR_RED "%sh" COLOR_RESET, printDeckValue(deck, i)); break;
+        case 3: printf(COLOR_CYAN "%sc" COLOR_RESET, printDeckValue(deck, i)); break;
       }
     }
     /* printing deck sequentially, linebreaking each 13th card */
@@ -85,6 +79,25 @@ void printDeck(struct card deck[], char *printType) {
       printf("\n");
   }
   printf("\n\n");
+}
+
+char * printDeckValue(struct card deck[], int i) {
+  switch (deck[i].value) {
+    case 0: return "2";
+    case 1: return "3";
+    case 2: return "4";
+    case 3: return "5";
+    case 4: return "6";
+    case 5: return "7";
+    case 6: return "8";
+    case 7: return "9";
+    case 8: return "10";
+    case 9: return "J";
+    case 10: return "Q";
+    case 11: return "K";
+    case 12: return "A";
+    default: return "Invalid value!";
+  }
 }
 
 void shuffleDeck(struct card deck[]) {
