@@ -1,3 +1,4 @@
+/* graded 3/3 with comments on good use of qsort, nice coding style and function abstracting */
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
