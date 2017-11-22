@@ -1,0 +1,77 @@
+Fornavn: Lars
+Efternavn: Jensen
+Vejnavn: Engtoften 
+Vejnummer: 23
+Postnummer: 7182
+Bynavn: Bredsten
+
+Fornavn: Bo
+Efternavn: Olsen
+Vejnavn: Gammel Vestergade 
+Vejnummer: 56
+Postnummer: 4261
+Bynavn: Dalmose
+
+Fornavn: Kurt
+Efternavn: Jensen
+Vejnavn: Haderslevvej 
+Vejnummer: 15
+Postnummer: 8370
+Bynavn: Hadsten
+
+Fornavn: Birte
+Efternavn: Madsen
+Vejnavn: Universitetsvej 
+Vejnummer: 899
+Postnummer: 9000
+Bynavn: Aalborg
+
+Fornavn: Kaj
+Efternavn: Morten Moberg
+Vejnavn: Halevindingevej 
+Vejnummer: 2
+Postnummer: 2670
+Bynavn: Greve
+
+Fornavn: Bo
+Efternavn: Rise
+Vejnavn: Hadsund Landvej Nord 
+Vejnummer: 56
+Postnummer: 8900
+Bynavn: Randers
+
+Fornavn: Ebbe
+Efternavn: Rise
+Vejnavn: Hadsund Landvej Syd 
+Vejnummer: 58
+Postnummer: 9520
+Bynavn: Hobro
+
+Fornavn: Kalle
+Efternavn: Rastrup
+Vejnavn: Under Broen 
+Vejnummer: 567
+Postnummer: 2650
+Bynavn: Hvidovre
+
+Fornavn: Emil
+Efternavn: Rask
+Vejnavn: Over Broen 
+Vejnummer: 765
+Postnummer: 2650
+Bynavn: Glostrup
+
+Fornavn: Jens
+Efternavn: Larsen
+Vejnavn: Finkevej 
+Vejnummer: 1
+Postnummer: 6682
+Bynavn: Hovborg
+
+Fornavn: Lars
+Efternavn: Olsen
+Vejnavn: Gammel Vindingevej 
+Vejnummer: 2
+Postnummer: 7560
+Bynavn: Hjerm
+
