@@ -1,0 +1,790 @@
+ParisRoubaix               "Greg VAN AVERMAET"                            32  BMC   BEL       1      5:41:07
+ParisRoubaix               "Zdenek STYBAR"                                32  QST   CZE       2      5:41:07
+ParisRoubaix               "Sebastian LANGEVELD"                          32  CDT   NED       3      5:41:07
+ParisRoubaix               "Jasper STUYVEN"                               25  TFS   BEL       4      5:41:07
+ParisRoubaix               "Gianni MOSCON"                                23  SKY   ITA       5      5:41:07
+ParisRoubaix               "Arnaud DEMARE"                                26  FDJ   FRA       6      5:41:19
+ParisRoubaix               "Andre GREIPEL"                                35  LTS   GER       7      5:41:19
+ParisRoubaix               "Edward THEUNS"                                26  TFS   BEL       8      5:41:19
+ParisRoubaix               "Adrien PETIT"                                 27  DEN   FRA       9      5:41:19
+ParisRoubaix               "John DEGENKOLB"                               28  TFS   GER      10      5:41:19
+ParisRoubaix               "Mathew HAYMAN"                                39  ORS   AUS      11      5:41:19
+ParisRoubaix               "Florian SENECHAL"                             24  COF   FRA      12      5:41:19
+ParisRoubaix               "Tom BOONEN"                                   37  QST   BEL      13      5:41:19
+ParisRoubaix               "Yoann OFFREDO"                                31  WGG   FRA      14      5:41:19
+ParisRoubaix               "Laurens DE VREESE"                            29  AST   BEL      15      5:41:19
+ParisRoubaix               "Marcus BURGHARDT"                             34  BOH   GER      16      5:41:19
+ParisRoubaix               "Piet ALLEGAERT"                               22  SVB   BEL      17      5:41:19
+ParisRoubaix               "Nikolas MAES"                                 31  LTS   BEL      18      5:41:19
+ParisRoubaix               "Sylvain CHAVANEL"                             38  DEN   FRA      19      5:41:19
+ParisRoubaix               "Dylan VAN BAARLE"                             25  CDT   NED      20      5:41:19
+ParisRoubaix               "Daniel OSS"                                   30  BMC   ITA      21      5:41:19
+ParisRoubaix               "Jurgen ROELANDTS"                             32  LTS   BEL      22      5:41:27
+ParisRoubaix               "Jelle WALLAYS"                                28  LTS   BEL      23      5:41:33
+ParisRoubaix               "Marcel SIEBERG"                               35  LTS   GER      24      5:41:43
+ParisRoubaix               "Ramon SINKELDAM"                              28  SUN   NED      25      5:43:31
+ParisRoubaix               "Marco MARCATO"                                33  UAD   ITA      26      5:43:31
+ParisRoubaix               "Nils POLITT"                                  23  KAT   GER      27      5:43:31
+ParisRoubaix               "Jonas VAN GENECHTEN"                          31  COF   BEL      28      5:43:31
+ParisRoubaix               "Koen DE KORT"                                 35  TFS   NED      29      5:43:31
+ParisRoubaix               "Bert VAN LERBERGHE"                           25  SVB   BEL      30      5:43:31
+ParisRoubaix               "Oliver NAESEN"                                27  ALM   BEL      31      5:43:31
+ParisRoubaix               "Bert DE BACKER"                               33  SUN   BEL      32      5:43:31
+ParisRoubaix               "Jos VAN EMDEN"                                32  TLJ   NED      33      5:43:31
+ParisRoubaix               "Dimitri CLAEYS"                               30  COF   BEL      34      5:43:31
+ParisRoubaix               "Stijn VANDENBERGH"                            33  ALM   BEL      35      5:44:08
+ParisRoubaix               "Bernhard EISEL"                               36  DDD   AUT      36      5:44:37
+ParisRoubaix               "Pieter VANSPEYBROUCK"                         30  WGG   BEL      37      5:44:52
+ParisRoubaix               "Peter SAGAN"                                  27  BOH   SVK      38      5:46:19
+ParisRoubaix               "Christophe LAPORTE"                           25  COF   FRA      39      5:46:51
+ParisRoubaix               "Jasha SUTTERLIN"                              25  MOV   GER      40      5:48:19
+ParisRoubaix               "Daniele BENNATI"                              37  MOV   ITA      41      5:50:48
+ParisRoubaix               "Wouter WIPPERT"                               27  CDT   NED      42      5:50:48
+ParisRoubaix               "Mickael DELAGE"                               32  FDJ   FRA      43      5:50:48
+ParisRoubaix               "Iljo KEISSE"                                  35  QST   BEL      44      5:50:48
+ParisRoubaix               "Matthieu LADAGNOUS"                           33  FDJ   FRA      45      5:50:48
+ParisRoubaix               "Mads Wurtz SCHMIDT"                           23  KAT   DEN      46      5:50:48
+ParisRoubaix               "Dylan GROENEWEGEN"                            24  TLJ   NED      47      5:50:48
+ParisRoubaix               "Reto HOLLENSTEIN"                             32  KAT   SUI      48      5:50:48
+ParisRoubaix               "Mike TEUNISSEN"                               25  SUN   NED      49      5:50:48
+ParisRoubaix               "Ryan MULLEN"                                  23  CDT   IRL      50      5:50:48
+ParisRoubaix               "Boy VAN POPPEL"                               29  TFS   NED      51      5:50:48
+ParisRoubaix               "Pim LIGTHART"                                 29  RNL   NED      52      5:50:48
+ParisRoubaix               "Scott THWAITES"                               27  DDD   GBR      53      5:50:48
+ParisRoubaix               "Lars Ytting BAK"                              37  LTS   DEN      54      5:50:48
+ParisRoubaix               "PIERRE LUC PERICHON"                          30  FVC   FRA      55      5:50:48
+ParisRoubaix               "Miles SCOTSON"                                23  BMC   AUS      56      5:50:48
+ParisRoubaix               "Maxime FARAZIJN"                              23  SVB   BEL      57      5:50:48
+ParisRoubaix               "Olivier LE GAC"                               24  FDJ   FRA      58      5:50:48
+ParisRoubaix               "Christian KNEES"                              36  SKY   GER      59      5:50:48
+ParisRoubaix               "Jorge ARCAS PENA"                             25  MOV   ESP      60      5:50:48
+ParisRoubaix               "Imanol ERVITI"                                34  MOV   ESP      61      5:50:48
+ParisRoubaix               "Gregory RAST"                                 37  TFS   SUI      62      5:50:48
+ParisRoubaix               "Hugo HOULE"                                   27  ALM   CAN      63      5:50:48
+ParisRoubaix               "Edvald BOASSON HAGEN"                         30  DDD   NOR      64      5:50:48
+ParisRoubaix               "Tom SCULLY"                                   27  CDT   NZL      65      5:50:48
+ParisRoubaix               "Alex DOWSETT"                                 29  MOV   GBR      66      5:50:48
+ParisRoubaix               "Luka MEZGEC"                                  29  ORS   SLO      67      5:50:48
+ParisRoubaix               "Dmitriy GRUZDEV"                              31  AST   KAZ      68      5:50:48
+ParisRoubaix               "Preben VAN HECKE"                             35  SVB   BEL      69      5:50:48
+ParisRoubaix               "William CLARKE"                               32  CDT   AUS      70      5:50:48
+ParisRoubaix               "Nikias ARNDT"                                 26  SUN   GER      71      5:50:48
+ParisRoubaix               "Ian STANNARD"                                 30  SKY   GBR      72      5:50:48
+ParisRoubaix               "Manuel QUINZIATO"                             38  BMC   ITA      73      5:50:48
+ParisRoubaix               "Jean-Pierre DRUCKER"                          31  BMC   LUX      74      5:50:48
+ParisRoubaix               "Maciej BODNAR"                                32  BOH   POL      75      5:50:48
+ParisRoubaix               "Tony MARTIN"                                  32  KAT   GER      76      5:50:48
+ParisRoubaix               "Andreas SCHILLINGER"                          34  BOH   GER      77      5:50:55
+ParisRoubaix               "Jens DEBUSSCHERE"                             28  LTS   BEL      78      5:51:00
+ParisRoubaix               "Edward PLANCKAERT"                            22  SVB   BEL      79      5:51:02
+ParisRoubaix               "Wesley KREDER"                                27  WGG   NED      80      5:51:02
+ParisRoubaix               "Francis MOUREY"                               37  FVC   FRA      81      5:51:02
+ParisRoubaix               "Yves LAMPAERT"                                26  QST   BEL      82      5:51:02
+ParisRoubaix               "Jens KEUKELEIRE"                              29  ORS   BEL      83      5:55:13
+ParisRoubaix               "Marc SARREAU"                                 24  FDJ   FRA      84      5:55:13
+ParisRoubaix               "Juraj SAGAN"                                  29  BOH   SVK      85      5:59:35
+ParisRoubaix               "Franck BONNAMOUR"                             22  FVC   FRA      86      5:59:35
+ParisRoubaix               "Marco HALLER"                                 26  KAT   AUT      87      5:59:35
+ParisRoubaix               "Matteo TRENTIN"                               28  QST   ITA      88      5:59:35
+ParisRoubaix               "NICCOLO BONIFAZIO"                            24  TBM   ITA      89      5:59:35
+ParisRoubaix               "Alexander EDMONSON"                           24  ORS   AUS      90      6:01:51
+ParisRoubaix               "Mitch DOCKER"                                 31  ORS   AUS      91      6:01:51
+ParisRoubaix               "Truls KORSATH"                                24  AST   NOR      92      6:01:51
+ParisRoubaix               "David PER"                                    22  TBM   SLO      93      6:01:51
+ParisRoubaix               "Amund Grondahl JANSEN"                        23  TLJ   NOR      94      6:01:51
+ParisRoubaix               "Mads PEDERSEN"                                22  TFS   DEN      95      6:01:51
+ParisRoubaix               "Jenthe BIERMANS"                              22  KAT   BEL      96      6:01:51
+ParisRoubaix               "Reinardt JANSE VAN RENSBURG"                  28  DDD   RSA      97      6:01:51
+ParisRoubaix               "Julien VERMOTE"                               28  QST   BEL      98      6:01:51
+ParisRoubaix               "Matti BRESCHEL"                               33  AST   DEN      99      6:01:51
+ParisRoubaix               "Boris VALLEE"                                 24  FVC   BEL     100      6:01:51
+ParisRoubaix               "Luka PIBERNIK"                                24  TBM   SLO     101      6:01:57
+ParisRoubaix               "Jay Robert THOMSON"                           31  DDD   RSA     102      6:08:19
+ParisRoubaix               "Berden DE VRIES"                              28  RNL   NED     OTL      6:11:56
+ParisRoubaix               "Jonas RICKAERT"                               23  SVB   BEL     OTL      6:11:56
+ParisRoubaix               "Ion Ander INSAUSTI IRASTORZA"                 25  TBM   ESP     OTL      6:11:56
+ParisRoubaix               "Tyler FARRAR"                                 33  DDD   USA     OTL      6:11:56
+ParisRoubaix               "Patrick BEVIN"                                26  CDT   NZL     OTL      6:13:13
+ParisRoubaix               "Borut BOZIC"                                  37  TBM   SLO     OTL      6:13:26
+ParisRoubaix               "Owain DOULL"                                  24  SKY   GBR     OTL      6:14:51
+ParisRoubaix               "Alexis GOUGEARD"                              24  ALM   FRA     OTL      6:14:51
+ParisRoubaix               "Benoit JARRIER"                               28  FVC   FRA     OTL      6:14:51
+ParisRoubaix               "Erwann CORBEL"                                26  FVC   FRA     OTL      6:14:51
+ParisRoubaix               "Maarten WYNANTS"                              35  TLJ   BEL     OTL      6:15:08
+ParisRoubaix               "Loic CHETOUT"                                 25  COF   FRA     OTL      6:15:24
+ParisRoubaix               "Daniel MCLAY"                                 25  FVC   GBR     OTL      6:15:35
+ParisRoubaix               "Twan CASTELIJNS"                              28  TLJ   NED     OTL      6:15:37
+ParisRoubaix               "Brian VAN GOETHEM"                            26  RNL   NED     OTL      6:19:56
+ParisRoubaix               "Romain CARDIS"                                25  DEN   FRA     OTL      6:19:56
+ParisRoubaix               "Taco VAN DER HOORN"                           24  RNL   NED     OTL      6:19:56
+ParisRoubaix               "Zhandos BIZHIGITOV"                           26  AST   KAZ     OTL      6:26:26
+ParisRoubaix               "Jonathan DIEBBEN"                             23  SKY   GBR     OTL      6:27:52
+ParisRoubaix               "Sam BEWLEY"                                   30  ORS   NZL     DNF            0
+ParisRoubaix               "Luke DURBRIDGE"                               26  ORS   AUS     DNF            0
+ParisRoubaix               "Magnus Cort NIELSEN"                          24  ORS   DEN     DNF            0
+ParisRoubaix               "Tim DECLERCQ"                                 28  QST   BEL     DNF            0
+ParisRoubaix               "Niki TERPSTRA"                                33  QST   NED     DNF            0
+ParisRoubaix               "Luke ROWE"                                    27  SKY   GBR     DNF            0
+ParisRoubaix               "Elia VIVIANI"                                 28  SKY   ITA     DNF            0
+ParisRoubaix               "Lukasz WISNIOWSKI"                            26  SKY   POL     DNF            0
+ParisRoubaix               "Tom VAN ASBROECK"                             27  CDT   BEL     DNF            0
+ParisRoubaix               "Nick DOUGALL"                                 25  DDD   RSA     DNF            0
+ParisRoubaix               "Ryan GIBBONS"                                 23  DDD   RSA     DNF            0
+ParisRoubaix               "Tony GALLOPIN"                                29  LTS   FRA     DNF            0
+ParisRoubaix               "Matthias BRANDLE"                             28  TFS   AUT     DNF            0
+ParisRoubaix               "Michal KOLAR"                                 25  BOH   SVK     DNF            0
+ParisRoubaix               "Aleksejs SARAMOTINS"                          35  BOH   LAT     DNF            0
+ParisRoubaix               "Rudiger SELIG"                                28  BOH   GER     DNF            0
+ParisRoubaix               "Martin ELMIGER"                               39  BMC   SUI     DNF            0
+ParisRoubaix               "Stefan KUNG"                                  24  BMC   SUI     DNF            0
+ParisRoubaix               "Francisco Jose VENTOSO ALBERDI"               35  BMC   ESP     DNF            0
+ParisRoubaix               "Lars BOOM"                                    32  TLJ   NED     DNF            0
+ParisRoubaix               "Gijs VAN HOECKE"                              26  TLJ   BEL     DNF            0
+ParisRoubaix               "Robert Thomas WAGNER"                         34  TLJ   GER     DNF            0
+ParisRoubaix               "Nuno MATOS"                                   23  MOV   POR     DNF            0
+ParisRoubaix               "Hector CARRETERO"                             22  MOV   ESP     DNF            0
+ParisRoubaix               "Nelson OLIVEIRA"                              28  MOV   POR     DNF            0
+ParisRoubaix               "Jacopo GUARNIERI"                             30  FDJ   ITA     DNF            0
+ParisRoubaix               "Daniel HOELGAARD"                             24  FDJ   NOR     DNF            0
+ParisRoubaix               "Ignatas KONOVALOVAS"                          32  FDJ   LTU     DNF            0
+ParisRoubaix               "Antoine DUCHESNE"                             26  DEN   CAN     DNF            0
+ParisRoubaix               "Yohann GENE"                                  36  DEN   FRA     DNF            0
+ParisRoubaix               "Tony HUREL"                                   30  DEN   FRA     DNF            0
+ParisRoubaix               "Julien MORICE"                                26  DEN   FRA     DNF            0
+ParisRoubaix               "Alexandre PICHOT"                             34  DEN   FRA     DNF            0
+ParisRoubaix               "Gediminas BAGDONAS"                           32  ALM   LTU     DNF            0
+ParisRoubaix               "Rudy BARBIER"                                 25  ALM   FRA     DNF            0
+ParisRoubaix               "Nico DENZ"                                    23  ALM   GER     DNF            0
+ParisRoubaix               "Julien DUVAL"                                 27  ALM   FRA     DNF            0
+ParisRoubaix               "Soren Kragh ANDERSEN"                         23  SUN   DEN     DNF            0
+ParisRoubaix               "Tom STAMSNIJDER"                              32  SUN   NED     DNF            0
+ParisRoubaix               "Zico WAEYTENS"                                26  SUN   BEL     DNF            0
+ParisRoubaix               "Albert TIMMER"                                32  SUN   NED     DNF            0
+ParisRoubaix               "Alexander KRISTOFF"                           30  KAT   NOR     DNF            0
+ParisRoubaix               "Michael MORKOV"                               32  KAT   DEN     DNF            0
+ParisRoubaix               "Hugo Hofstetter"                              23  COF   FRA     DNF            0
+ParisRoubaix               "Cyril LEMOINE"                                34  COF   FRA     DNF            0
+ParisRoubaix               "Kenneth VANBILSEN"                            27  COF   BEL     DNF            0
+ParisRoubaix               "Benjamin DECLERCQ"                            23  SVB   BEL     DNF            0
+ParisRoubaix               "Stijn STEELS"                                 28  SVB   BEL     DNF            0
+ParisRoubaix               "Arman KAMYSHEV"                               26  AST   KAZ     DNF            0
+ParisRoubaix               "Riccardo MINALI"                              22  AST   ITA     DNF            0
+ParisRoubaix               "Ruslan TLEUBAYEV"                             30  AST   KAZ     DNF            0
+ParisRoubaix               "Frederik BACKAERT"                            27  WGG   BEL     DNF            0
+ParisRoubaix               "Mark MCNALLY"                                 28  WGG   GBR     DNF            0
+ParisRoubaix               "Guillaume VAN KEIRSBULCK"                     26  WGG   BEL     DNF            0
+ParisRoubaix               "Frederik VEUCHELEN"                           39  WGG   BEL     DNF            0
+ParisRoubaix               "Danilo NAPOLITANO"                            36  WGG   ITA     DNF            0
+ParisRoubaix               "Maxime DANIEL"                                26  FVC   FRA     DNF            0
+ParisRoubaix               "Jesper ASSELMAN"                              27  RNL   NED     DNF            0
+ParisRoubaix               "Andre LOOIJ"                                  22  RNL   NED     DNF            0
+ParisRoubaix               "Elmar REINDERS"                               25  RNL   NED     DNF            0
+ParisRoubaix               "Coen VERMELTFOORT"                            29  RNL   NED     DNF            0
+ParisRoubaix               "Ivan GARCIA CORTINA"                          22  TBM   ESP     DNF            0
+ParisRoubaix               "Meiyin WANG"                                  29  TBM   CHN     DNF            0
+ParisRoubaix               "Sacha MODOLO"                                 30  UAD   ITA     DNF            0
+ParisRoubaix               "Matteo BONO"                                  34  UAD   ITA     DNF            0
+ParisRoubaix               "Roberto FERRARI"                              34  UAD   ITA     DNF            0
+ParisRoubaix               "Andrea GUARDINI"                              28  UAD   ITA     DNF            0
+ParisRoubaix               "Marko KUMP"                                   29  UAD   SLO     DNF            0
+ParisRoubaix               "Oliviero TROIA"                               23  UAD   ITA     DNF            0
+ParisRoubaix               "Federico ZURLO"                               23  UAD   ITA     DNF            0
+ParisRoubaix               "Yannick MARTINEZ"                             29  DMP   FRA     DNF            0
+ParisRoubaix               "Asbjorn KRAGH ANDERSEN"                       25  DMP   DEN     DNF            0
+ParisRoubaix               "Mikel ARISTI GARDOKI"                         24  DMP   ESP     DNF            0
+ParisRoubaix               "Benjamin GIRAUD"                              31  DMP   FRA     DNF            0
+ParisRoubaix               "Martin LAAS"                                  24  DMP   EST     DNF            0
+ParisRoubaix               "Romain LEMARCHAND"                            30  DMP   FRA     DNF            0
+ParisRoubaix               "Evaldas SISKEVICIUS"                          29  DMP   LTU     DNF            0
+ParisRoubaix               "Gatis SMUKULIS"                               30  DMP   LAT     DNF            0
+AmstelGoldRace             "Philippe GILBERT"                             35  QST   BEL       1      6:31:40
+AmstelGoldRace             "Michal KWIATKOWSKI"                           27  SKY   POL       2      6:31:40
+AmstelGoldRace             "Michael ALBASINI"                             37  ORS   SUI       3      6:31:50
+AmstelGoldRace             "Nathan HAAS"                                  28  DDD   AUS       4      6:31:50
+AmstelGoldRace             "Jose ROJAS"                                   32  MOV   ESP       5      6:31:50
+AmstelGoldRace             "Sergio Luis HENAO MONTOYA"                    30  SKY   COL       6      6:31:50
+AmstelGoldRace             "Jon IZAGUIRRE INSAUSTI"                       28  TBM   ESP       7      6:31:54
+AmstelGoldRace             "Michael GOGL"                                 24  TFS   AUT       8      6:32:50
+AmstelGoldRace             "Sonny COLBRELLI"                              27  TBM   ITA       9      6:32:51
+AmstelGoldRace             "Michael MATTHEWS"                             27  SUN   AUS      10      6:32:51
+AmstelGoldRace             "Juan Jose LOBATO DEL VALLE"                   29  TLJ   ESP      11      6:32:51
+AmstelGoldRace             "Greg VAN AVERMAET"                            32  BMC   BEL      12      6:32:51
+AmstelGoldRace             "Oliver NAESEN"                                27  ALM   BEL      13      6:32:51
+AmstelGoldRace             "Arthur VICHOT"                                29  FDJ   FRA      14      6:32:51
+AmstelGoldRace             "Tiesj BENOOT"                                 23  LTS   BEL      15      6:32:51
+AmstelGoldRace             "Kristian SBARAGLI"                            27  DDD   ITA      16      6:32:51
+AmstelGoldRace             "Jay MCCARTHY"                                 25  BOH   AUS      17      6:32:51
+AmstelGoldRace             "Daryl IMPEY"                                  33  ORS   RSA      18      6:32:51
+AmstelGoldRace             "Alejandro VALVERDE BELMONTE"                  37  MOV   ESP      19      6:32:51
+AmstelGoldRace             "Paul MARTENS"                                 34  TLJ   GER      20      6:32:51
+AmstelGoldRace             "Sebastian LANGEVELD"                          32  CDT   NED      21      6:32:51
+AmstelGoldRace             "Christopher JUUL JENSEN"                      28  ORS   DEN      22      6:32:51
+AmstelGoldRace             "Nick VAN DER LIJKE"                           26  RNL   NED      23      6:32:51
+AmstelGoldRace             "Tomasz MARCZYNSKI"                            33  LTS   POL      24      6:32:51
+AmstelGoldRace             "Alex HOWES"                                   29  CDT   USA      25      6:32:51
+AmstelGoldRace             "Maurits LAMMERTINK"                           27  KAT   NED      26      6:32:51
+AmstelGoldRace             "Diego ULISSI"                                 28  UAD   ITA      27      6:32:51
+AmstelGoldRace             "Anthony ROUX"                                 30  FDJ   FRA      28      6:32:51
+AmstelGoldRace             "Manuele MORI"                                 37  UAD   ITA      29      6:32:51
+AmstelGoldRace             "Georg PREIDLER"                               27  SUN   AUT      30      6:32:51
+AmstelGoldRace             "Dion SMITH"                                   24  WGG   NZL      31      6:32:51
+AmstelGoldRace             "Fabio FELLINE"                                27  TFS   ITA      32      6:32:51
+AmstelGoldRace             "Simone PETILLI"                               24  UAD   ITA      33      6:32:51
+AmstelGoldRace             "Rudy MOLARD"                                  28  FDJ   FRA      34      6:32:51
+AmstelGoldRace             "MICHAEL VALGREN ANDERSEN"                     25  AST   DEN      35      6:32:51
+AmstelGoldRace             "Dries DEVENYNS"                               34  QST   BEL      36      6:32:51
+AmstelGoldRace             "Jelle VANENDERT"                              32  LTS   BEL      37      6:32:51
+AmstelGoldRace             "Rui Alberto FARIA DA COSTA"                   31  UAD   POR      38      6:32:51
+AmstelGoldRace             "Bob JUNGELS"                                  25  QST   LUX      39      6:32:51
+AmstelGoldRace             "Enrico BATTAGLIN"                             28  TLJ   ITA      40      6:32:51
+AmstelGoldRace             "Daniel MORENO"                                36  MOV   ESP      41      6:32:51
+AmstelGoldRace             "Tim WELLENS"                                  26  LTS   BEL      42      6:32:51
+AmstelGoldRace             "CYRIL GAUTIER"                                30  ALM   FRA      43      6:32:51
+AmstelGoldRace             "Dylan TEUNS"                                  25  BMC   BEL      44      6:32:51
+AmstelGoldRace             "Warren BARGUIL"                               26  SUN   FRA      45      6:32:51
+AmstelGoldRace             "Tom-Jelte SLAGTER"                            28  CDT   NED      46      6:33:12
+AmstelGoldRace             "Antwan TOLHOEK"                               23  TLJ   NED      47      6:33:26
+AmstelGoldRace             "Jacques Willem JANSE VAN RENSBURG"            30  DDD   RSA      48      6:34:35
+AmstelGoldRace             "Simon CLARKE"                                 31  CDT   AUS      49      6:35:22
+AmstelGoldRace             "Dylan VAN BAARLE"                             25  CDT   NED      50      6:35:22
+AmstelGoldRace             "Xandro MEURISSE"                              25  WGG   BEL      51      6:35:45
+AmstelGoldRace             "Jakob FUGLSANG"                               32  AST   DEN      52      6:35:45
+AmstelGoldRace             "Angelo TULIK"                                 27  DEN   FRA      53      6:37:59
+AmstelGoldRace             "Simon GESCHKE"                                31  SUN   GER      54      6:37:59
+AmstelGoldRace             "Cesare BENEDETTI"                             30  BOH   ITA      55      6:38:23
+AmstelGoldRace             "Patrick KONRAD"                               26  BOH   AUT      56      6:38:23
+AmstelGoldRace             "Serge PAUWELS"                                34  DDD   BEL      57      6:38:23
+AmstelGoldRace             "Thomas SPRENGERS"                             27  SVB   BEL      58      6:38:23
+AmstelGoldRace             "Jonathan HIVERT"                              32  DEN   FRA      59      6:38:23
+AmstelGoldRace             "Lilian CALMEJANE"                             25  DEN   FRA      60      6:38:23
+AmstelGoldRace             "Gianluca BRAMBILLA"                           30  QST   ITA      61      6:38:23
+AmstelGoldRace             "Giovanni VISCONTI"                            34  TBM   ITA      62      6:38:23
+AmstelGoldRace             "Alessandro DE MARCHI"                         31  BMC   ITA      63      6:38:27
+AmstelGoldRace             "Sam OOMEN"                                    22  SUN   NED      64      6:38:45
+AmstelGoldRace             "Tosh VAN DER SANDE"                           27  LTS   BEL      65      6:38:56
+AmstelGoldRace             "Petr VAKOC"                                   25  QST   CZE      66      6:39:10
+AmstelGoldRace             "Grega BOLE"                                   32  TBM   SLO      67      6:39:10
+AmstelGoldRace             "Michal GOLAS"                                 33  SKY   POL      68      6:39:10
+AmstelGoldRace             "Sean DE BIE"                                  26  LTS   BEL      69      6:39:10
+AmstelGoldRace             "Bram TANKINK"                                 39  TLJ   NED      70      6:39:10
+AmstelGoldRace             "Jerome BAUGNIES"                              30  WGG   BEL      71      6:39:10
+AmstelGoldRace             "Bert-Jan LINDEMAN"                            28  TLJ   NED      72      6:41:01
+AmstelGoldRace             "Lorenzo ROTA"                                 22  BRD   ITA      73      6:41:01
+AmstelGoldRace             "Pim LIGTHART"                                 29  RNL   NED      74      6:41:01
+AmstelGoldRace             "Ruben GUERREIRO"                              23  TFS   POR      75      6:41:01
+AmstelGoldRace             "Thomas DEGAND"                                31  WGG   BEL      76      6:41:01
+AmstelGoldRace             "Angel VICIOSO ARCOS"                          40  KAT   ESP      77      6:41:01
+AmstelGoldRace             "Martijn BUDDING"                              22  RNL   NED      78      6:41:01
+AmstelGoldRace             "SEBASTIAN HENAO GOMEZ"                        24  SKY   COL      79      6:41:01
+AmstelGoldRace             "Jeroen MEIJERS"                               24  RNL   NED      80      6:41:10
+AmstelGoldRace             "Romain SICARD"                                29  DEN   FRA      81      6:41:10
+AmstelGoldRace             "KEVIN REZA"                                   29  FDJ   FRA      82      6:42:06
+AmstelGoldRace             "Mikael CHEREL"                                31  ALM   FRA      83      6:42:06
+AmstelGoldRace             "BENOIT VAUGRENARD"                            35  FDJ   FRA      84      6:42:06
+AmstelGoldRace             "Eliot LIETAER"                                27  SVB   BEL      85      6:42:06
+AmstelGoldRace             "Matej MOHORIC"                                23  UAD   SLO      86      6:42:06
+AmstelGoldRace             "Ben HERMANS"                                  31  BMC   BEL      87      6:42:06
+AmstelGoldRace             "Silvan DILLIER"                               27  BMC   SUI      88      6:42:06
+AmstelGoldRace             "Jan TRATNIK"                                  27  CCC   SLO      89      6:42:06
+AmstelGoldRace             "Jakub KACZMAREK"                              24  CCC   POL      90      6:42:06
+AmstelGoldRace             "Simone PONZI"                                 30  CCC   ITA      91      6:42:06
+AmstelGoldRace             "Jesus HERRADA LOPEZ"                          27  MOV   ESP      92      6:42:06
+AmstelGoldRace             "Andre CARDOSO"                                33  TFS   POR      93      6:42:06
+AmstelGoldRace             "Viacheslav KUZNETSOV"                         28  KAT   RUS      94      6:42:06
+AmstelGoldRace             "Jaco VENTER"                                  30  DDD   RSA      95      6:42:06
+AmstelGoldRace             "Mads Wurtz SCHMIDT"                           23  KAT   DEN      96      6:43:51
+AmstelGoldRace             "Rick ZABEL"                                   24  KAT   GER      97      6:43:51
+AmstelGoldRace             "Roy CURVERS"                                  38  SUN   NED      98      6:43:51
+AmstelGoldRace             "Floris GERFS"                                 25  BMC   NED      99      6:43:51
+AmstelGoldRace             "Kevin DELTOMBE"                               23  SVB   BEL     100      6:43:51
+AmstelGoldRace             "Tao GEOGHEGAN HART"                           22  SKY   GBR     101      6:43:51
+AmstelGoldRace             "Adrian KUREK"                                 29  CCC   POL     102      6:43:51
+AmstelGoldRace             "Jonas KOCH"                                   24  CCC   GER     103      6:43:51
+AmstelGoldRace             "Michal PALUTA"                                22  CCC   POL     104      6:43:51
+AmstelGoldRace             "Maximilian SCHACHMANN"                        23  QST   GER     105      6:43:51
+AmstelGoldRace             "Brendan CANTY"                                25  CDT   AUS     106      6:43:51
+AmstelGoldRace             "Giulio CICCONE"                               23  BRD   ITA     107      6:43:51
+AmstelGoldRace             "Guillaume MARTIN"                             24  WGG   FRA     108      6:43:51
+AmstelGoldRace             "Wilco KELDERMAN"                              26  SUN   NED     109      6:43:51
+AmstelGoldRace             "Andrea PASQUALON"                             29  WGG   ITA     110      6:43:51
+AmstelGoldRace             "Axel DOMONT"                                  27  ALM   FRA     111      6:43:51
+AmstelGoldRace             "Timo ROOSEN"                                  24  TLJ   NED     112      6:43:51
+AmstelGoldRace             "Michael SCHAR"                                31  BMC   SUI     113      6:43:51
+AmstelGoldRace             "Stijn VANDENBERGH"                            33  ALM   BEL     114      6:43:51
+AmstelGoldRace             "Carlos Alberto BETANCUR GOMEZ"                28  MOV   COL     115      6:43:51
+AmstelGoldRace             "Nikita STALNOV"                               26  AST   KAZ     116      6:43:51
+AmstelGoldRace             "Arnaud COURTEILLE"                            28  FDJ   FRA     117      6:43:51
+AmstelGoldRace             "Imanol ERVITI"                                34  MOV   ESP     118      6:43:51
+AmstelGoldRace             "Rory SUTHERLAND"                              35  MOV   AUS     119      6:43:51
+AmstelGoldRace             "Oscar RIESEBEEK"                              25  RNL   NED     120      6:43:51
+AmstelGoldRace             "Johann VAN ZYL"                               26  DDD   RSA     121      6:43:51
+AmstelGoldRace             "Aime DE GENDT"                                23  SVB   BEL     122      6:43:51
+AmstelGoldRace             "Pieter VANSPEYBROUCK"                         30  WGG   BEL     123      6:43:51
+AmstelGoldRace             "Mathew HAYMAN"                                39  ORS   AUS     124      6:43:51
+AmstelGoldRace             "Toms SKUJINS"                                 26  CDT   LAT     125      6:43:51
+AmstelGoldRace             "Roman KREUZIGER"                              31  ORS   CZE     126      6:43:51
+AmstelGoldRace             "Gregor MUHLBERGER"                            23  BOH   AUT     127      6:43:51
+AmstelGoldRace             "Enrico GASPAROTTO"                            35  TBM   ITA     DNF            0
+AmstelGoldRace             "Yukiya ARASHIRO"                              33  TBM   JPN     DNF            0
+AmstelGoldRace             "Meiyin WANG"                                  29  TBM   CHN     DNF            0
+AmstelGoldRace             "Ivan GARCIA CORTINA"                          22  TBM   ESP     DNF            0
+AmstelGoldRace             "Owain DOULL"                                  24  SKY   GBR     DNF            0
+AmstelGoldRace             "Lukasz WISNIOWSKI"                            26  SKY   POL     DNF            0
+AmstelGoldRace             "Danny VAN POPPEL"                             24  SKY   NED     DNF            0
+AmstelGoldRace             "Zdenek STYBAR"                                32  QST   CZE     DNF            0
+AmstelGoldRace             "Daniel MARTIN"                                31  QST   IRL     DNF            0
+AmstelGoldRace             "Marc SOLER GIMENEZ"                           24  MOV   ESP     DNF            0
+AmstelGoldRace             "Michael HEPBURN"                              26  ORS   AUS     DNF            0
+AmstelGoldRace             "Simon GERRANS"                                37  ORS   AUS     DNF            0
+AmstelGoldRace             "Jens KEUKELEIRE"                              29  ORS   BEL     DNF            0
+AmstelGoldRace             "Albert TIMMER"                                32  SUN   NED     DNF            0
+AmstelGoldRace             "Remy MERTZ"                                   22  LTS   BEL     DNF            0
+AmstelGoldRace             "Bart DE CLERCQ"                               31  LTS   BEL     DNF            0
+AmstelGoldRace             "Daniel OSS"                                   30  BMC   ITA     DNF            0
+AmstelGoldRace             "Lars BOOM"                                    32  TLJ   NED     DNF            0
+AmstelGoldRace             "Erik BASKA"                                   23  BOH   SVK     DNF            0
+AmstelGoldRace             "Marcus BURGHARDT"                             34  BOH   GER     DNF            0
+AmstelGoldRace             "Christoph PFINGSTEN"                          30  BOH   GER     DNF            0
+AmstelGoldRace             "Michael SCHWARZMANN"                          26  BOH   GER     DNF            0
+AmstelGoldRace             "Fumiyuki BEPPU"                               34  TFS   JPN     DNF            0
+AmstelGoldRace             "GREGORY DANIEL"                               23  TFS   USA     DNF            0
+AmstelGoldRace             "Jesus HERNANDEZ BLAZQUEZ"                     36  TFS   ESP     DNF            0
+AmstelGoldRace             "Edward THEUNS"                                26  TFS   BEL     DNF            0
+AmstelGoldRace             "Oscar GATTO"                                  32  AST   ITA     DNF            0
+AmstelGoldRace             "ANDREY GRIVKO"                                34  AST   UKR     DNF            0
+AmstelGoldRace             "Laurens DE VREESE"                            29  AST   BEL     DNF            0
+AmstelGoldRace             "Alexey LUTSENKO"                              25  AST   KAZ     DNF            0
+AmstelGoldRace             "Matti BRESCHEL"                               33  AST   DEN     DNF            0
+AmstelGoldRace             "Jenthe BIERMANS"                              22  KAT   BEL     DNF            0
+AmstelGoldRace             "Marco MATHIS"                                 23  KAT   GER     DNF            0
+AmstelGoldRace             "Baptiste PLANCKAERT"                          29  KAT   BEL     DNF            0
+AmstelGoldRace             "Alexis GOUGEARD"                              24  ALM   FRA     DNF            0
+AmstelGoldRace             "Julien DUVAL"                                 27  ALM   FRA     DNF            0
+AmstelGoldRace             "Quentin JAUREGUI"                             23  ALM   FRA     DNF            0
+AmstelGoldRace             "Odd Christian EIKING"                         23  FDJ   NOR     DNF            0
+AmstelGoldRace             "CEDRIC PINEAU"                                32  FDJ   FRA     DNF            0
+AmstelGoldRace             "Matteo BONO"                                  34  UAD   ITA     DNF            0
+AmstelGoldRace             "Marco MARCATO"                                33  UAD   ITA     DNF            0
+AmstelGoldRace             "Alberto BETTIOL"                              24  CDT   ITA     DNF            0
+AmstelGoldRace             "Benjamin KING"                                28  DDD   USA     DNF            0
+AmstelGoldRace             "Youcef REGUIGUI"                              27  DDD   ALG     DNF            0
+AmstelGoldRace             "Preben VAN HECKE"                             35  SVB   BEL     DNF            0
+AmstelGoldRace             "Benjamin DECLERCQ"                            23  SVB   BEL     DNF            0
+AmstelGoldRace             "Jens WALLAYS"                                 25  SVB   BEL     DNF            0
+AmstelGoldRace             "Kenneth VAN ROOY"                             24  SVB   BEL     DNF            0
+AmstelGoldRace             "Tim ARIESEN"                                  23  RNL   NED     DNF            0
+AmstelGoldRace             "Martijn TUSVELD"                              24  RNL   NED     DNF            0
+AmstelGoldRace             "Taco VAN DER HOORN"                           24  RNL   NED     DNF            0
+AmstelGoldRace             "Marco MINNAARD"                               28  WGG   NED     DNF            0
+AmstelGoldRace             "Enrico BARBIN"                                27  BRD   ITA     DNF            0
+AmstelGoldRace             "Nicola BOEM"                                  28  BRD   ITA     DNF            0
+AmstelGoldRace             "Mirco MAESTRI"                                26  BRD   ITA     DNF            0
+AmstelGoldRace             "Marco MARONESE"                               23  BRD   ITA     DNF            0
+AmstelGoldRace             "Vincenzo ALBANESE"                            21  BRD   ITA     DNF            0
+AmstelGoldRace             "Paolo SIMION"                                 25  BRD   ITA     DNF            0
+AmstelGoldRace             "Maciej PATERSKI"                              31  CCC   POL     DNF            0
+AmstelGoldRace             "FrantisEk SISR"                               24  CCC   CZE     DNF            0
+AmstelGoldRace             "Bryan COQUARD"                                25  DEN   FRA     DNF            0
+AmstelGoldRace             "Tony HUREL"                                   30  DEN   FRA     DNF            0
+AmstelGoldRace             "Fabien GRELLIER"                              23  DEN   FRA     DNF            0
+AmstelGoldRace             "Paul OURSELIN"                                23  DEN   FRA     DNF            0
+LaFlecheWallonne           "Alejandro VALVERDE BELMONTE"                  37  MOV   ESP       1      5:15:37 
+LaFlecheWallonne           "Daniel MARTIN"                                31  QST   IRL       2      5:15:38
+LaFlecheWallonne           "Dylan TEUNS"                                  25  BMC   BEL       3      5:15:38
+LaFlecheWallonne           "Sergio Luis HENAO MONTOYA"                    30  SKY   COL       4      5:15:38
+LaFlecheWallonne           "Michael ALBASINI"                             37  ORS   SUI       5      5:15:38
+LaFlecheWallonne           "Warren BARGUIL"                               26  SUN   FRA       6      5:15:38
+LaFlecheWallonne           "Michal KWIATKOWSKI"                           27  SKY   POL       7      5:15:38
+LaFlecheWallonne           "Rudy MOLARD"                                  28  FDJ   FRA       8      5:15:38
+LaFlecheWallonne           "David GAUDU"                                  21  FDJ   FRA       9      5:15:38
+LaFlecheWallonne           "Diego ULISSI"                                 28  UAD   ITA      10      5:15:38
+LaFlecheWallonne           "Michael WOODS"                                31  CDT   CAN      11      5:15:38
+LaFlecheWallonne           "Jon IZAGUIRRE INSAUSTI"                       28  TBM   ESP      12      5:15:38
+LaFlecheWallonne           "Romain BARDET"                                27  ALM   FRA      13      5:15:45
+LaFlecheWallonne           "Pierre Roger LATOUR"                          24  ALM   FRA      14      5:15:45
+LaFlecheWallonne           "Robert GESINK"                                31  TLJ   NED      15      5:15:45
+LaFlecheWallonne           "Patrick KONRAD"                               26  BOH   AUT      16      5:15:45
+LaFlecheWallonne           "Jelle VANENDERT"                              32  LTS   BEL      17      5:15:50
+LaFlecheWallonne           "Tim WELLENS"                                  26  LTS   BEL      18      5:15:50
+LaFlecheWallonne           "Jay MCCARTHY"                                 25  BOH   AUS      19      5:15:50
+LaFlecheWallonne           "Jonathan HIVERT"                              32  DEN   FRA      20      5:15:53
+LaFlecheWallonne           "Tom-Jelte SLAGTER"                            28  CDT   NED      21      5:15:53
+LaFlecheWallonne           "Jakob FUGLSANG"                               32  AST   DEN      22      5:15:53
+LaFlecheWallonne           "Rigoberto URAN URAN"                          30  CDT   COL      23      5:15:58
+LaFlecheWallonne           "Eduardo SEPULVEDA"                            26  FVC   ARG      24      5:15:58
+LaFlecheWallonne           "Maurits LAMMERTINK"                           27  KAT   NED      25      5:16:01
+LaFlecheWallonne           "Alexis VUILLERMOZ"                            29  ALM   FRA      26      5:16:01
+LaFlecheWallonne           "Mathias FRANK"                                31  ALM   SUI      27      5:16:06
+LaFlecheWallonne           "Igor ANTON HERNANDEZ"                         34  DDD   ESP      28      5:16:06
+LaFlecheWallonne           "Rafal MAJKA"                                  28  BOH   POL      29      5:16:12
+LaFlecheWallonne           "Diego ROSA"                                   28  SKY   ITA      30      5:16:12
+LaFlecheWallonne           "Rui Alberto FARIA DA COSTA"                   31  UAD   POR      31      5:16:14
+LaFlecheWallonne           "Georg PREIDLER"                               27  SUN   AUT      32      5:16:16
+LaFlecheWallonne           "Pavel KOCHETKOV"                              31  KAT   RUS      33      5:16:19
+LaFlecheWallonne           "Arthur VICHOT"                                29  FDJ   FRA      34      5:16:19
+LaFlecheWallonne           "Elie GESBERT"                                 22  FVC   FRA      35      5:16:22
+LaFlecheWallonne           "Nathan HAAS"                                  28  DDD   AUS      36      5:16:22
+LaFlecheWallonne           "Jarlinson PANTANO GOMEZ"                      29  TFS   COL      37      5:16:25
+LaFlecheWallonne           "Paul MARTENS"                                 34  TLJ   GER      38      5:16:27
+LaFlecheWallonne           "Bob JUNGELS"                                  25  QST   LUX      39      5:16:30
+LaFlecheWallonne           "Xandro MEURISSE"                              25  WGG   BEL      40      5:16:31
+LaFlecheWallonne           "Thomas SPRENGERS"                             27  SVB   BEL      41      5:16:31
+LaFlecheWallonne           "Thomas DEGAND"                                31  WGG   BEL      42      5:16:31
+LaFlecheWallonne           "Ruben GUERREIRO"                              23  TFS   POR      43      5:16:31
+LaFlecheWallonne           "Mikael CHEREL"                                31  ALM   FRA      44      5:16:31
+LaFlecheWallonne           "Louis MEINTJES"                               25  UAD   RSA      45      5:16:31
+LaFlecheWallonne           "Samuel SANCHEZ GONZALEZ"                      39  BMC   ESP      46      5:16:38
+LaFlecheWallonne           "Ben HERMANS"                                  31  BMC   BEL      47      5:16:38
+LaFlecheWallonne           "Julien SIMON"                                 32  COF   FRA      48      5:16:38
+LaFlecheWallonne           "Daniel MORENO"                                36  MOV   ESP      49      5:16:38
+LaFlecheWallonne           "Guillaume MARTIN"                             24  WGG   FRA      50      5:16:38
+LaFlecheWallonne           "Laurens DE PLUS"                              22  QST   BEL      51      5:16:38
+LaFlecheWallonne           "CYRIL GAUTIER"                                30  ALM   FRA      52      5:16:38
+LaFlecheWallonne           "Simone PETILLI"                               24  UAD   ITA      53      5:16:38
+LaFlecheWallonne           "Eliot LIETAER"                                27  SVB   BEL      54      5:16:38
+LaFlecheWallonne           "Michael GOGL"                                 24  TFS   AUT      55      5:16:50
+LaFlecheWallonne           "Maxime VANTOMME"                              31  WVA   BEL      56      5:16:50
+LaFlecheWallonne           "Pello BILBAO LOPEZ DE ARMENTIA"               27  AST   ESP      57      5:16:50
+LaFlecheWallonne           "Jacques Willem JANSE VAN RENSBURG"            30  DDD   RSA      58      5:16:54
+LaFlecheWallonne           "Floris DE TIER"                               25  TLJ   BEL      59      5:16:58
+LaFlecheWallonne           "Serge PAUWELS"                                34  DDD   BEL      60      5:16:58
+LaFlecheWallonne           "Lilian CALMEJANE"                             25  DEN   FRA      61      5:16:58
+LaFlecheWallonne           "Silvan DILLIER"                               27  BMC   SUI      62      5:16:58
+LaFlecheWallonne           "Armindo FONSECA"                              28  FVC   FRA      63      5:17:03
+LaFlecheWallonne           "SEBASTIAN HENAO GOMEZ"                        24  SKY   COL      64      5:17:03
+LaFlecheWallonne           "Bart DE CLERCQ"                               31  LTS   BEL      65      5:17:11
+LaFlecheWallonne           "Wilco KELDERMAN"                              26  SUN   NED      66      5:17:11
+LaFlecheWallonne           "Michael MATTHEWS"                             27  SUN   AUS      67      5:17:11
+LaFlecheWallonne           "Enrico BATTAGLIN"                             28  TLJ   ITA      68      5:17:11
+LaFlecheWallonne           "Jose ROJAS"                                   32  MOV   ESP      69      5:17:15
+LaFlecheWallonne           "Dion SMITH"                                   24  WGG   NZL      70      5:17:21
+LaFlecheWallonne           "Juan Jose LOBATO DEL VALLE"                   29  TLJ   ESP      71      5:17:29
+LaFlecheWallonne           "Roman KREUZIGER"                              31  ORS   CZE      72      5:17:46
+LaFlecheWallonne           "Merhawi KUDUS GHEBREMEDHIN"                   23  DDD   ERI      73      5:17:46
+LaFlecheWallonne           "Andre CARDOSO"                                33  TFS   POR      74      5:17:46
+LaFlecheWallonne           "Carlos Alberto BETANCUR GOMEZ"                28  MOV   COL      75      5:17:46
+LaFlecheWallonne           "Haimar ZUBELDIA AGIRRE"                       40  TFS   ESP      76      5:17:46
+LaFlecheWallonne           "Luis Angel MATE MARDONES"                     33  COF   ESP      77      5:17:46
+LaFlecheWallonne           "Stephane ROSSETTO"                            30  COF   FRA      78      5:17:50
+LaFlecheWallonne           "Jesus HERRADA LOPEZ"                          27  MOV   ESP      79      5:17:50
+LaFlecheWallonne           "Ben O'CONNOR"                                 22  DDD   AUS      80      5:17:50
+LaFlecheWallonne           "Sander ARMEE"                                 32  LTS   BEL      81      5:17:50
+LaFlecheWallonne           "Dimitri PEYSKENS"                             26  WVA   BEL      82      5:17:50
+LaFlecheWallonne           "Alex HOWES"                                   29  CDT   USA      83      5:17:50
+LaFlecheWallonne           "Simon CLARKE"                                 31  CDT   AUS      84      5:17:50
+LaFlecheWallonne           "Brendan CANTY"                                25  CDT   AUS      85      5:17:50
+LaFlecheWallonne           "Maxime BOUET"                                 31  FVC   FRA      86      5:17:50
+LaFlecheWallonne           "Brice FEILLU"                                 32  FVC   FRA      87      5:17:57
+LaFlecheWallonne           "Alexey VERMEULEN"                             23  TLJ   USA      88      5:17:57
+LaFlecheWallonne           "Andrea PASQUALON"                             29  WGG   ITA      89      5:18:00
+LaFlecheWallonne           "Perrig QUEMENEUR"                             33  DEN   FRA      90      5:18:00
+LaFlecheWallonne           "Romain SICARD"                                29  DEN   FRA      91      5:18:04
+LaFlecheWallonne           "Nicolas EDET"                                 30  COF   FRA      92      5:18:04
+LaFlecheWallonne           "Nikita STALNOV"                               26  AST   KAZ      93      5:18:08
+LaFlecheWallonne           "Giovanni VISCONTI"                            34  TBM   ITA      94      5:18:08
+LaFlecheWallonne           "Antoine WARNIER"                              24  WVA   BEL      95      5:18:08
+LaFlecheWallonne           "Michael SCHAR"                                31  BMC   SUI      96      5:18:08
+LaFlecheWallonne           "Brian NAULEAU"                                29  DEN   FRA      97      5:18:08
+LaFlecheWallonne           "AMAEL MOINARD"                                35  BMC   FRA      98      5:18:08
+LaFlecheWallonne           "Sebastien DELFOSSE"                           35  WVA   BEL      99      5:18:18
+LaFlecheWallonne           "Christophe MASSON"                            32  WVA   FRA     100      5:18:18
+LaFlecheWallonne           "Dries DEVENYNS"                               34  QST   BEL     101      5:18:23
+LaFlecheWallonne           "Yukiya ARASHIRO"                              33  TBM   JPN     102      5:18:23
+LaFlecheWallonne           "Manuele MORI"                                 37  UAD   ITA     103      5:18:33
+LaFlecheWallonne           "Gianni MOSCON"                                23  SKY   ITA     104      5:18:33
+LaFlecheWallonne           "Michel KREDER"                                30  ABS   NED     105      5:18:33
+LaFlecheWallonne           "Tosh VAN DER SANDE"                           27  LTS   BEL     106      5:18:37
+LaFlecheWallonne           "Guillaume BONNAFOND"                          30  COF   FRA     107      5:18:41
+LaFlecheWallonne           "Lennard HOFSTEDE"                             23  SUN   NED     108      5:18:41
+LaFlecheWallonne           "Angel VICIOSO ARCOS"                          40  KAT   ESP     109      5:18:48
+LaFlecheWallonne           "Fabien GRELLIER"                              23  DEN   FRA     110      5:18:51
+LaFlecheWallonne           "KEVIN REZA"                                   29  FDJ   FRA     111      5:18:56
+LaFlecheWallonne           "Tao GEOGHEGAN HART"                           22  SKY   GBR     112      5:18:59
+LaFlecheWallonne           "Franck BONNAMOUR"                             22  FVC   FRA     113      5:19:07
+LaFlecheWallonne           "Christoph PFINGSTEN"                          30  BOH   GER     114      5:19:09
+LaFlecheWallonne           "Maximilian SCHACHMANN"                        23  QST   GER     115      5:19:09
+LaFlecheWallonne           "Jenthe BIERMANS"                              22  KAT   BEL     116      5:19:32
+LaFlecheWallonne           "Preben VAN HECKE"                             35  SVB   BEL     117      5:19:32
+LaFlecheWallonne           "Marco MINNAARD"                               28  WGG   NED     118      5:19:57
+LaFlecheWallonne           "Tomasz MARCZYNSKI"                            33  LTS   POL     119      5:20:13
+LaFlecheWallonne           "Mark CHRISTIAN"                               27  ABS   GBR     120      5:20:13
+LaFlecheWallonne           "Gregor MUHLBERGER"                            23  BOH   AUT     121      5:20:13
+LaFlecheWallonne           "Gianluca BRAMBILLA"                           30  QST   ITA     122      5:21:28
+LaFlecheWallonne           "Michal GOLAS"                                 33  SKY   POL     123      5:21:28
+LaFlecheWallonne           "Cesare BENEDETTI"                             30  BOH   ITA     124      5:21:28
+LaFlecheWallonne           "Jack HAIG"                                    24  ORS   AUS     125      5:21:28
+LaFlecheWallonne           "Petr VAKOC"                                   25  QST   CZE     126      5:21:31
+LaFlecheWallonne           "Matej MOHORIC"                                23  UAD   SLO     127      5:21:31
+LaFlecheWallonne           "Matteo BONO"                                  34  UAD   ITA     128      5:21:31
+LaFlecheWallonne           "Jaco VENTER"                                  30  DDD   RSA     129      5:21:31
+LaFlecheWallonne           "Christopher JUUL JENSEN"                      28  ORS   DEN     130      5:21:46
+LaFlecheWallonne           "Tsgabu Gebremaryam GRMAY"                     26  TBM   ETH     131      5:21:53
+LaFlecheWallonne           "Tanel KANGERT"                                30  AST   EST     132      5:22:19
+LaFlecheWallonne           "Daryl IMPEY"                                  33  ORS   RSA     133      5:22:41
+LaFlecheWallonne           "Toms SKUJINS"                                 26  CDT   LAT     134      5:22:41
+LaFlecheWallonne           "Rory SUTHERLAND"                              35  MOV   AUS     135      5:22:41
+LaFlecheWallonne           "ANDREY GRIVKO"                                34  AST   UKR     136      5:22:51
+LaFlecheWallonne           "Damien HOWSON"                                25  ORS   AUS     137      5:22:53
+LaFlecheWallonne           "Bert-Jan LINDEMAN"                            28  TLJ   NED     138      5:23:23
+LaFlecheWallonne           "CEDRIC PINEAU"                                32  FDJ   FRA     139      5:24:33
+LaFlecheWallonne           "Quentin JAUREGUI"                             23  ALM   FRA     140      5:24:33
+LaFlecheWallonne           "Axel DOMONT"                                  27  ALM   FRA     141      5:24:36
+LaFlecheWallonne           "Paul OURSELIN"                                23  DEN   FRA     142      5:24:36
+LaFlecheWallonne           "Lukas POSTLBERGER"                            25  BOH   AUT     143      5:24:36
+LaFlecheWallonne           "Anthony PEREZ"                                26  COF   FRA     144      5:24:36
+LaFlecheWallonne           "Alessandro DE MARCHI"                         31  BMC   ITA     145      5:24:36
+LaFlecheWallonne           "Floris GERFS"                                 25  BMC   NED     146      5:24:36
+LaFlecheWallonne           "Grega BOLE"                                   32  TBM   SLO     147      5:24:42
+LaFlecheWallonne           "Simon GESCHKE"                                31  SUN   GER     148      5:24:42
+LaFlecheWallonne           "Sindre SKJOESTAD LUNKE"                       24  SUN   NOR     149      5:24:42
+LaFlecheWallonne           "Gregory HABEAUX"                              35  WVA   BEL     150      5:24:42
+LaFlecheWallonne           "Viacheslav KUZNETSOV"                         28  KAT   RUS     151      5:24:42
+LaFlecheWallonne           "GREGORY DANIEL"                               23  TFS   USA     152      5:28:17
+LaFlecheWallonne           "Fumiyuki BEPPU"                               34  TFS   JPN     153      5:28:17
+LaFlecheWallonne           "Johannes FROHLINGER"                          32  SUN   GER     154      5:28:17
+LaFlecheWallonne           "Jesus HERNANDEZ BLAZQUEZ"                     36  TFS   ESP     155      5:28:17
+LaFlecheWallonne           "Jens WALLAYS"                                 25  SVB   BEL     156      5:28:27
+LaFlecheWallonne           "Romain GUILLEMOIS"                            26  DEN   FRA     157      5:28:29
+LaFlecheWallonne           "Antonio NIBALI"                               25  TBM   ITA     158      5:28:32
+LaFlecheWallonne           "Johann VAN ZYL"                               26  DDD   RSA     159      5:28:32
+LaFlecheWallonne           "Justin JULES"                                 31  WVA   FRA     160      5:28:32
+LaFlecheWallonne           "Tom SCULLY"                                   27  CDT   NZL     161      5:28:37
+LaFlecheWallonne           "Arnaud COURTEILLE"                            28  FDJ   FRA     162      5:28:37
+LaFlecheWallonne           "Koen BOUWMAN"                                 24  TLJ   NED     163      5:28:37
+LaFlecheWallonne           "Alexey LUTSENKO"                              25  AST   KAZ     164      5:28:52
+LaFlecheWallonne           "Jerome COUSIN"                                28  COF   FRA     165      5:29:18
+LaFlecheWallonne           "Yoann BAGOT"                                  30  COF   FRA     166      5:29:18
+LaFlecheWallonne           "Olivier PARDINI"                              32  WVA   BEL     DNF            0
+LaFlecheWallonne           "Daniel PEARSON"                               23  ABS   GBR     DNF            0
+LaFlecheWallonne           "Lasse Norman HANSEN"                          25  ABS   DEN     DNF            0
+LaFlecheWallonne           "Aaron GATE"                                   27  ABS   NZL     DNF            0
+LaFlecheWallonne           "Conor DUNNE"                                  25  ABS   IRL     DNF            0
+LaFlecheWallonne           "Adam BLYTHE"                                  28  ABS   GBR     DNF            0
+LaFlecheWallonne           "Lars Petter NORDHAUG"                         33  ABS   NOR     DNF            0
+LaFlecheWallonne           "Kenneth VAN ROOY"                             24  SVB   BEL     DNF            0
+LaFlecheWallonne           "Dries VAN GESTEL"                             23  SVB   BEL     DNF            0
+LaFlecheWallonne           "Ruben POLS"                                   23  SVB   BEL     DNF            0
+LaFlecheWallonne           "Maxime FARAZIJN"                              23  SVB   BEL     DNF            0
+LaFlecheWallonne           "Romain HARDY"                                 29  FVC   FRA     DNF            0
+LaFlecheWallonne           "Arnold JEANNESSON"                            31  FVC   FRA     DNF            0
+LaFlecheWallonne           "Meiyin WANG"                                  29  TBM   CHN     DNF            0
+LaFlecheWallonne           "Enrico GASPAROTTO"                            35  TBM   ITA     DNF            0
+LaFlecheWallonne           "Anthony ROUX"                                 30  FDJ   FRA     DNF            0
+LaFlecheWallonne           "MARC FOURNIER"                                23  FDJ   FRA     DNF            0
+LaFlecheWallonne           "Michael SCHWARZMANN"                          26  BOH   GER     DNF            0
+LaFlecheWallonne           "Mads Wurtz SCHMIDT"                           23  KAT   DEN     DNF            0
+LaFlecheWallonne           "Nils POLITT"                                  23  KAT   GER     DNF            0
+LaFlecheWallonne           "Marco MATHIS"                                 23  KAT   GER     DNF            0
+LaFlecheWallonne           "MICHAEL VALGREN ANDERSEN"                     25  AST   DEN     DNF            0
+LaFlecheWallonne           "Laurens DE VREESE"                            29  AST   BEL     DNF            0
+LaFlecheWallonne           "Thomas DE GENDT"                              31  LTS   BEL     DNF            0
+LaFlecheWallonne           "Sean DE BIE"                                  26  LTS   BEL     DNF            0
+LaFlecheWallonne           "Oliviero TROIA"                               23  UAD   ITA     DNF            0
+LaFlecheWallonne           "Alexander EDMONSON"                           24  ORS   AUS     DNF            0
+LaFlecheWallonne           "Sam BEWLEY"                                   30  ORS   NZL     DNF            0
+LaFlecheWallonne           "Fabien DOUBEY"                                24  WGG   FRA     DNF            0
+LaFlecheWallonne           "Jerome BAUGNIES"                              30  WGG   BEL     DNF            0
+LaFlecheWallonne           "Owain DOULL"                                  24  SKY   GBR     DNF            0
+LaFlecheWallonne           "Martin VELITS"                                32  QST   SVK     DNF            0
+LaFlecheWallonne           "Marc SOLER GIMENEZ"                           24  MOV   ESP     DNF            0
+LaFlecheWallonne           "Imanol ERVITI"                                34  MOV   ESP     DNF            0
+LiegeBastogneLiege         "Alejandro VALVERDE BELMONTE"                  37  MOV   ESP       1      6:24:27
+LiegeBastogneLiege         "Daniel MARTIN"                                31  QST   IRL       2      6:24:27
+LiegeBastogneLiege         "Michal KWIATKOWSKI"                           27  SKY   POL       3      6:24:30
+LiegeBastogneLiege         "Michael MATTHEWS"                             27  SUN   AUS       4      6:24:30
+LiegeBastogneLiege         "Jon IZAGUIRRE INSAUSTI"                       28  TBM   ESP       5      6:24:30
+LiegeBastogneLiege         "Romain BARDET"                                27  ALM   FRA       6      6:24:30
+LiegeBastogneLiege         "Michael ALBASINI"                             37  ORS   SUI       7      6:24:30
+LiegeBastogneLiege         "Adam YATES"                                   25  ORS   GBR       8      6:24:34
+LiegeBastogneLiege         "Michael WOODS"                                31  CDT   CAN       9      6:24:34
+LiegeBastogneLiege         "Rafal MAJKA"                                  28  BOH   POL      10      6:24:34
+LiegeBastogneLiege         "Greg VAN AVERMAET"                            32  BMC   BEL      11      6:24:34
+LiegeBastogneLiege         "Domenico POZZOVIVO"                           35  ALM   ITA      12      6:24:34
+LiegeBastogneLiege         "Sergio Luis HENAO MONTOYA"                    30  SKY   COL      13      6:24:34
+LiegeBastogneLiege         "Rui Alberto FARIA DA COSTA"                   31  UAD   POR      14      6:24:37
+LiegeBastogneLiege         "Jakob FUGLSANG"                               32  AST   DEN      15      6:24:37
+LiegeBastogneLiege         "Fabio FELLINE"                                27  TFS   ITA      16      6:24:41
+LiegeBastogneLiege         "Rudy MOLARD"                                  28  FDJ   FRA      17      6:24:41
+LiegeBastogneLiege         "Julien SIMON"                                 32  COF   FRA      18      6:24:41
+LiegeBastogneLiege         "Jelle VANENDERT"                              32  LTS   BEL      19      6:24:41
+LiegeBastogneLiege         "Patrick KONRAD"                               26  BOH   AUT      20      6:24:41
+LiegeBastogneLiege         "Rigoberto URAN URAN"                          30  CDT   COL      21      6:24:41
+LiegeBastogneLiege         "Tom DUMOULIN"                                 27  SUN   NED      22      6:24:41
+LiegeBastogneLiege         "Davide FORMOLO"                               25  CDT   ITA      23      6:24:41
+LiegeBastogneLiege         "Dylan TEUNS"                                  25  BMC   BEL      24      6:24:51
+LiegeBastogneLiege         "Omar FRAILE MATARRANZ"                        27  DDD   ESP      25      6:24:55
+LiegeBastogneLiege         "Michael GOGL"                                 24  TFS   AUT      26      6:24:55
+LiegeBastogneLiege         "Roman KREUZIGER"                              31  ORS   CZE      27      6:25:01
+LiegeBastogneLiege         "Daniel MORENO"                                36  MOV   ESP      28      6:25:18
+LiegeBastogneLiege         "Alexis VUILLERMOZ"                            29  ALM   FRA      29      6:25:21
+LiegeBastogneLiege         "Diego ULISSI"                                 28  UAD   ITA      30      6:25:21
+LiegeBastogneLiege         "Damiano CARUSO"                               30  BMC   ITA      31      6:25:21
+LiegeBastogneLiege         "Lawrence WARBASSE"                            27  ABS   USA      32      6:25:21
+LiegeBastogneLiege         "Jay MCCARTHY"                                 25  BOH   AUS      33      6:25:21
+LiegeBastogneLiege         "Gianluca BRAMBILLA"                           30  QST   ITA      34      6:25:21
+LiegeBastogneLiege         "Tim WELLENS"                                  26  LTS   BEL      35      6:25:21
+LiegeBastogneLiege         "Simone PETILLI"                               24  UAD   ITA      36      6:25:21
+LiegeBastogneLiege         "Enrico GASPAROTTO"                            35  TBM   ITA      37      6:25:21
+LiegeBastogneLiege         "Warren BARGUIL"                               26  SUN   FRA      38      6:25:21
+LiegeBastogneLiege         "Davide VILLELLA"                              26  CDT   ITA      39      6:25:21
+LiegeBastogneLiege         "Antwan TOLHOEK"                               23  TLJ   NED      40      6:25:21
+LiegeBastogneLiege         "Jacques Willem JANSE VAN RENSBURG"            30  DDD   RSA      41      6:25:21
+LiegeBastogneLiege         "Floris DE TIER"                               25  TLJ   BEL      42      6:25:21
+LiegeBastogneLiege         "Igor ANTON HERNANDEZ"                         34  DDD   ESP      43      6:25:21
+LiegeBastogneLiege         "Maurits LAMMERTINK"                           27  KAT   NED      44      6:25:21
+LiegeBastogneLiege         "Tom-Jelte SLAGTER"                            28  CDT   NED      45      6:25:21
+LiegeBastogneLiege         "Pavel KOCHETKOV"                              31  KAT   RUS      46      6:25:21
+LiegeBastogneLiege         "Sam OOMEN"                                    22  SUN   NED      47      6:25:21
+LiegeBastogneLiege         "Louis MEINTJES"                               25  UAD   RSA      48      6:25:21
+LiegeBastogneLiege         "CYRIL GAUTIER"                                30  ALM   FRA      49      6:25:21
+LiegeBastogneLiege         "Serge PAUWELS"                                34  DDD   BEL      50      6:25:27
+LiegeBastogneLiege         "Jose GONCALVES"                               28  KAT   POR      51      6:25:27
+LiegeBastogneLiege         "Samuel SANCHEZ GONZALEZ"                      39  BMC   ESP      52      6:25:27
+LiegeBastogneLiege         "Jarlinson PANTANO GOMEZ"                      29  TFS   COL      53      6:25:27
+LiegeBastogneLiege         "Tanel KANGERT"                                30  AST   EST      54      6:25:35
+LiegeBastogneLiege         "Tosh VAN DER SANDE"                           27  LTS   BEL      55      6:26:23
+LiegeBastogneLiege         "Lilian CALMEJANE"                             25  DEN   FRA      56      6:26:23
+LiegeBastogneLiege         "Enrico BATTAGLIN"                             28  TLJ   ITA      57      6:26:40
+LiegeBastogneLiege         "Pello BILBAO LOPEZ DE ARMENTIA"               27  AST   ESP      58      6:26:40
+LiegeBastogneLiege         "Jose ROJAS"                                   32  MOV   ESP      59      6:26:40
+LiegeBastogneLiege         "David DE LA CRUZ MELGAREJO"                   28  QST   ESP      60      6:27:49
+LiegeBastogneLiege         "Stephane ROSSETTO"                            30  COF   FRA      61      6:27:56
+LiegeBastogneLiege         "Nathan HAAS"                                  28  DDD   AUS      62      6:28:05
+LiegeBastogneLiege         "Gregor MUHLBERGER"                            23  BOH   AUT      63      6:28:05
+LiegeBastogneLiege         "Tiago MACHADO"                                32  KAT   POR      64      6:28:17
+LiegeBastogneLiege         "Thomas DEGAND"                                31  WGG   BEL      65      6:28:17
+LiegeBastogneLiege         "Simon CLARKE"                                 31  CDT   AUS      66      6:28:17
+LiegeBastogneLiege         "Stefan DENIFL"                                30  ABS   AUT      67      6:28:17
+LiegeBastogneLiege         "Alex HOWES"                                   29  CDT   USA      68      6:29:09
+LiegeBastogneLiege         "Andre CARDOSO"                                33  TFS   POR      69      6:29:09
+LiegeBastogneLiege         "Pawel POLJANSKI"                              27  BOH   POL      70      6:29:09
+LiegeBastogneLiege         "Nick VAN DER LIJKE"                           26  RNL   NED      71      6:29:17
+LiegeBastogneLiege         "Giovanni VISCONTI"                            34  TBM   ITA      72      6:29:28
+LiegeBastogneLiege         "Manuele MORI"                                 37  UAD   ITA      73      6:29:58
+LiegeBastogneLiege         "Carlos Alberto BETANCUR GOMEZ"                28  MOV   COL      74      6:29:58
+LiegeBastogneLiege         "Eliot LIETAER"                                27  SVB   BEL      75      6:29:58
+LiegeBastogneLiege         "Dion SMITH"                                   24  WGG   NZL      76      6:29:58
+LiegeBastogneLiege         "Yoann BAGOT"                                  30  COF   FRA      77      6:29:58
+LiegeBastogneLiege         "Gianni MOSCON"                                23  SKY   ITA      78      6:30:02
+LiegeBastogneLiege         "Diego ROSA"                                   28  SKY   ITA      79      6:30:02
+LiegeBastogneLiege         "Alessandro DE MARCHI"                         31  BMC   ITA      80      6:30:02
+LiegeBastogneLiege         "Bart DE CLERCQ"                               31  LTS   BEL      81      6:30:08
+LiegeBastogneLiege         "Fabien GRELLIER"                              23  DEN   FRA      82      6:30:41
+LiegeBastogneLiege         "Bram TANKINK"                                 39  TLJ   NED      83      6:31:54
+LiegeBastogneLiege         "Thomas SPRENGERS"                             27  SVB   BEL      84      6:32:07
+LiegeBastogneLiege         "Alexey VERMEULEN"                             23  TLJ   USA      85      6:32:07
+LiegeBastogneLiege         "Arthur VICHOT"                                29  FDJ   FRA      86      6:32:07
+LiegeBastogneLiege         "Mikael CHEREL"                                31  ALM   FRA      87      6:32:07
+LiegeBastogneLiege         "Ruben GUERREIRO"                              23  TFS   POR      88      6:32:07
+LiegeBastogneLiege         "SEBASTIAN HENAO GOMEZ"                        24  SKY   COL      89      6:32:07
+LiegeBastogneLiege         "Mark CHRISTIAN"                               27  ABS   GBR      90      6:32:07
+LiegeBastogneLiege         "Anthony ROUX"                                 30  FDJ   FRA      91      6:32:07
+LiegeBastogneLiege         "Laurens DE PLUS"                              22  QST   BEL      92      6:32:07
+LiegeBastogneLiege         "Matej MOHORIC"                                23  UAD   SLO      93      6:32:07
+LiegeBastogneLiege         "Guillaume MARTIN"                             24  WGG   FRA      94      6:32:07
+LiegeBastogneLiege         "Yukiya ARASHIRO"                              33  TBM   JPN      95      6:32:07
+LiegeBastogneLiege         "Sebastien DELFOSSE"                           35  WVA   BEL      96      6:32:07
+LiegeBastogneLiege         "Tomasz MARCZYNSKI"                            33  LTS   POL      97      6:32:07
+LiegeBastogneLiege         "Alexey LUTSENKO"                              25  AST   KAZ      98      6:32:07
+LiegeBastogneLiege         "Luis Angel MATE MARDONES"                     33  COF   ESP      99      6:32:07
+LiegeBastogneLiege         "Jose MENDES"                                  32  BOH   POR     100      6:32:07
+LiegeBastogneLiege         "Paul MARTENS"                                 34  TLJ   GER     101      6:32:07
+LiegeBastogneLiege         "Tao GEOGHEGAN HART"                           22  SKY   GBR     102      6:32:07
+LiegeBastogneLiege         "Lennard HOFSTEDE"                             23  SUN   NED     103      6:32:07
+LiegeBastogneLiege         "Michal GOLAS"                                 33  SKY   POL     104      6:32:07
+LiegeBastogneLiege         "Cesare BENEDETTI"                             30  BOH   ITA     105      6:32:07
+LiegeBastogneLiege         "AMAEL MOINARD"                                35  BMC   FRA     106      6:32:07
+LiegeBastogneLiege         "Toms SKUJINS"                                 26  CDT   LAT     107      6:32:07
+LiegeBastogneLiege         "BENOIT VAUGRENARD"                            35  FDJ   FRA     108      6:32:07
+LiegeBastogneLiege         "Arnaud COURTEILLE"                            28  FDJ   FRA     109      6:32:07
+LiegeBastogneLiege         "KEVIN REZA"                                   29  FDJ   FRA     110      6:32:07
+LiegeBastogneLiege         "Rory SUTHERLAND"                              35  MOV   AUS     111      6:32:07
+LiegeBastogneLiege         "Thomas VOECKLER"                              38  DEN   FRA     112      6:32:07
+LiegeBastogneLiege         "Jonathan HIVERT"                              32  DEN   FRA     113      6:32:07
+LiegeBastogneLiege         "Alberto LOSADA ALGUACIL"                      35  KAT   ESP     114      6:32:07
+LiegeBastogneLiege         "Angel VICIOSO ARCOS"                          40  KAT   ESP     115      6:32:07
+LiegeBastogneLiege         "Jesus HERRADA LOPEZ"                          27  MOV   ESP     116      6:32:19
+LiegeBastogneLiege         "Anthony PEREZ"                                26  COF   FRA     117      6:33:08
+LiegeBastogneLiege         "Romain SICARD"                                29  DEN   FRA     118      6:33:42
+LiegeBastogneLiege         "Antoine WARNIER"                              24  WVA   BEL     119      6:35:06
+LiegeBastogneLiege         "Brian NAULEAU"                                29  DEN   FRA     120      6:35:06
+LiegeBastogneLiege         "Andrea PASQUALON"                             29  WGG   ITA     121      6:35:06
+LiegeBastogneLiege         "Perrig QUEMENEUR"                             33  DEN   FRA     122      6:35:06
+LiegeBastogneLiege         "Gregory HABEAUX"                              35  WVA   BEL     123      6:35:06
+LiegeBastogneLiege         "Christophe MASSON"                            32  WVA   FRA     124      6:35:06
+LiegeBastogneLiege         "Dries VAN GESTEL"                             23  SVB   BEL     125      6:35:06
+LiegeBastogneLiege         "Matteo BONO"                                  34  UAD   ITA     126      6:35:06
+LiegeBastogneLiege         "Marco MINNAARD"                               28  WGG   NED     127      6:35:06
+LiegeBastogneLiege         "Odd Christian EIKING"                         23  FDJ   NOR     128      6:35:06
+LiegeBastogneLiege         "Jeroen MEIJERS"                               24  RNL   NED     129      6:35:06
+LiegeBastogneLiege         "Tsgabu Gebremaryam GRMAY"                     26  TBM   ETH     130      6:35:06
+LiegeBastogneLiege         "Pieter WEENING"                               36  RNL   NED     131      6:35:06
+LiegeBastogneLiege         "Matvey MAMYKIN"                               23  KAT   RUS     132      6:35:11
+LiegeBastogneLiege         "Guillaume BONNAFOND"                          30  COF   FRA     133      6:35:59
+LiegeBastogneLiege         "Imanol ERVITI"                                34  MOV   ESP     134      6:37:38
+LiegeBastogneLiege         "Remy MERTZ"                                   22  LTS   BEL     135      6:37:38
+LiegeBastogneLiege         "Aaron GATE"                                   27  ABS   NZL     136      6:37:38
+LiegeBastogneLiege         "ANDREY GRIVKO"                                34  AST   UKR     137      6:37:38
+LiegeBastogneLiege         "Lukas POSTLBERGER"                            25  BOH   AUT     138      6:37:38
+LiegeBastogneLiege         "Simon GERRANS"                                37  ORS   AUS     139      6:37:38
+LiegeBastogneLiege         "Jaco VENTER"                                  30  DDD   RSA     140      6:37:38
+LiegeBastogneLiege         "Oscar RIESEBEEK"                              25  RNL   NED     141      6:37:38
+LiegeBastogneLiege         "Dries DEVENYNS"                               34  QST   BEL     142      6:37:38
+LiegeBastogneLiege         "Michel KREDER"                                30  ABS   NED     143      6:37:38
+LiegeBastogneLiege         "Romain GUILLEMOIS"                            26  DEN   FRA     144      6:37:59
+LiegeBastogneLiege         "Grega BOLE"                                   32  TBM   SLO     145      6:37:59
+LiegeBastogneLiege         "Pierre Roger LATOUR"                          24  ALM   FRA     146      6:38:22
+LiegeBastogneLiege         "Quentin JAUREGUI"                             23  ALM   FRA     147      6:38:22
+LiegeBastogneLiege         "Petr VAKOC"                                   25  QST   CZE     148      6:38:36
+LiegeBastogneLiege         "Benjamin DECLERCQ"                            23  SVB   BEL     149      6:39:08
+LiegeBastogneLiege         "Aime DE GENDT"                                23  SVB   BEL     150      6:39:08
+LiegeBastogneLiege         "Rein TAARAMAE"                                30  KAT   EST     151      6:39:08
+LiegeBastogneLiege         "Nicolas EDET"                                 30  COF   FRA     152      6:40:02
+LiegeBastogneLiege         "Simon YATES"                                  25  ORS   GBR     153      6:41:06
+LiegeBastogneLiege         "Ludovic ROBEET"                               23  WVA   BEL     DNF            0
+LiegeBastogneLiege         "Meiyin WANG"                                  29  TBM   CHN     DNF            0
+LiegeBastogneLiege         "Martijn BUDDING"                              22  RNL   NED     DNF            0
+LiegeBastogneLiege         "Etienne VAN EMPEL"                            23  RNL   NED     DNF            0
+LiegeBastogneLiege         "Sjoerd VAN GINNEKEN"                          25  RNL   NED     DNF            0
+LiegeBastogneLiege         "Tim ARIESEN"                                  23  RNL   NED     DNF            0
+LiegeBastogneLiege         "Steven LAMMERTINK"                            24  TLJ   NED     DNF            0
+LiegeBastogneLiege         "Bert-Jan LINDEMAN"                            28  TLJ   NED     DNF            0
+LiegeBastogneLiege         "CEDRIC PINEAU"                                32  FDJ   FRA     DNF            0
+LiegeBastogneLiege         "Thomas DERUETTE"                              22  WVA   BEL     DNF            0
+LiegeBastogneLiege         "Dimitri PEYSKENS"                             26  WVA   BEL     DNF            0
+LiegeBastogneLiege         "Thomas DE GENDT"                              31  LTS   BEL     DNF            0
+LiegeBastogneLiege         "Preben VAN HECKE"                             35  SVB   BEL     DNF            0
+LiegeBastogneLiege         "Kevin DELTOMBE"                               23  SVB   BEL     DNF            0
+LiegeBastogneLiege         "Lars Petter NORDHAUG"                         33  ABS   NOR     DNF            0
+LiegeBastogneLiege         "Conor DUNNE"                                  25  ABS   IRL     DNF            0
+LiegeBastogneLiege         "Daniel PEARSON"                               23  ABS   GBR     DNF            0
+LiegeBastogneLiege         "Peter KENNAUGH"                               28  SKY   GBR     DNF            0
+LiegeBastogneLiege         "Daryl IMPEY"                                  33  ORS   RSA     DNF            0
+LiegeBastogneLiege         "Dario CATALDO"                                32  AST   ITA     DNF            0
+LiegeBastogneLiege         "Marc SOLER GIMENEZ"                           24  MOV   ESP     DNF            0
+LiegeBastogneLiege         "Eros CAPECCHI"                                31  QST   ITA     DNF            0
+LiegeBastogneLiege         "Olivier PARDINI"                              32  WVA   BEL     DNF            0
+LiegeBastogneLiege         "Jesus HERNANDEZ BLAZQUEZ"                     36  TFS   ESP     DNF            0
+LiegeBastogneLiege         "Kenneth VAN ROOY"                             24  SVB   BEL     DNF            0
+LiegeBastogneLiege         "Damien HOWSON"                                25  ORS   AUS     DNF            0
+LiegeBastogneLiege         "Christopher JUUL JENSEN"                      28  ORS   DEN     DNF            0
+LiegeBastogneLiege         "Oliviero TROIA"                               23  UAD   ITA     DNF            0
+LiegeBastogneLiege         "Michael SCHAR"                                31  BMC   SUI     DNF            0
+LiegeBastogneLiege         "Floris GERFS"                                 25  BMC   NED     DNF            0
+LiegeBastogneLiege         "Sindre SKJOESTAD LUNKE"                       24  SUN   NOR     DNF            0
+LiegeBastogneLiege         "Albert TIMMER"                                32  SUN   NED     DNF            0
+LiegeBastogneLiege         "Soren Kragh ANDERSEN"                         23  SUN   DEN     DNF            0
+LiegeBastogneLiege         "Luka PIBERNIK"                                24  TBM   SLO     DNF            0
+LiegeBastogneLiege         "GREGORY DANIEL"                               23  TFS   USA     DNF            0
+LiegeBastogneLiege         "Enric MAS NICOLAU"                            22  QST   ESP     DNF            0
+LiegeBastogneLiege         "Luis Leon SANCHEZ"                            34  AST   ESP     DNF            0
+LiegeBastogneLiege         "Nikita STALNOV"                               26  AST   KAZ     DNF            0
+LiegeBastogneLiege         "Jerome BAUGNIES"                              30  WGG   BEL     DNF            0
+LiegeBastogneLiege         "Fabien DOUBEY"                                24  WGG   FRA     DNF            0
+LiegeBastogneLiege         "Xandro MEURISSE"                              25  WGG   BEL     DNF            0
+LiegeBastogneLiege         "Axel DOMONT"                                  27  ALM   FRA     DNF            0
+LiegeBastogneLiege         "Jerome COUSIN"                                28  COF   FRA     DNF            0
+LiegeBastogneLiege         "Mekseb DEBESAY"                               26  DDD   ERI     DNF            0
+LiegeBastogneLiege         "Ben O'CONNOR"                                 22  DDD   AUS     DNF            0
+LiegeBastogneLiege         "Sean DE BIE"                                  26  LTS   BEL     DNF            0
+LiegeBastogneLiege         "Fumiyuki BEPPU"                               34  TFS   JPN     DNF            0
