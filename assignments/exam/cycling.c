@@ -3,10 +3,11 @@
 #include <string.h>
 #include <assert.h>
 
+#define FILENAME "data.txt"
 #define ENTRIES 1000
 #define LINELENGTH 150
 #define NAMELENGTH 50
-/* løbsnavn rytternavn rytter-alder rytter-hold nationalitet placering køretid */
+
 typedef struct {
   char raceName[NAMELENGTH];  /* name of race, probably enumerate this */
   char firstName[NAMELENGTH]; /* only lower case and capitalized */
@@ -20,20 +21,18 @@ typedef struct {
   int points;
 } entry;
 
-/* point system
-  2 points for entering into any race
-  (ridersFinished - placement in race)/17 points, if race is finished without dnf and otl
-  1st +8, 2nd +5 and 3rd +3 points
 
-read file and input into struct-array */
 int readData(entry data[]);
 void printData(entry data[]);
 int convertTime(char string[]);
 void printRange(entry data[], int entries, int age, char nationality[]);
+/* point system
+2 points for entering into any race
+(ridersFinished - placement in race)/17 points, if race is finished without dnf and otl
+1st +8, 2nd +5 and 3rd +3 points */
+void calculatePoints(entry data[]);
 
-/* take arguments, such as "--print" for all assignments */
 int main(int argc, char *argv[]) {
-
   /* should use malloc() */
   entry data[ENTRIES];
 
@@ -44,13 +43,9 @@ int main(int argc, char *argv[]) {
     return EXIT_FAILURE;
   } else if(!strcmp(argv[1], "--print")) {
       printRange(data, entries, 23, "BEL");
+  } else {
+    /* ask user for shit */
   }
-
-  /* printData(data); */
-
-
-  /* printRange(data, entries, 23, "BEL"); */
-
   return EXIT_SUCCESS;
 }
 
@@ -58,9 +53,8 @@ int readData(entry data[]) {
   int i=0;
   char buffer[LINELENGTH], placement[5], dnf[] = "DNF", otl[] = "OTL";
   FILE *ifp;
-  ifp = fopen("data.txt", "r");
+  ifp = fopen(FILENAME, "r");
 
-  /* løbsnavn rytternavn rytter-alder rytter-hold nationalitet placering køretid */
   while(fgets(buffer, LINELENGTH, ifp) != NULL) {
     sscanf(buffer, "%[a-zA-Z] \" %[a-zA-Z] %[^\"]\" %d %[A-Z] %[A-Z] %[0-9DNFOTL] %[0-9:]",
     data[i].raceName,
@@ -102,7 +96,7 @@ void printData(entry data[]) {
 
 void printRange(entry data[], int entries, int age, char nationality[]) {
   int i;
-  printf("matched nationality is: %s\n", nationality);
+  printf("matching for age: %d and nationality: %s\n", age, nationality);
   for (i=0; i<entries; i++) {
 
 /*    printf("nationality: %s seen at i:%d\n", data[i].nationality, i); */
