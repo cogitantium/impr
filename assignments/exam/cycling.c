@@ -76,7 +76,7 @@ int main(int argc, char *argv[]) {
 
 int readData(entry data[]) {
   int i=0;
-  char buffer[LINELENGTH], placement[5], dnf[] = "DNF", otl[] = "OTL";
+  char buffer[LINELENGTH], placement[5];
   FILE *ifp;
   ifp = fopen(FILENAME, "r");
 
@@ -90,15 +90,14 @@ int readData(entry data[]) {
     data[i].nationality,
     placement, /* replaced with placeholder */
     data[i].raceTime);
-    if (placement == dnf) {
+    if (!strcmp(placement, "DNF")) {
       data[i].placement = 0;
-    } else if (placement == otl) {
+    } else if (!strcmp(placement, "OTL")) {
       data[i].placement = -1;
     }
     data[i].raceTimeSec = convertTime(data[i].raceTime);
     i++;
   }
-
   fclose(ifp);
   return i;
 }
