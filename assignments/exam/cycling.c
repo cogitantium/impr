@@ -33,12 +33,12 @@ void printRange(entry data[], int entries, int age, char nationality[]);
 void calculatePoints(entry data[]);
 
 /* assignments
-  find and print all BEL below 23 years
-  find and print all danish that have attended one or more races. Sort these after teams, secondly alphabetically on firstName
-  print the 10 highest scoring riders, sort by points, secondly by age (youngest), thirdly alphabetically on lastName
-  find, for each race, the team with most riders DNF or OTL
-  find the nation, that did best in the races. sort by own choice
-  find, in each race, the meadian raceTime, without DNF or OTL, a higher time is preferred, relative to M, than a lower time.
+  (X) find and print all BEL below 23 years
+  ( ) find and print all danish that have attended one or more races. Sort these after teams, secondly alphabetically on firstName
+  ( ) print the 10 highest scoring riders, sort by points, secondly by age (youngest), thirdly alphabetically on lastName
+  ( ) find, for each race, the team with most riders DNF or OTL
+  ( ) find the nation, that did best in the races. sort by own choice
+  ( ) find, in each race, the meadian raceTime, without DNF or OTL, a higher time is preferred, relative to M, than a lower time.
 */
 
 
@@ -48,27 +48,27 @@ int main(int argc, char *argv[]) {
   int entries = readData(data), optAge;
   char option, optNation[2];
 
-  printf("1: Find racer by nationality and max-age\n");
-  printf("Choose an option: ");
-  scanf(" %c", &option);
 
-  if (option == '1') {
-    printf("Choose nationality, e.g. DEN or GBR: ");
-    scanf(" %s", optNation);
-    printf("Choose max-age: ");
-    scanf(" %d", &optAge);
-    printRange(data, entries, optAge, optNation);
-  }
-/*
   if (argc > 2) {
     printf("Too many arguments supplied!\n");
     return EXIT_FAILURE;
-  } else if(!strcmp(argv[1], "--print")) {
+  } else if(argc == 2 && !strcmp(argv[1], "--print")) {
       printRange(data, entries, 23, "BEL");
   } else {
 
+    printf("1: Find racer by nationality and max-age\n");
+    printf("Choose an option: ");
+    scanf(" %c", &option);
+
+    if (option == '1') {
+      printf("Choose nationality, e.g. DEN or GBR: ");
+      scanf(" %s", optNation);
+      printf("Choose max-age: ");
+      scanf(" %d", &optAge);
+      printRange(data, entries, optAge, optNation);
+    }
   }
-*/
+
 
 
   return EXIT_SUCCESS;
