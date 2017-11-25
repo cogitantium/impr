@@ -33,7 +33,7 @@ void printRange(entry data[], int entries, int age, char nationality[]);
 (ridersFinished - placement in race)/17 points, if race is finished without dnf and otl
 1st +8, 2nd +5 and 3rd +3 points */
 void calculatePoints(entry data[]);
-void splitNames(entry data[], char string[]);
+void splitNames(char string[], char *firstName, char *lastName);
 int enumeratePlacement(char string[]);
 
 /* assignments
@@ -49,7 +49,7 @@ int main(int argc, char *argv[]) {
   /* should use malloc() */
   entry data[ENTRIES];
   int entries = readData(data), optAge;
-  char option, optNation[2], testString[] = "Ben O'CONNOR";
+  char option, optNation[2];
 
   if (argc > 2) {
     printf("Too many arguments supplied!\n");
@@ -72,7 +72,7 @@ int main(int argc, char *argv[]) {
       scanf(" %d", &optAge);
       printRange(data, entries, optAge, optNation);
     } if (option == '3') {
-      splitNames(data, testString);
+      /* splitNames(data, testString); */
     }
   }
 
@@ -81,20 +81,23 @@ int main(int argc, char *argv[]) {
 
 int readData(entry data[]) {
   int i=0;
-  char buffer[LINELENGTH], placement[5];
+  char buffer[LINELENGTH], fullName[20], placement[5], firstName[20], lastName[20];
   FILE *ifp;
   ifp = fopen(FILENAME, "r");
 
   while(fgets(buffer, LINELENGTH, ifp) != NULL) {
-    sscanf(buffer, "%s \" %s %[^\"]\" %d %[A-Z] %[A-Z] %[0-9DNFOTL] %[0-9:]",
+    sscanf(buffer, "%s \" %[^\"]\" %d %[A-Z] %[A-Z] %[0-9DNFOTL] %[0-9:]",
     data[i].raceName,
-    data[i].firstName,
-    data[i].lastName,
+    fullName,
     &(data[i].age),
     data[i].team,
     data[i].nationality,
     placement, /* replaced with placeholder */
     data[i].raceTime);
+
+    splitNames(fullName, firstName, lastName);
+    memcpy(data[i].firstName, firstName, strlen(firstName)+1);
+    memcpy(data[i].lastName, lastName, strlen(lastName)+1);
 
     data[i].placement = enumeratePlacement(placement);
     data[i].raceTimeSec = convertTime(data[i].raceTime);
@@ -111,15 +114,14 @@ int enumeratePlacement(char string[]) {
   return -2;
 }
 
-void splitNames(entry data[], char string[]) {
+void splitNames(char string[], char *firstName, char *lastName) {
   int i=0, n=1, stringLength = strlen(string);
-  char string1[20], string2[20];
 
   for (i=0; i<=stringLength; i++)
   if( (isupper(string[i]) && ((isupper(string[n]) || string[n] == '\'' )) ) ) {
-    strncpy(string1, string, i);
-    string1[i] = '\0';
-    strcpy(string2, &string[i]);
+    strncpy(firstName, string, i);
+    firstName[i] = '\0';
+    strcpy(lastName, &string[i]);
     break;
   } else {
     n++;
