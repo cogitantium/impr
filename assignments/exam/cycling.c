@@ -49,7 +49,7 @@ int main(int argc, char *argv[]) {
   /* should use malloc() */
   entry data[ENTRIES];
   int entries = readData(data), optAge;
-  char option, optNation[2], testString[] = "Martin Larsen O'CONNOR";
+  char option, optNation[2], testString[] = "Ben O'CONNOR";
 
   if (argc > 2) {
     printf("Too many arguments supplied!\n");
@@ -112,20 +112,18 @@ int enumeratePlacement(char string[]) {
 }
 
 void splitNames(entry data[], char string[]) {
-  int i=0, n=1, k, stringLength = strlen(string);
+  int i=0, n=1, stringLength = strlen(string);
   char string1[20], string2[20];
-  printf("string is: %s\n", string);
 
   for (i=0; i<=stringLength; i++)
-  if(isupper(string[i] && (isupper(string[n]) || string[n] == '\''))) {
-    printf("Found beginning of lastName at: %d\n", i);
+  if( (isupper(string[i]) && ((isupper(string[n]) || string[n] == '\'' )) ) ) {
     strncpy(string1, string, i);
-    printf("First string: %s\n", string1);
+    string1[i] = '\0';
+    strcpy(string2, &string[i]);
+    break;
+  } else {
     n++;
   }
-
-
-
 }
 
 void printData(entry data[]) {
