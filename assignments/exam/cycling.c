@@ -87,7 +87,7 @@ int main(int argc, char *argv[]) {
 
 int readData(entry data[]) {
   int i=0;
-  char buffer[LINELENGTH], fullName[20], placement[5], firstName[20], lastName[20];
+  char buffer[LINELENGTH], fullName[50], placement[5], firstName[25], lastName[25];
   FILE *ifp;
   ifp = fopen(FILENAME, "r");
 
@@ -140,7 +140,7 @@ void printData(entry data[], int entries) {
   for (i=0; i<entries; i++) {
     printf("race: %s\t", data[i].raceName);
     printf("name: %s%s\n", data[i].firstName, data[i].lastName);
-    printf("age: %d\t", data[i].age);
+    printf("age: %d\t\t", data[i].age);
     printf("team: %s\t", data[i].team);
     printf("nation: %s\t", data[i].nationality);
     printf("placement: %d\t", data[i].placement);
@@ -149,15 +149,13 @@ void printData(entry data[], int entries) {
 }
 
 void printEntry(entry data[], int index) {
-  printf("raceName: %s\n", data[index].raceName);
-  printf("firstName: %s\t", data[index].firstName);
-  printf("lastName: %s\t", data[index].lastName);
-  printf("age: %d\n", data[index].age);
+  printf("race: %s\t", data[index].raceName);
+  printf("name: %s%s\n", data[index].firstName, data[index].lastName);
+  printf("age: %d\t\t", data[index].age);
   printf("team: %s\t", data[index].team);
-  printf("nationality: %s\t", data[index].nationality);
+  printf("nation: %s\t", data[index].nationality);
   printf("placement: %d\t", data[index].placement);
-  printf("raceTime: %s\t", data[index].raceTime),
-  printf("raceTime: %d\n\n", data[index].raceTimeSec);
+  printf("raceTime: %s\t\n\n", data[index].raceTime);
 }
 
 void printRange(entry data[], int entries, int age, char nationality[]) {
@@ -175,13 +173,15 @@ void printAttendants(entry data[], int entries, char nationality[]) {
   int i, n=0;
   entry attendants[1000];
 
-  for (i=0; i<=entries; i++) {
+  for (i=0; i<entries; i++) {
     if (!strcmp(data[i].nationality, nationality)) {
       attendants[n] = data[i];
       printEntry(attendants, n);
       n++;
     }
   }
+  printf("n is: %d\n", n);
+
 }
 
 int convertTime(char string[]) {
