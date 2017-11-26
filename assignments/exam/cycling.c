@@ -28,15 +28,17 @@ int readData(entry data[]);
 void printData(entry data[]);
 int convertTime(char string[]);
 void printRange(entry data[], int entries, int age, char nationality[]);
-/* point system
-2 points for entering into any race
-(ridersFinished - placement in race)/17 points, if race is finished without dnf and otl
-1st +8, 2nd +5 and 3rd +3 points */
 void calculatePoints(entry data[]);
 void splitNames(char string[], char *firstName, char *lastName);
 int enumeratePlacement(char string[]);
+void printAttendants(entry data[], int entries, char nationality[]);
 
-/* assignments
+/* point system
+2 points for entering into any race
+(ridersFinished - placement in race)/17 points, if race is finished without dnf and otl
+1st +8, 2nd +5 and 3rd +3 points
+
+  assignments
   (X) find and print all BEL below 23 years
   ( ) find and print all danish racers that have attended one or more races. Sort these after teams, secondly alphabetically on firstName
   ( ) print the 10 highest scoring riders, sort by points, secondly by age (youngest), thirdly alphabetically on lastName
@@ -56,6 +58,7 @@ int main(int argc, char *argv[]) {
     return EXIT_FAILURE;
   } else if(argc == 2 && !strcmp(argv[1], "--print")) {
       printRange(data, entries, 23, "BEL");
+
   } else {
     printf("1: Print all entries\n");
     printf("2: Find racer by nationality and max-age\n");
@@ -72,7 +75,9 @@ int main(int argc, char *argv[]) {
       scanf(" %d", &optAge);
       printRange(data, entries, optAge, optNation);
     } if (option == '3') {
-      /* splitNames(data, testString); */
+        printf("Choose nationality, e.g. DEN or GBR: ");
+        scanf(" %s", optNation);
+        printAttendants(data, entries, optNation);
     }
   }
 
@@ -149,13 +154,28 @@ void printRange(entry data[], int entries, int age, char nationality[]) {
   printf("matching for age: %d and nationality: %s\n", age, nationality);
   for (i=0; i<entries; i++) {
     if ((data[i].age < age) && !strcmp(data[i].nationality, nationality)) {
-      printf("match found for: %s %s, age %d from %s\n", data[i].firstName, data[i].lastName, data[i].age, data[i].nationality);
+      printf("match found for: %s   \t%s, age %d from %s\n", data[i].firstName, data[i].lastName, data[i].age, data[i].nationality);
+    }
+  }
+}
+
+void printAttendants(entry data[], int entries, char nationality[]) {
+  /* find and print all danish racers that have attended one or more races. Sort these after teams, secondly alphabetically on firstName */
+  int i, n=0;
+  entry attendants[1000];
+
+  for (i=0; i<=entries; i++) {
+    if (!strcmp(data[i].nationality, nationality)) {
+      attendants[n] = data[i];
+      n++;
+
     }
   }
 }
 
 int convertTime(char string[]) {
-  int h=0, m=0, s=0;
+  int h, m, s;
+  if (!strcmp(string, "0")) return 0;
   sscanf(string, "%d:%d:%d", &h, &m, &s);
   return h*SECSINHOUR + m*SECSINMIN + s;
 }
