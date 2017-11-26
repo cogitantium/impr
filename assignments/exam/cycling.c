@@ -52,7 +52,7 @@ int main(int argc, char *argv[]) {
   /* should use malloc() */
   entry data[ENTRIES];
   int entries = readData(data), optAge;
-  char option, optNation[2];
+  char option, optNation[3];
 
   if (argc > 2) {
     printf("Too many arguments supplied!\n");
@@ -174,14 +174,13 @@ void printAttendants(entry data[], int entries, char nationality[]) {
   entry attendants[1000];
 
   for (i=0; i<entries; i++) {
-    if (!strcmp(data[i].nationality, nationality)) {
+    if (strcmp(data[i].nationality, nationality) == 0) {
       attendants[n] = data[i];
       printEntry(attendants, n);
       n++;
     }
   }
-  printf("n is: %d\n", n);
-
+  
 }
 
 int convertTime(char string[]) {
