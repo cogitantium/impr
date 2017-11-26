@@ -25,13 +25,14 @@ typedef struct {
 } entry;
 
 int readData(entry data[]);
-void printData(entry data[]);
+void printData(entry data[], int entries);
 int convertTime(char string[]);
 void printRange(entry data[], int entries, int age, char nationality[]);
 void calculatePoints(entry data[]);
 void splitNames(char string[], char *firstName, char *lastName);
 int enumeratePlacement(char string[]);
 void printAttendants(entry data[], int entries, char nationality[]);
+void printEntry(entry data[], int entries);
 
 /* point system
 2 points for entering into any race
@@ -66,7 +67,7 @@ int main(int argc, char *argv[]) {
     printf("Choose an option: ");
     scanf(" %c", &option);
     if (option == '1') {
-      printData(data);
+      printData(data, entries);
     }
     if (option == '2') {
       printf("Choose nationality, e.g. DEN or GBR: ");
@@ -93,7 +94,7 @@ int readData(entry data[]) {
   while(fgets(buffer, LINELENGTH, ifp) != NULL) {
     sscanf(buffer, "%s \" %[^\"]\" %d %[A-Z] %[A-Z] %[0-9DNFOTL] %[0-9:]",
     data[i].raceName,
-    fullName,
+    fullName, /* placeholder */
     &(data[i].age),
     data[i].team,
     data[i].nationality,
@@ -133,20 +134,30 @@ void splitNames(char string[], char *firstName, char *lastName) {
   }
 }
 
-void printData(entry data[]) {
+void printData(entry data[], int entries) {
   int i;
   printf("##### PRINTING DATA #####\n");
-  for (i=0; i<ENTRIES; i++) {
-    printf("raceName: %s\n", data[i].raceName);
-    printf("firstName: %s\t", data[i].firstName);
-    printf("lastName: %s\t", data[i].lastName);
-    printf("age: %d\n", data[i].age);
+  for (i=0; i<entries; i++) {
+    printf("race: %s\t", data[i].raceName);
+    printf("name: %s%s\n", data[i].firstName, data[i].lastName);
+    printf("age: %d\t", data[i].age);
     printf("team: %s\t", data[i].team);
-    printf("nationality: %s\t", data[i].nationality);
+    printf("nation: %s\t", data[i].nationality);
     printf("placement: %d\t", data[i].placement);
-    printf("raceTime: %s\t", data[i].raceTime),
-    printf("raceTime: %d\n\n", data[i].raceTimeSec);
+    printf("raceTime: %s\t\n\n", data[i].raceTime);
   }
+}
+
+void printEntry(entry data[], int index) {
+  printf("raceName: %s\n", data[index].raceName);
+  printf("firstName: %s\t", data[index].firstName);
+  printf("lastName: %s\t", data[index].lastName);
+  printf("age: %d\n", data[index].age);
+  printf("team: %s\t", data[index].team);
+  printf("nationality: %s\t", data[index].nationality);
+  printf("placement: %d\t", data[index].placement);
+  printf("raceTime: %s\t", data[index].raceTime),
+  printf("raceTime: %d\n\n", data[index].raceTimeSec);
 }
 
 void printRange(entry data[], int entries, int age, char nationality[]) {
@@ -167,8 +178,8 @@ void printAttendants(entry data[], int entries, char nationality[]) {
   for (i=0; i<=entries; i++) {
     if (!strcmp(data[i].nationality, nationality)) {
       attendants[n] = data[i];
+      printEntry(attendants, n);
       n++;
-
     }
   }
 }
