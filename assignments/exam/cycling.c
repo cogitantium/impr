@@ -43,7 +43,7 @@ int compareTeams(const void * a, const void * b);
 
   assignments
   (X) find and print all BEL below 23 years
-  ( ) find and print all danish racers that have attended one or more races. Sort these after teams, secondly alphabetically on firstName
+  (X) find and print all danish racers that have attended one or more races. Sort these after teams, secondly alphabetically on firstName
   ( ) print the 10 highest scoring riders, sort by points, secondly by age (youngest), thirdly alphabetically on lastName
   ( ) find, for each race, the team with most riders DNF or OTL
   ( ) find the nation, that did best in the races. sort by own choice
@@ -116,8 +116,8 @@ int readData(entry data[]) {
 }
 
 int enumeratePlacement(char string[]) {
-  if (!strcmp(string, "DNF")) return 0;
-  else if (!strcmp(string, "OTL")) return -1;
+  if (strcmp(string, "DNF") == 0) return 0;
+  else if (strcmp(string, "OTL") == 0) return -1;
   else return atoi(string);
   return -2;
 }
@@ -151,12 +151,12 @@ void printData(entry data[], int entries) {
 }
 
 void printEntry(entry data[], int index) {
-  printf("race: %19s | ", data[index].raceName);
-  printf("name: %30s | ", data[index].fullName);
-  printf("age: %d | ", data[index].age);
-  printf("team: %s | ", data[index].team);
-  printf("nation: %s | ", data[index].nationality);
-  printf("placement: %3d | ", data[index].placement);
+  printf("race:%19s | ", data[index].raceName);
+  printf("name:%34s | ", data[index].fullName);
+  printf("age:%3d | ", data[index].age);
+  printf("team:%4s | ", data[index].team);
+  printf("nation:%4s | ", data[index].nationality);
+  printf("placement:%4d | ", data[index].placement);
   printf("raceTime: %s\n", data[index].raceTime);
 }
 
@@ -164,27 +164,25 @@ void printRange(entry data[], int entries, int age, char nationality[]) {
   int i;
   printf("matching for age: %d and nationality: %s\n", age, nationality);
   for (i=0; i<entries; i++) {
-    if ((data[i].age < age) && !strcmp(data[i].nationality, nationality)) {
-      printf("match found for: %s   \t%s, age %d from %s\n", data[i].firstName, data[i].lastName, data[i].age, data[i].nationality);
+    if ((data[i].age < age) && (strcmp(data[i].nationality, nationality) == 0)) {
+      printEntry(data, i);
     }
   }
 }
 
 void printAttendants(entry data[], int entries, char nationality[]) {
-  /* find and print all danish racers that have attended one or more races. Sort these after teams, secondly alphabetically on firstName */
   int i, n=0;
   entry attendants[1000];
-
+  /* for all entries, if nationality matches searched nationality, copy struct wholly into attendants struct-array and increment n */
   for (i=0; i<entries; i++) {
     if (strcmp(data[i].nationality, nationality) == 0) {
       attendants[n] = data[i];
-      printEntry(attendants, n);
       n++;
     }
   }
 
   qsort(attendants, n, sizeof(entry), compareTeams);
-  printf("PRINTING SORTED\n");
+  printf("Printing attendants from: %s sorted by team, secondly by first name.\n", nationality);
   for (i=0; i<n; i++) {
     printEntry(attendants, i);
   }
@@ -193,18 +191,16 @@ void printAttendants(entry data[], int entries, char nationality[]) {
 int compareTeams(const void * a, const void * b) {
   entry *attendant1 = (entry *)a;
   entry *attendant2 = (entry *)b;
-
+  /* if teams are equal, sort by firstname else sort by teams */
   if(strcmp((*attendant1).team, (*attendant2).team) == 0) {
     return strcmp((*attendant1).firstName, (*attendant2).firstName);
   }
   return strcmp((*attendant1).team, (*attendant2).team);
 }
 
-
-
 int convertTime(char string[]) {
   int h, m, s;
-  if (!strcmp(string, "0")) return 0;
+  if (strcmp(string, "0") == 0) return 0;
   sscanf(string, "%d:%d:%d", &h, &m, &s);
   return h*SECSINHOUR + m*SECSINMIN + s;
 }
