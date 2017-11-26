@@ -13,6 +13,7 @@
 
 typedef struct {
   char raceName[NAMELENGTH];  /* name of race, probably enumerate this */
+  char fullName[NAMELENGTH];
   char firstName[NAMELENGTH]; /* only lower case and capitalized */
   char lastName[NAMELENGTH]; /* specified as all caps in file */
   int age;
@@ -33,6 +34,7 @@ void splitNames(char string[], char *firstName, char *lastName);
 int enumeratePlacement(char string[]);
 void printAttendants(entry data[], int entries, char nationality[]);
 void printEntry(entry data[], int entries);
+int compareTeams(const void * a, const void * b);
 
 /* point system
 2 points for entering into any race
@@ -87,21 +89,21 @@ int main(int argc, char *argv[]) {
 
 int readData(entry data[]) {
   int i=0;
-  char buffer[LINELENGTH], fullName[50], placement[5], firstName[25], lastName[25];
+  char buffer[LINELENGTH], placement[5], firstName[25], lastName[25];
   FILE *ifp;
   ifp = fopen(FILENAME, "r");
 
   while(fgets(buffer, LINELENGTH, ifp) != NULL) {
     sscanf(buffer, "%s \" %[^\"]\" %d %[A-Z] %[A-Z] %[0-9DNFOTL] %[0-9:]",
     data[i].raceName,
-    fullName, /* placeholder */
+    data[i].fullName, /* placeholder */
     &(data[i].age),
     data[i].team,
     data[i].nationality,
     placement, /* replaced with placeholder */
     data[i].raceTime);
 
-    splitNames(fullName, firstName, lastName);
+    splitNames(data[i].fullName, firstName, lastName);
     memcpy(data[i].firstName, firstName, strlen(firstName)+1);
     memcpy(data[i].lastName, lastName, strlen(lastName)+1);
 
@@ -138,24 +140,24 @@ void printData(entry data[], int entries) {
   int i;
   printf("##### PRINTING DATA #####\n");
   for (i=0; i<entries; i++) {
-    printf("race: %s\t", data[i].raceName);
-    printf("name: %s%s\n", data[i].firstName, data[i].lastName);
-    printf("age: %d\t\t", data[i].age);
-    printf("team: %s\t", data[i].team);
-    printf("nation: %s\t", data[i].nationality);
-    printf("placement: %d\t", data[i].placement);
-    printf("raceTime: %s\t\n\n", data[i].raceTime);
+    printf("race:%19s | ", data[i].raceName);
+    printf("name:%34s | ", data[i].fullName);
+    printf("age:%3d | ", data[i].age);
+    printf("team:%4s | ", data[i].team);
+    printf("nation:%4s | ", data[i].nationality);
+    printf("placement:%4d | ", data[i].placement);
+    printf("raceTime: %s\n", data[i].raceTime);
   }
 }
 
 void printEntry(entry data[], int index) {
-  printf("race: %s\t", data[index].raceName);
-  printf("name: %s%s\n", data[index].firstName, data[index].lastName);
-  printf("age: %d\t\t", data[index].age);
-  printf("team: %s\t", data[index].team);
-  printf("nation: %s\t", data[index].nationality);
-  printf("placement: %d\t", data[index].placement);
-  printf("raceTime: %s\t\n\n", data[index].raceTime);
+  printf("race: %19s | ", data[index].raceName);
+  printf("name: %30s | ", data[index].fullName);
+  printf("age: %d | ", data[index].age);
+  printf("team: %s | ", data[index].team);
+  printf("nation: %s | ", data[index].nationality);
+  printf("placement: %3d | ", data[index].placement);
+  printf("raceTime: %s\n", data[index].raceTime);
 }
 
 void printRange(entry data[], int entries, int age, char nationality[]) {
@@ -180,8 +182,25 @@ void printAttendants(entry data[], int entries, char nationality[]) {
       n++;
     }
   }
-  
+
+  qsort(attendants, n, sizeof(entry), compareTeams);
+  printf("PRINTING SORTED\n");
+  for (i=0; i<n; i++) {
+    printEntry(attendants, i);
+  }
 }
+
+int compareTeams(const void * a, const void * b) {
+  entry *attendant1 = (entry *)a;
+  entry *attendant2 = (entry *)b;
+
+  if(strcmp((*attendant1).team, (*attendant2).team) == 0) {
+    return strcmp((*attendant1).firstName, (*attendant2).firstName);
+  }
+  return strcmp((*attendant1).team, (*attendant2).team);
+}
+
+
 
 int convertTime(char string[]) {
   int h, m, s;
