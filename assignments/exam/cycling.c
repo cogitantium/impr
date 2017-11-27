@@ -155,18 +155,17 @@ void calculatePoints(entry data[], int entries) {
   int i=0, n=1, races=0, qualRiders=0, k;
   int endPos[4];
 
-  /* find unique races and their end-position in sorted array */
+  /* find unique races in sorted array and store their end-position in array */
   for (i=0; i<entries; i++) {
     if (!strcmp(data[i].raceName, data[n].raceName) == 0 ) {
       endPos[races] = n;
       races++;
-      printf("races: %d, n: %d and i: %d\n", races, n, i);
     }
     n++;
   }
 
   n=0, k=0;
-  /* for each race do*/
+  /* for each race do */
   for (i=0; i<races; i++) {
 
     /* count up qualRiders for all placements above 0 */
@@ -176,14 +175,9 @@ void calculatePoints(entry data[], int entries) {
         qualRiders++;
       }
     }
-    printf("Finishing riders in race %d: %d\n", i, qualRiders);
-
 
     /* for indexes in race do */
     for (; n<endPos[i]; n++) {
-
-
-
       /* assigning 2 points for entering race */
       data[n].points += 2;
 
@@ -192,10 +186,6 @@ void calculatePoints(entry data[], int entries) {
         if (data[n].placement == 1) data[n].points += 8;
         if (data[n].placement == 2) data[n].points += 5;
         if (data[n].placement == 3) data[n].points += 3;
-
-
-        printf("\nFound position: %d at n: %d ", data[n].placement, n);
-        printf("---rider found: %s with points: %d\n", data[n].fullName, data[n].points);
       }
 
       /* if rider finishes within timelimit, they're assigned (qualRacers - riderPlacement) / 17 points*/
@@ -203,8 +193,6 @@ void calculatePoints(entry data[], int entries) {
         data[n].points += ((qualRiders - data[n].placement) / 17);
       }
     }
-    printf("\n### FINISHED ### -- i/raceNum: %d endPos: %d n: %d\n", i, endPos[i], n);
-
     /* reset qualified racers, before calculating next race*/
     qualRiders = 0;
     /* reset n and k to next races beginning, before calculating next race */
