@@ -25,11 +25,12 @@ typedef struct {
   int points;
 } entry;
 
-int readData(entry data[]);
+int countLines();
+void readData(entry data[]);
 void printData(entry data[], int entries);
 int convertTime(char string[]);
 void printRange(entry data[], int entries, int age, char nationality[]);
-void calculatePoints(entry data[]);
+void calculatePoints(entry data[], int entries);
 void splitNames(char string[], char *firstName, char *lastName);
 int enumeratePlacement(char string[]);
 void printAttendants(entry data[], int entries, char nationality[]);
@@ -52,20 +53,26 @@ int compareTeams(const void * a, const void * b);
 
 int main(int argc, char *argv[]) {
   /* should use malloc() */
-  entry data[ENTRIES];
-  int entries = readData(data), optAge;
+  /* entry data[ENTRIES]; */
+  entry *data;
+  int optAge, entries = countLines();
   char option, optNation[3];
+  data = (entry *)malloc(countLines() * sizeof(entry));
+  readData(data);
+  calculatePoints(data, entries);
+
 
   if (argc > 2) {
     printf("Too many arguments supplied!\n");
     return EXIT_FAILURE;
   } else if(argc == 2 && !strcmp(argv[1], "--print")) {
       printRange(data, entries, 23, "BEL");
+      printAttendants(data, entries, "DEN");
 
   } else {
     printf("1: Print all entries\n");
-    printf("2: Find racer by nationality and max-age\n");
-    printf("3: Debug some stuff\n");
+    printf("2: Find racers by nationality and max-age\n");
+    printf("3: Find racers by nationality\n");
     printf("Choose an option: ");
     scanf(" %c", &option);
     if (option == '1') {
@@ -87,7 +94,20 @@ int main(int argc, char *argv[]) {
   return EXIT_SUCCESS;
 }
 
-int readData(entry data[]) {
+int countLines() {
+  int i=0;
+  char buffer[LINELENGTH];
+  FILE *ifp;
+  ifp = fopen(FILENAME, "r");
+
+  while(fgets(buffer, LINELENGTH, ifp) != NULL) {
+    i++;
+  }
+  fclose(ifp);
+  return i;
+}
+
+void readData(entry data[]) {
   int i=0;
   char buffer[LINELENGTH], placement[5], firstName[25], lastName[25];
   FILE *ifp;
@@ -112,7 +132,6 @@ int readData(entry data[]) {
     i++;
   }
   fclose(ifp);
-  return i;
 }
 
 int enumeratePlacement(char string[]) {
@@ -136,6 +155,24 @@ void splitNames(char string[], char *firstName, char *lastName) {
   }
 }
 
+/* point system
+2 points for entering into any race
+(ridersFinished - placement in race)/17 points, if race is finished without dnf and otl
+1st +8, 2nd +5 and 3rd +3 points */
+void calculatePoints(entry data[], int entries) {
+  int i=0, n=1, races=0;
+
+  /* find unique elements in sorted array */
+  for (i=0; i<entries; i++) {
+    if (!strcmp(data[i].raceName, data[n].raceName) == 0 ) {
+      races++;
+      printf("races: %d, n: %d and i: %d\n", races, n, i);
+    }
+    n++;
+  }
+}
+
+/* for debug purposes only */
 void printData(entry data[], int entries) {
   int i;
   printf("##### PRINTING DATA #####\n");
@@ -162,7 +199,7 @@ void printEntry(entry data[], int index) {
 
 void printRange(entry data[], int entries, int age, char nationality[]) {
   int i;
-  printf("matching for age: %d and nationality: %s\n", age, nationality);
+  printf("Printing attendants from nationality: %s and age: %d\n", nationality, age);
   for (i=0; i<entries; i++) {
     if ((data[i].age < age) && (strcmp(data[i].nationality, nationality) == 0)) {
       printEntry(data, i);
