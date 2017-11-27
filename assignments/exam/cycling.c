@@ -5,6 +5,7 @@
 #include <assert.h>
 
 #define FILENAME "data.txt"
+#define READMODE "r"
 #define ENTRIES 790
 #define LINELENGTH 150
 #define NAMELENGTH 50
@@ -37,12 +38,7 @@ void printAttendants(entry data[], int entries, char nationality[]);
 void printEntry(entry data[], int entries);
 int compareTeams(const void * a, const void * b);
 
-/* point system
-2 points for entering into any race
-(ridersFinished - placement in race)/17 points, if race is finished without dnf and otl
-1st +8, 2nd +5 and 3rd +3 points
-
-  assignments
+/*assignments
   (X) find and print all BEL below 23 years
   (X) find and print all danish racers that have attended one or more races. Sort these after teams, secondly alphabetically on firstName
   ( ) print the 10 highest scoring riders, sort by points, secondly by age (youngest), thirdly alphabetically on lastName
@@ -57,7 +53,7 @@ int main(int argc, char *argv[]) {
   entry *data;
   int optAge, entries = countLines();
   char option, optNation[3];
-  data = (entry *)malloc(countLines() * sizeof(entry));
+  data = (entry *)malloc(entries * sizeof(entry));
   readData(data);
   calculatePoints(data, entries);
 
@@ -66,8 +62,8 @@ int main(int argc, char *argv[]) {
     printf("Too many arguments supplied!\n");
     return EXIT_FAILURE;
   } else if(argc == 2 && !strcmp(argv[1], "--print")) {
-      printRange(data, entries, 23, "BEL");
-      printAttendants(data, entries, "DEN");
+    /*  printRange(data, entries, 23, "BEL");
+      printAttendants(data, entries, "DEN"); */
 
   } else {
     printf("1: Print all entries\n");
@@ -98,7 +94,7 @@ int countLines() {
   int i=0;
   char buffer[LINELENGTH];
   FILE *ifp;
-  ifp = fopen(FILENAME, "r");
+  ifp = fopen(FILENAME, READMODE);
 
   while(fgets(buffer, LINELENGTH, ifp) != NULL) {
     i++;
@@ -111,7 +107,7 @@ void readData(entry data[]) {
   int i=0;
   char buffer[LINELENGTH], placement[5], firstName[25], lastName[25];
   FILE *ifp;
-  ifp = fopen(FILENAME, "r");
+  ifp = fopen(FILENAME, READMODE);
 
   while(fgets(buffer, LINELENGTH, ifp) != NULL) {
     sscanf(buffer, "%s \" %[^\"]\" %d %[A-Z] %[A-Z] %[0-9DNFOTL] %[0-9:]",
@@ -155,20 +151,65 @@ void splitNames(char string[], char *firstName, char *lastName) {
   }
 }
 
-/* point system
-2 points for entering into any race
-(ridersFinished - placement in race)/17 points, if race is finished without dnf and otl
-1st +8, 2nd +5 and 3rd +3 points */
 void calculatePoints(entry data[], int entries) {
-  int i=0, n=1, races=0;
+  int i=0, n=1, races=0, qualRiders=0, k;
+  int endPos[4];
 
-  /* find unique elements in sorted array */
+  /* find unique races and their end-position in sorted array */
   for (i=0; i<entries; i++) {
     if (!strcmp(data[i].raceName, data[n].raceName) == 0 ) {
+      endPos[races] = n;
       races++;
       printf("races: %d, n: %d and i: %d\n", races, n, i);
     }
     n++;
+  }
+
+  n=0, k=0;
+  /* for each race do*/
+  for (i=0; i<races; i++) {
+
+    /* count up qualRiders for all placements above 0 */
+    for (; k<endPos[i]; k++) {
+      /* printf("p: %3d ", data[k].placement); */
+      if (data[k].placement > 0) {
+        qualRiders++;
+      }
+    }
+    printf("Finishing riders in race %d: %d\n", i, qualRiders);
+
+
+    /* for indexes in race do */
+    for (; n<endPos[i]; n++) {
+
+
+
+      /* assigning 2 points for entering race */
+      data[n].points += 2;
+
+      /* assign points for first, second and third place */
+      if (data[n].placement <= 3 && data[n].placement >=1) {
+        if (data[n].placement == 1) data[n].points += 8;
+        if (data[n].placement == 2) data[n].points += 5;
+        if (data[n].placement == 3) data[n].points += 3;
+
+
+        printf("\nFound position: %d at n: %d ", data[n].placement, n);
+        printf("---rider found: %s with points: %d\n", data[n].fullName, data[n].points);
+      }
+
+      /* if rider finishes within timelimit, they're assigned (qualRacers - riderPlacement) / 17 points*/
+      if (data[n].placement > 0) {
+        data[n].points += ((qualRiders - data[n].placement) / 17);
+      }
+    }
+    printf("\n### FINISHED ### -- i/raceNum: %d endPos: %d n: %d\n", i, endPos[i], n);
+
+    /* reset qualified racers, before calculating next race*/
+    qualRiders = 0;
+    /* reset n and k to next races beginning, before calculating next race */
+    n=endPos[i];
+    k=endPos[i];
   }
 }
 
@@ -182,8 +223,10 @@ void printData(entry data[], int entries) {
     printf("age:%3d | ", data[i].age);
     printf("team:%4s | ", data[i].team);
     printf("nation:%4s | ", data[i].nationality);
+    printf("points: %2d | ", data[i].points);
     printf("placement:%4d | ", data[i].placement);
     printf("raceTime: %s\n", data[i].raceTime);
+
   }
 }
 
@@ -193,6 +236,7 @@ void printEntry(entry data[], int index) {
   printf("age:%3d | ", data[index].age);
   printf("team:%4s | ", data[index].team);
   printf("nation:%4s | ", data[index].nationality);
+  printf("points: %2d | ", data[index].points);
   printf("placement:%4d | ", data[index].placement);
   printf("raceTime: %s\n", data[index].raceTime);
 }
