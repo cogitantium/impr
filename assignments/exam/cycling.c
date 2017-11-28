@@ -24,19 +24,23 @@ typedef struct {
   char raceTime[NAMELENGTH]; /* create function for representing secs as nicely formatted time */
   int raceTimeSec;
   int points;
+  int totalPoints;
 } entry;
 
 int countLines();
 void readData(entry data[]);
 void printData(entry data[], int entries);
 int convertTime(char string[]);
-void printRange(entry data[], int entries, int age, char nationality[]);
+void printRiderRange(entry data[], int entries, int age, char nationality[]);
 void calculatePoints(entry data[], int entries);
+void sumPoints(entry data[], int entries);
 void splitNames(char string[], char *firstName, char *lastName);
 int enumeratePlacement(char string[]);
 void printAttendants(entry data[], int entries, char nationality[]);
 void printEntry(entry data[], int entries);
+int countUniqueRiders(entry data[], int entries);
 int compareTeams(const void * a, const void * b);
+int compareName(const void * a, const void * b);
 
 /*assignments
   (X) find and print all BEL below 23 years
@@ -56,13 +60,13 @@ int main(int argc, char *argv[]) {
   data = (entry *)malloc(entries * sizeof(entry));
   readData(data);
   calculatePoints(data, entries);
-
+  sumPoints(data, entries);
 
   if (argc > 2) {
     printf("Too many arguments supplied!\n");
     return EXIT_FAILURE;
   } else if(argc == 2 && !strcmp(argv[1], "--print")) {
-    /*  printRange(data, entries, 23, "BEL");
+    /*  printRiderRange(data, entries, 23, "BEL");
       printAttendants(data, entries, "DEN"); */
 
   } else {
@@ -79,14 +83,14 @@ int main(int argc, char *argv[]) {
       scanf(" %s", optNation);
       printf("Choose max-age: ");
       scanf(" %d", &optAge);
-      printRange(data, entries, optAge, optNation);
+      printRiderRange(data, entries, optAge, optNation);
     } if (option == '3') {
         printf("Choose nationality, e.g. DEN or GBR: ");
         scanf(" %s", optNation);
         printAttendants(data, entries, optNation);
     }
   }
-
+  free(data);
   return EXIT_SUCCESS;
 }
 
@@ -131,8 +135,8 @@ void readData(entry data[]) {
 }
 
 int enumeratePlacement(char string[]) {
-  if (strcmp(string, "DNF") == 0) return 0;
-  else if (strcmp(string, "OTL") == 0) return -1;
+  if (strcmp(string, "DNF") == 0) return -1;
+  else if (strcmp(string, "OTL") == 0) return 0;
   else return atoi(string);
   return -2;
 }
@@ -152,7 +156,7 @@ void splitNames(char string[], char *firstName, char *lastName) {
 }
 
 void calculatePoints(entry data[], int entries) {
-  int i=0, n=1, races=0, qualRiders=0, k;
+  int i=0, n=1, races=0, qualRiders=0, k=0;
   int endPos[4];
 
   /* find unique races in sorted array and store their end-position in array */
@@ -164,7 +168,7 @@ void calculatePoints(entry data[], int entries) {
     n++;
   }
 
-  n=0, k=0;
+  n=0;
   /* for each race do */
   for (i=0; i<races; i++) {
 
@@ -178,9 +182,10 @@ void calculatePoints(entry data[], int entries) {
 
     /* for indexes in race do */
     for (; n<endPos[i]; n++) {
-      /* assigning 2 points for entering race */
-      data[n].points += 2;
-
+      /* assigning 2 points for finishing race, not DNF */
+      if (data[n].placement > -1) {
+        data[n].points += 2;
+      }
       /* assign points for first, second and third place */
       if (data[n].placement <= 3 && data[n].placement >=1) {
         if (data[n].placement == 1) data[n].points += 8;
@@ -199,6 +204,62 @@ void calculatePoints(entry data[], int entries) {
     n=endPos[i];
     k=endPos[i];
   }
+}
+
+void sumPoints(entry data[], int entries) {
+  int i, uniqueRiders=0;
+  entry *riders, *copy;
+  riders = (entry *)malloc(countUniqueRiders(data, entries) * sizeof(entry));
+  copy = (entry *)malloc(entries * sizeof(entry));
+
+  /* deep copy array */
+  for (i=0; i<entries; i++) {
+    copy[i] = data[i];
+  }
+
+  qsort(copy, entries, sizeof(entry), compareName);
+
+  for (i=0; i<entries; i++) {
+    if (!(strcmp(copy[i].fullName, copy[i+1].fullName) == 0)) {
+      riders[uniqueRiders] = copy[i];
+      riders[uniqueRiders].totalPoints = data[i].points;
+      uniqueRiders++;
+    } else {
+      copy[i+1].points += copy[i].points;
+      printf("points added: %d\n", copy[i].points);
+    }
+  }
+
+  for (i=0; i<uniqueRiders; i++) {
+    printEntry(riders, i);
+  }
+}
+
+int countUniqueRiders(entry data[], int entries) {
+  int i, uniqueRiders=0;
+  entry *riders;
+  riders = (entry *)malloc(entries * sizeof(entry));
+
+  /* deep copy array */
+  for (i=0; i<entries; i++) {
+    riders[i] = data[i];
+  }
+
+  qsort(riders, entries, sizeof(entry), compareName);
+
+  for (i=0; i<entries; i++) {
+    if (!(strcmp(riders[i].fullName, riders[i+1].fullName) == 0)) {
+      uniqueRiders++;
+    }
+  }
+  free(riders);
+  return uniqueRiders;
+}
+
+int compareName(const void * a, const void * b) {
+  entry *rider1 = (entry *)a;
+  entry *rider2 = (entry *)b;
+  return strcmp((*rider1).fullName, (*rider2).fullName);
 }
 
 /* for debug purposes only */
@@ -229,7 +290,7 @@ void printEntry(entry data[], int index) {
   printf("raceTime: %s\n", data[index].raceTime);
 }
 
-void printRange(entry data[], int entries, int age, char nationality[]) {
+void printRiderRange(entry data[], int entries, int age, char nationality[]) {
   int i;
   printf("Printing attendants from nationality: %s and age: %d\n", nationality, age);
   for (i=0; i<entries; i++) {
@@ -258,13 +319,13 @@ void printAttendants(entry data[], int entries, char nationality[]) {
 }
 
 int compareTeams(const void * a, const void * b) {
-  entry *attendant1 = (entry *)a;
-  entry *attendant2 = (entry *)b;
+  entry *rider1 = (entry *)a;
+  entry *rider2 = (entry *)b;
   /* if teams are equal, sort by firstname else sort by teams */
-  if(strcmp((*attendant1).team, (*attendant2).team) == 0) {
-    return strcmp((*attendant1).firstName, (*attendant2).firstName);
+  if(strcmp((*rider1).team, (*rider2).team) == 0) {
+    return strcmp((*rider1).firstName, (*rider2).firstName);
   }
-  return strcmp((*attendant1).team, (*attendant2).team);
+  return strcmp((*rider1).team, (*rider2).team);
 }
 
 int convertTime(char string[]) {
