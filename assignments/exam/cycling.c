@@ -33,7 +33,7 @@ void printData(entry data[], int entries);
 int convertTime(char string[]);
 void printRiderRange(entry data[], int entries, int age, char nationality[]);
 void calculatePoints(entry data[], int entries);
-void printTopTen(entry data[], int entries);
+void printTop(entry data[], int entries, int top);
 void splitNames(char string[], char *firstName, char *lastName);
 int enumeratePlacement(char string[]);
 void printAttendants(entry data[], int entries, char nationality[]);
@@ -56,7 +56,7 @@ int main(int argc, char *argv[]) {
   /* should use malloc() */
   /* entry data[ENTRIES]; */
   entry *data;
-  int optAge, entries = countLines();
+  int optAge, optTop, entries = countLines();
   char option, optNation[3];
   data = (entry *)malloc(entries * sizeof(entry));
   readData(data);
@@ -68,12 +68,13 @@ int main(int argc, char *argv[]) {
   } else if(argc == 2 && !strcmp(argv[1], "--print")) {
       printRiderRange(data, entries, 23, "BEL");
       printAttendants(data, entries, "DEN");
-      printTopTen(data, entries);
+      printTop(data, entries, 10);
 
   } else {
-    printf("1: Print all entries\n");
+    printf("1: Print all entries read from file\n");
     printf("2: Find racers by nationality and max-age\n");
     printf("3: Find racers by nationality\n");
+    printf("4: Print top n racers\n");
     printf("Choose an option: ");
     scanf(" %c", &option);
     if (option == '1') {
@@ -89,6 +90,10 @@ int main(int argc, char *argv[]) {
         printf("Choose nationality, e.g. DEN or GBR: ");
         scanf(" %s", optNation);
         printAttendants(data, entries, optNation);
+    } if (option == '4') {
+        printf("Choose number of top-scoring riders to show: ");
+        scanf(" %d", &optTop);
+        printTop(data, entries, optTop);
     }
   }
   free(data);
@@ -207,7 +212,7 @@ void calculatePoints(entry data[], int entries) {
   }
 }
 
-void printTopTen(entry data[], int entries) {
+void printTop(entry data[], int entries, int top) {
   int i, uniqueRiders=0;
   entry *riders, *copy;
   riders = (entry *)malloc(countUniqueRiders(data, entries) * sizeof(entry));
@@ -235,7 +240,8 @@ void printTopTen(entry data[], int entries) {
 
   qsort(riders, uniqueRiders, sizeof(entry), compareTop);
 
-  for (i=0; i<10; i++) {
+  printf("Printing top %d sorted by points, ascending age and last name.\n", top);
+  for (i=0; i<top; i++) {
     printEntry(riders, i);
   }
   free(riders);
