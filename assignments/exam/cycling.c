@@ -33,7 +33,7 @@ void printData(entry data[], int entries);
 int convertTime(char string[]);
 void printRiderRange(entry data[], int entries, int age, char nationality[]);
 void calculatePoints(entry data[], int entries);
-void sumPoints(entry data[], int entries);
+void printTopTen(entry data[], int entries);
 void splitNames(char string[], char *firstName, char *lastName);
 int enumeratePlacement(char string[]);
 void printAttendants(entry data[], int entries, char nationality[]);
@@ -41,11 +41,12 @@ void printEntry(entry data[], int entries);
 int countUniqueRiders(entry data[], int entries);
 int compareTeams(const void * a, const void * b);
 int compareName(const void * a, const void * b);
+int compareTop(const void * a, const void * b);
 
 /*assignments
   (X) find and print all BEL below 23 years
   (X) find and print all danish racers that have attended one or more races. Sort these after teams, secondly alphabetically on firstName
-  ( ) print the 10 highest scoring riders, sort by points, secondly by age (youngest), thirdly alphabetically on lastName
+  (X) print the 10 highest scoring riders, sort by points, secondly by age (youngest), thirdly alphabetically on lastName
   ( ) find, for each race, the team with most riders DNF or OTL
   ( ) find the nation, that did best in the races. sort by own choice
   ( ) find, in each race, the meadian raceTime, without DNF or OTL, a higher time is preferred, relative to M, than a lower time.
@@ -60,14 +61,14 @@ int main(int argc, char *argv[]) {
   data = (entry *)malloc(entries * sizeof(entry));
   readData(data);
   calculatePoints(data, entries);
-  sumPoints(data, entries);
 
   if (argc > 2) {
     printf("Too many arguments supplied!\n");
     return EXIT_FAILURE;
   } else if(argc == 2 && !strcmp(argv[1], "--print")) {
-    /*  printRiderRange(data, entries, 23, "BEL");
-      printAttendants(data, entries, "DEN"); */
+      printRiderRange(data, entries, 23, "BEL");
+      printAttendants(data, entries, "DEN");
+      printTopTen(data, entries);
 
   } else {
     printf("1: Print all entries\n");
@@ -206,7 +207,7 @@ void calculatePoints(entry data[], int entries) {
   }
 }
 
-void sumPoints(entry data[], int entries) {
+void printTopTen(entry data[], int entries) {
   int i, uniqueRiders=0;
   entry *riders, *copy;
   riders = (entry *)malloc(countUniqueRiders(data, entries) * sizeof(entry));
@@ -217,22 +218,29 @@ void sumPoints(entry data[], int entries) {
     copy[i] = data[i];
   }
 
+  /* sort copied by name */
   qsort(copy, entries, sizeof(entry), compareName);
 
+  /* for all entries in copy-array, do */
   for (i=0; i<entries; i++) {
+    /* if current and next name in array are different, count up uniqueRiders and assign accumulated points to totalPoints in riders-array */
     if (!(strcmp(copy[i].fullName, copy[i+1].fullName) == 0)) {
       riders[uniqueRiders] = copy[i];
-      riders[uniqueRiders].totalPoints = data[i].points;
+      riders[uniqueRiders].totalPoints = copy[i].points;
       uniqueRiders++;
     } else {
       copy[i+1].points += copy[i].points;
-      printf("points added: %d\n", copy[i].points);
     }
   }
 
-  for (i=0; i<uniqueRiders; i++) {
+  qsort(riders, uniqueRiders, sizeof(entry), compareTop);
+
+  for (i=0; i<10; i++) {
     printEntry(riders, i);
   }
+  free(riders);
+  free(copy);
+
 }
 
 int countUniqueRiders(entry data[], int entries) {
@@ -262,6 +270,21 @@ int compareName(const void * a, const void * b) {
   return strcmp((*rider1).fullName, (*rider2).fullName);
 }
 
+int compareTop(const void * a, const void * b) {
+  entry *rider1 = (entry *)a;
+  entry *rider2 = (entry *)b;
+
+  if ( (*rider1).totalPoints == (*rider2).totalPoints) {
+    if ( (*rider1).age == (*rider2).age ) {
+      return strcmp((*rider1).lastName, (*rider2).lastName);
+    } else {
+      return (*rider1).age - (*rider2).age;
+    }
+  } else {
+    return (*rider2).totalPoints - (*rider1).totalPoints;
+  }
+}
+
 /* for debug purposes only */
 void printData(entry data[], int entries) {
   int i;
@@ -286,6 +309,7 @@ void printEntry(entry data[], int index) {
   printf("team:%4s | ", data[index].team);
   printf("nation:%4s | ", data[index].nationality);
   printf("points: %2d | ", data[index].points);
+  printf("totalPoints: %2d | ", data[index].totalPoints);
   printf("placement:%4d | ", data[index].placement);
   printf("raceTime: %s\n", data[index].raceTime);
 }
