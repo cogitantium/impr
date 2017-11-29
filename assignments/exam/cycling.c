@@ -3,7 +3,7 @@
 #include <string.h>
 #include <ctype.h>
 
-#define FILENAME "data.txt"
+#define FILENAME "cykelloeb-2017"
 #define READMODE "r"
 #define LINELENGTH 150
 #define NAMELENGTH 50
@@ -47,6 +47,7 @@ int compareName(const void * a, const void * b);
 int compareTop(const void * a, const void * b);
 int compareRaces(const void * a, const void * b);
 void printTopUnqualified(entry data[], int entries);
+void printMedianRacetime(entry data[], int entries);
 
 /*assignments
   (X) find and print all BEL below 23 years
@@ -54,12 +55,10 @@ void printTopUnqualified(entry data[], int entries);
   (X) print the 10 highest scoring riders, sort by points, secondly by age (youngest), thirdly alphabetically on lastName
   ( ) find, for each race, the team with most riders DNF or OTL
   ( ) find the nation, that did best in the races. sort by own choice
-  ( ) find, in each race, the meadian raceTime, without DNF or OTL, a higher time is preferred, relative to M, than a lower time.
+  (X) find, in each race, the meadian raceTime, without DNF or OTL, a higher time is preferred, relative to M, than a lower time.
 */
 
 int main(int argc, char *argv[]) {
-  /* should use malloc() */
-  /* entry data[ENTRIES]; */
   entry *data;
   int optAge, optTop, entries = countLines();
   char option, optNation[3];
@@ -75,12 +74,14 @@ int main(int argc, char *argv[]) {
       printRiderRange(data, entries, 23, "BEL");
       printAttendants(data, entries, "DEN");
       printTop(data, entries, 10);
+      printMedianRacetime(data, entries);
 
   } else {
     printf("1: Print all entries read from file\n");
     printf("2: Find racers by nationality and max-age\n");
     printf("3: Find racers by nationality\n");
     printf("4: Print top n racers\n");
+    printf("7: Print median times for all races\n");
     printf("Choose an option: ");
     scanf(" %c", &option);
     if (option == '1') {
@@ -93,13 +94,15 @@ int main(int argc, char *argv[]) {
       scanf(" %d", &optAge);
       printRiderRange(data, entries, optAge, optNation);
     } if (option == '3') {
-        printf("Choose nationality, e.g. DEN or GBR: ");
-        scanf(" %s", optNation);
-        printAttendants(data, entries, optNation);
+      printf("Choose nationality, e.g. DEN or GBR: ");
+      scanf(" %s", optNation);
+      printAttendants(data, entries, optNation);
     } if (option == '4') {
-        printf("Choose number of top-scoring riders to show: ");
-        scanf(" %d", &optTop);
-        printTop(data, entries, optTop);
+      printf("Choose number of top-scoring riders to show: ");
+      scanf(" %d", &optTop);
+      printTop(data, entries, optTop);
+    } if (option == '7') {
+      printMedianRacetime(data, entries);
     }
   }
   free(data);
@@ -253,7 +256,7 @@ void printTop(entry data[], int entries, int top) {
   qsort(riders, uniqueRiders, sizeof(entry), compareTop);
 
   /* printing top n riders */
-  printf("Printing top %d sorted by points, ascending age and last name.\n", top);
+  printf("\nPrinting top %d riders sorted by points, ascending age and last name.\n", top);
   for (i=0; i<top; i++) {
     printEntry(riders, i);
   }
@@ -307,8 +310,46 @@ int compareTop(const void * a, const void * b) {
   }
 }
 
-/* find, for each race, the team with most riders DNF or OTL
+void printMedianRacetime(entry data[], int entries) {
+  int i, n=0, endPos[4], medianIndex, races=0, finishedRiders=0;
+  /* allocating sufficient memory for race-array */
+  entry *race;
+  race = (entry *)malloc(entries * sizeof(entry));
 
+  /* find unique races in sorted array and store their end-position in array */
+  for (i=0; i<entries; i++) {
+    if (!strcmp(data[i].raceName, data[i+1].raceName) == 0) {
+      endPos[races] = i+1;
+      races++;
+    }
+  }
+  printf("\nPrinting median racetimes for %d races.\n", races);
+
+  /* for each race do */
+  for (i=0; i<races; i++) {
+
+    /* for i in indexes in race do */
+    for (; n<endPos[i]; n++) {
+      /* if rider qualified, copy data-array wholly to race-array*/
+      if (data[n].placement > 0) {
+        race[finishedRiders] = data[n];
+        finishedRiders++;
+      }
+    }
+    /* calculate medianIndex, utilising the floor behaviour of
+    integer division to get a lower index when finishedRiders is uneven */
+    medianIndex = finishedRiders / 2;
+    printf("race: %18s | median racetime is: %s\n", race[medianIndex].raceName, race[medianIndex].raceTime);
+
+    /* reset n to next races beginning, before calculating next race */
+    n=endPos[i];
+    finishedRiders=0;
+  }
+  /* freeing allocated memory upon completion */
+  free(race);
+}
+
+  /*
   create arrays for each races
   create int-array for each team
   for races, do
@@ -317,8 +358,7 @@ int compareTop(const void * a, const void * b) {
         count up team
     sort by size
     print top n compare
-*/
-
+    */
 void printTopUnqualified(entry data[], int entries) {
   int i, n=1, races=0;
   int endPos[4];
@@ -334,11 +374,6 @@ void printTopUnqualified(entry data[], int entries) {
   }
 
   qsort(copy, entries, sizeof(entry), compareRaces);
-
-  /* print array */
-  for (i=0; i<entries; i++) {
-    printEntry(copy, i);
-  }
 
   /* find unique races in sorted array and store their end-position in array */
   for (i=0; i<entries; i++) {
@@ -358,17 +393,12 @@ void printTopUnqualified(entry data[], int entries) {
     for (; n<endPos[i]; n++) {
       if (!strcmp(copy[i].team, copy[n].team) == 0) {
 
-      } else {
-
       }
-
 
     }
     /* reset n to next races beginning, before calculating next race */
     n=endPos[i];
   }
-
-
   free(copy);
   free(team);
 
@@ -432,7 +462,7 @@ void printAttendants(entry data[], int entries, char nationality[]) {
   /* sort attendants-array by team and secondly by firstName */
   qsort(attendants, n, sizeof(entry), compareTeams);
   /* prints attendants found nicely */
-  printf("Printing attendants from: %s sorted by team, secondly by first name.\n", nationality);
+  printf("\nPrinting all entries for attendants from: %s sorted by team, secondly by first name.\n", nationality);
   for (i=0; i<n; i++) {
     printEntry(attendants, i);
   }
@@ -459,6 +489,7 @@ int compareRaces(const void * a, const void * b) {
   return strcmp((*rider1).raceName, (*rider2).raceName);
 }
 
+/* convert formatted time to seconds */
 int convertTime(char string[]) {
   int h, m, s;
   if (strcmp(string, "0") == 0) return 0;
