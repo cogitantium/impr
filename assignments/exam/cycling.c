@@ -74,7 +74,7 @@ int main(int argc, char *argv[]) {
     printf("2: Find riders by nationality\n");
     printf("3: Print top n riders\n");
     printf("5: Print highest scoring nation\n");
-    printf("7: Print median times for all races\n");
+    printf("6: Print median times for all races\n");
     printf("q: Quit program\n");
     printf("Choose an option: ");
     scanf(" %c", &option);
@@ -249,7 +249,7 @@ void printTop(entry data[], int entries, int top) {
   qsort(riders, uniqueRiders, sizeof(entry), compareTop);
 
   /* printing top n riders */
-  printf("\nPrinting top %d riders sorted by points, ascending age and last name.\n", top);
+  printf("\nPrinting top %d riders sorted by points, ascending age and lastly by last name.\n", top);
   for (i=0; i<top; i++) {
     printEntry(riders, i);
   }
@@ -327,8 +327,6 @@ void printBestNation(entry data[], int entries, int top) {
   /* allocating sufficient memory for nation-array */
   nation = (nationEntry *)malloc(MAXNATIONS * sizeof(nationEntry));
 
-  top = 3;
-
   /* deep copy array */
   for (i=0; i<entries; i++) {
     copy[i] = data[i];
@@ -353,6 +351,7 @@ void printBestNation(entry data[], int entries, int top) {
 
   /* print all existing nations if user chooses more than exists */
   if (top>nations+1) top = nations;
+  printf("\nPrinting highest scoring nation sorted by points and listed alphabetically.\n");
   for (i=0; i<top; i++) {
     /* switching for proper particle on placement */
     switch (i) {
@@ -361,7 +360,7 @@ void printBestNation(entry data[], int entries, int top) {
       case 2: strcpy(particle, "rd"); break;
       default: strcpy(particle, "th"); break;
     }
-    printf("\nNation %s came %d%s place with %d points.\n", nation[i].nation, i+1, particle, nation[i].points);
+    printf("Nation %s came %d%s place with %d points.\n", nation[i].nation, i+1, particle, nation[i].points);
   }
   /* freeing allocated memory upon completion */
   free (copy);
