@@ -415,7 +415,7 @@ void printEntry(entry data[], int index) {
 int compareTeams(const void * a, const void * b) {
   entry *rider1 = (entry *)a;
   entry *rider2 = (entry *)b;
-  /* if teams are equal, sort by firstname else sort by teams */
+  /* if teams are equal, compare by firstname else compare by teams */
   if(strcmp((*rider1).team, (*rider2).team) == 0) {
     return strcmp((*rider1).firstName, (*rider2).firstName);
   }
@@ -425,7 +425,7 @@ int compareTeams(const void * a, const void * b) {
 int compareRaces(const void * a, const void * b) {
   entry *rider1 = (entry *)a;
   entry *rider2 = (entry *)b;
-  /* if races are equal, sort by teams else by races */
+  /* if races are equal, compare by teams else compare by races */
   if(strcmp((*rider1).raceName, (*rider2).raceName) == 0) {
     return strcmp((*rider1).team, (*rider2).team);
   }
@@ -435,25 +435,29 @@ int compareRaces(const void * a, const void * b) {
 int compareName(const void * a, const void * b) {
   entry *rider1 = (entry *)a;
   entry *rider2 = (entry *)b;
+  /* compare by name */
   return strcmp((*rider1).fullName, (*rider2).fullName);
 }
 
 int comparePoints(const void * a, const void * b) {
   nationEntry *rider1 = (nationEntry *)a;
   nationEntry *rider2 = (nationEntry *)b;
+  /* compare by points */
   return (*rider2).points - (*rider1).points;
 }
 
+/* */
 int compareNation(const void * a, const void * b) {
   entry *rider1 = (entry *)a;
   entry *rider2 = (entry *)b;
+  /* compare by nationality */
   return strcmp((*rider1).nationality, (*rider2).nationality);
 }
 
 int compareTop(const void * a, const void * b) {
   entry *rider1 = (entry *)a;
   entry *rider2 = (entry *)b;
-  /* sorting by totalPoints, age and lastly lastName,
+  /* comparing by totalPoints, age and lastly lastName,
   if given criteria is equal check next criteria, else return difference */
   if ( (*rider1).totalPoints == (*rider2).totalPoints) {
     if ( (*rider1).age == (*rider2).age ) {
