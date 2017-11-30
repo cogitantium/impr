@@ -8,15 +8,16 @@
 #define READMODE "r"
 #define MAXLINELENGTH 150
 #define MAXNAMELENGTH 50
+#define MAXNATIONS 50
 
 typedef struct {
-  char raceName[MAXNAMELENGTH];  /* name of race, probably enumerate this */
+  char raceName[MAXNAMELENGTH];
   char fullName[MAXNAMELENGTH];
-  char firstName[MAXNAMELENGTH]; /* only lower case and capitalized */
-  char lastName[MAXNAMELENGTH]; /* specified as all caps in file */
+  char firstName[MAXNAMELENGTH];
+  char lastName[MAXNAMELENGTH];
   int age;
   char team[MAXNAMELENGTH];
-  char nationality[MAXNAMELENGTH]; /* 3-char */
+  char nationality[MAXNAMELENGTH];
   int placement;
   char raceTime[MAXNAMELENGTH];
   int points;
@@ -30,7 +31,6 @@ typedef struct {
 
 int countLines();
 void readData(entry data[]);
-void printData(entry data[], int entries);
 void printRiderRange(entry data[], int entries, int age, char nationality[]);
 void calculatePoints(entry data[], int entries);
 void printTop(entry data[], int entries, int top);
@@ -70,11 +70,10 @@ int main(int argc, char *argv[]) {
       printMedianRacetime(data, entries);
   /* user dialogue prompting for custom input to each function */
   } else {
-    printf("1: Print all entries read from file\n");
-    printf("2: Find racers by nationality and max-age\n");
-    printf("3: Find racers by nationality\n");
-    printf("4: Print top n racers\n");
-    printf("6: Print highest scoring nation\n");
+    printf("1: Find riders by nationality and max-age\n");
+    printf("2: Find riders by nationality\n");
+    printf("3: Print top n riders\n");
+    printf("5: Print highest scoring nation\n");
     printf("7: Print median times for all races\n");
     printf("q: Quit program\n");
     printf("Choose an option: ");
@@ -82,27 +81,24 @@ int main(int argc, char *argv[]) {
     if (option == 'q') {
       return EXIT_SUCCESS;
     } if (option == '1') {
-      printData(data, entries);
-    }
-    if (option == '2') {
       printf("Choose nationality, e.g. DEN or GBR: ");
       scanf(" %s", optNation);
-      printf("Choose max-age: ");
+      printf("Choose riders aged below: ");
       scanf(" %d", &optAge);
       printRiderRange(data, entries, optAge, optNation);
-    } if (option == '3') {
+    } if (option == '2') {
       printf("Choose nationality, e.g. DEN or GBR: ");
       scanf(" %s", optNation);
       printAttendants(data, entries, optNation);
-    } if (option == '4') {
+    } if (option == '3') {
       printf("Choose number of top-scoring riders to show: ");
       scanf(" %d", &optTop);
       printTop(data, entries, optTop);
-    } if (option == '6') {
+    } if (option == '5') {
       printf("Choose number of top-scoring nations to show: ");
       scanf(" %d", &optTop);
       printBestNation(data, entries, optTop);
-    } if (option == '7') {
+    } if (option == '6') {
       printMedianRacetime(data, entries);
     }
   }
@@ -154,13 +150,12 @@ int enumeratePlacement(char string[]) {
   /* using -1 and 0 to represent DNF or OTL rider-placement */
   if (strcmp(string, "DNF") == 0) return -1;
   else if (strcmp(string, "OTL") == 0) return 0;
-  /* using atoi() for converting int-characters to int-type */
+  /* using atoi() for converting numeral-characters to int-type */
   else return atoi(string);
 }
 
 void splitNames(char string[], char *firstName, char *lastName) {
   int i=0, strLen = strlen(string);
-
   for (i=0; i<=strLen; i++) {
     /* when evaluated true, we've found i to be index of first lastName char */
     if ( isupper(string[i]) && (isupper(string[i+1]) || string[i+1] == '\'') ) {
@@ -218,8 +213,7 @@ void calculatePoints(entry data[], int entries) {
     /* reset qualified racers, before calculating next race*/
     qualRiders = 0;
     /* reset n and k to next races beginning, before calculating next race */
-    n=endPos[i];
-    k=endPos[i];
+    n=endPos[i]; k=endPos[i];
   }
 }
 
@@ -260,8 +254,7 @@ void printTop(entry data[], int entries, int top) {
     printEntry(riders, i);
   }
   /* free memory allocated upon completion */
-  free(riders);
-  free(copy);
+  free(riders); free(copy);
 }
 
 int countUniqueRiders(entry data[], int entries) {
@@ -305,7 +298,7 @@ void printMedianRacetime(entry data[], int entries) {
   /* for each race do */
   for (i=0; i<races; i++) {
 
-    /* for i in indexes in race do */
+    /* for indexes in race do */
     for (; n<endPos[i]; n++) {
       /* if rider qualified, copy data-array wholly to race-array*/
       if (data[n].placement > 0) {
@@ -318,9 +311,8 @@ void printMedianRacetime(entry data[], int entries) {
     medianIndex = finishedRiders / 2;
     printf("race: %18s | median racetime is: %s\n", race[medianIndex].raceName, race[medianIndex].raceTime);
 
-    /* reset n to next races beginning, before calculating next race */
-    n=endPos[i];
-    finishedRiders=0;
+    /* resetting finishedRiders and n to next races beginning, before calculating next race */
+    n=endPos[i]; finishedRiders=0;
   }
   /* freeing allocated memory upon completion */
   free(race);
@@ -332,19 +324,22 @@ void printBestNation(entry data[], int entries, int top) {
   entry *copy;
   nationEntry *nation;
   copy = (entry *)malloc(entries * sizeof(entry));
-  nation = (nationEntry *)malloc(50 * sizeof(nationEntry));
+  /* allocating sufficient memory for nation-array */
+  nation = (nationEntry *)malloc(MAXNATIONS * sizeof(nationEntry));
+
+  top = 3;
 
   /* deep copy array */
   for (i=0; i<entries; i++) {
     copy[i] = data[i];
   }
 
-  /* sort array by nation */
+  /* sort array alphabetically by nation */
   qsort(copy, entries, sizeof(entry), compareNation);
 
   /* find unique nations in sorted array */
   for (i=0; i<entries; i++) {
-    /* assigning name of nation to nation-arrays nation-member */
+    /* assigning name of nation to nation-arrays nation-member, if next nation is different */
     if (!strcmp(copy[i].nationality, copy[i+1].nationality) == 0) {
       strcpy(nation[nations].nation, copy[i].nationality);
       nations++;
@@ -353,7 +348,7 @@ void printBestNation(entry data[], int entries, int top) {
       nation[nations].points += copy[i].points;
     }
   }
-  /* sort nation-array by points, if equal alphabetically */
+  /* sort nation-array by points, if equal, then alphabetically */
   qsort(nation, nations, sizeof(nationEntry), comparePoints);
 
   /* print all existing nations if user chooses more than exists */
@@ -368,38 +363,8 @@ void printBestNation(entry data[], int entries, int top) {
     }
     printf("\nNation %s came %d%s place with %d points.\n", nation[i].nation, i+1, particle, nation[i].points);
   }
+  /* freeing allocated memory upon completion */
   free (copy);
-}
-
-/* for debug purposes only */
-void printData(entry data[], int entries) {
-  int i;
-  printf("##### PRINTING DATA #####\n");
-  for (i=0; i<entries; i++) {
-    printf("race:%19s | ", data[i].raceName);
-    printf("name:%34s | ", data[i].fullName);
-    printf("age:%3d | ", data[i].age);
-    printf("team:%4s | ", data[i].team);
-    printf("nation:%4s | ", data[i].nationality);
-    printf("points: %2d | ", data[i].points);
-    printf("totalPoints: %2d | ", data[i].totalPoints);
-    printf("placement:%4d | ", data[i].placement);
-    printf("raceTime: %s\n", data[i].raceTime);
-
-  }
-}
-
-void printEntry(entry data[], int index) {
-  /* prints a single entrys member-values, formatted nicely on one line */
-  printf("race:%19s | ", data[index].raceName);
-  printf("name:%34s | ", data[index].fullName);
-  printf("age:%3d | ", data[index].age);
-  printf("team:%4s | ", data[index].team);
-  printf("nation:%4s | ", data[index].nationality);
-  printf("points: %2d | ", data[index].points);
-  printf("totalPoints: %2d | ", data[index].totalPoints);
-  printf("placement:%4d | ", data[index].placement);
-  printf("raceTime: %s\n", data[index].raceTime);
 }
 
 /* printing index in struct-array if age- and nationality-member is smaller or matches parsed arguments */
@@ -433,6 +398,19 @@ void printAttendants(entry data[], int entries, char nationality[]) {
     printEntry(attendants, i);
   }
   free(attendants);
+}
+
+void printEntry(entry data[], int index) {
+  /* prints a single entrys member-values, formatted nicely on one line */
+  printf("race:%19s | ", data[index].raceName);
+  printf("name:%34s | ", data[index].fullName);
+  printf("age:%3d | ", data[index].age);
+  printf("team:%4s | ", data[index].team);
+  printf("nation:%4s | ", data[index].nationality);
+  printf("points: %2d | ", data[index].points);
+  printf("totalPoints: %2d | ", data[index].totalPoints);
+  printf("placement:%4d | ", data[index].placement);
+  printf("raceTime: %s\n", data[index].raceTime);
 }
 
 int compareTeams(const void * a, const void * b) {
