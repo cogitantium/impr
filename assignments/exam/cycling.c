@@ -1,3 +1,4 @@
+/* remember credentials! */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -5,35 +6,31 @@
 
 #define FILENAME "cykelloeb-2017.txt"
 #define READMODE "r"
-#define LINELENGTH 150
-#define NAMELENGTH 50
-#define SECSINHOUR 3600
-#define SECSINMIN 60
+#define MAXLINELENGTH 150
+#define MAXNAMELENGTH 50
 
 typedef struct {
-  char raceName[NAMELENGTH];  /* name of race, probably enumerate this */
-  char fullName[NAMELENGTH];
-  char firstName[NAMELENGTH]; /* only lower case and capitalized */
-  char lastName[NAMELENGTH]; /* specified as all caps in file */
+  char raceName[MAXNAMELENGTH];  /* name of race, probably enumerate this */
+  char fullName[MAXNAMELENGTH];
+  char firstName[MAXNAMELENGTH]; /* only lower case and capitalized */
+  char lastName[MAXNAMELENGTH]; /* specified as all caps in file */
   int age;
-  char team[NAMELENGTH];
-  char nationality[NAMELENGTH]; /* 3-char */
+  char team[MAXNAMELENGTH];
+  char nationality[MAXNAMELENGTH]; /* 3-char */
   int placement;
-  char raceTime[NAMELENGTH];
-  int raceTimeSec;
+  char raceTime[MAXNAMELENGTH];
   int points;
   int totalPoints;
 } entry;
 
 typedef struct {
-  char nation[NAMELENGTH];
+  char nation[MAXNAMELENGTH];
   int points;
 } nationEntry;
 
 int countLines();
 void readData(entry data[]);
 void printData(entry data[], int entries);
-int convertTime(char string[]);
 void printRiderRange(entry data[], int entries, int age, char nationality[]);
 void calculatePoints(entry data[], int entries);
 void printTop(entry data[], int entries, int top);
@@ -42,32 +39,36 @@ int enumeratePlacement(char string[]);
 void printAttendants(entry data[], int entries, char nationality[]);
 void printEntry(entry data[], int entries);
 int countUniqueRiders(entry data[], int entries);
+void printMedianRacetime(entry data[], int entries);
+void printBestNation(entry data[], int entries, int top);
 int compareTeams(const void * a, const void * b);
 int compareName(const void * a, const void * b);
 int compareTop(const void * a, const void * b);
 int compareRaces(const void * a, const void * b);
 int compareNation(const void * a, const void * b);
 int comparePoints(const void * a, const void * b);
-void printMedianRacetime(entry data[], int entries);
-void printBestNation(entry data[], int entries, int top);
 
 int main(int argc, char *argv[]) {
-  entry *data;
+  /* declaring optional variables and initialising struct-array with variabel length */
   int optAge, optTop, entries = countLines();
   char option, optNation[3];
+  entry *data;
   data = (entry *)malloc(entries * sizeof(entry));
+  /* calls functions for reading data and calculating points */
   readData(data);
   calculatePoints(data, entries);
 
   if (argc > 2) {
     printf("Too many arguments supplied!\n");
     return EXIT_FAILURE;
+  /* prints default functions with criteria specified in assignment */
   } else if(argc == 2 && !strcmp(argv[1], "--print")) {
       printRiderRange(data, entries, 23, "BEL");
       printAttendants(data, entries, "DEN");
       printTop(data, entries, 10);
       printBestNation(data, entries, 1);
       printMedianRacetime(data, entries);
+  /* user dialogue prompting for custom input to each function */
   } else {
     printf("1: Print all entries read from file\n");
     printf("2: Find racers by nationality and max-age\n");
@@ -75,9 +76,12 @@ int main(int argc, char *argv[]) {
     printf("4: Print top n racers\n");
     printf("6: Print highest scoring nation\n");
     printf("7: Print median times for all races\n");
+    printf("q: Quit program\n");
     printf("Choose an option: ");
     scanf(" %c", &option);
-    if (option == '1') {
+    if (option == 'q') {
+      return EXIT_SUCCESS;
+    } if (option == '1') {
       printData(data, entries);
     }
     if (option == '2') {
@@ -102,17 +106,18 @@ int main(int argc, char *argv[]) {
       printMedianRacetime(data, entries);
     }
   }
+  /* freeing allocated memory before exiting successfully */
   free(data);
   return EXIT_SUCCESS;
 }
 
 int countLines() {
   int i=0;
-  char buffer[LINELENGTH];
+  char buffer[MAXLINELENGTH];
   FILE *ifp;
   ifp = fopen(FILENAME, READMODE);
   /* while a new line exists in file, increment i */
-  while(fgets(buffer, LINELENGTH, ifp) != NULL) {
+  while(fgets(buffer, MAXLINELENGTH, ifp) != NULL) {
     i++;
   }
   fclose(ifp);
@@ -121,18 +126,18 @@ int countLines() {
 
 void readData(entry data[]) {
   int i=0;
-  char buffer[LINELENGTH], placement[5], firstName[25], lastName[25];
+  char buffer[MAXLINELENGTH], placement[5], firstName[25], lastName[25];
   FILE *ifp;
   ifp = fopen(FILENAME, READMODE);
 
-  while(fgets(buffer, LINELENGTH, ifp) != NULL) {
+  while(fgets(buffer, MAXLINELENGTH, ifp) != NULL) {
     sscanf(buffer, "%s \" %[^\"]\" %d %[A-Z] %[A-Z] %[0-9DNFOTL] %[0-9:]",
     data[i].raceName,
     data[i].fullName,
     &(data[i].age),
     data[i].team,
     data[i].nationality,
-    placement, /* placeholder for enumeration in same loop */
+    placement, /* placeholder for enumeration in same cycle */
     data[i].raceTime);
     /* split names correctly and use output parameters for copying in same loop */
     splitNames(data[i].fullName, firstName, lastName);
@@ -140,8 +145,6 @@ void readData(entry data[]) {
     strcpy(data[i].lastName, lastName);
     /* using char-array as placeholder for placement, to retain an int representing placement */
     data[i].placement = enumeratePlacement(placement);
-    /* converting formatted time to another member containing elapsed seconds */
-    data[i].raceTimeSec = convertTime(data[i].raceTime);
     i++;
   }
   fclose(ifp);
@@ -484,12 +487,4 @@ int compareTop(const void * a, const void * b) {
   } else {
     return (*rider2).totalPoints - (*rider1).totalPoints;
   }
-}
-
-/* convert formatted time to seconds */
-int convertTime(char string[]) {
-  int h, m, s;
-  if (strcmp(string, "0") == 0) return 0;
-  sscanf(string, "%d:%d:%d", &h, &m, &s);
-  return h*SECSINHOUR + m*SECSINMIN + s;
 }
