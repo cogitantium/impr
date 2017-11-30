@@ -3,7 +3,7 @@
 #include <string.h>
 #include <ctype.h>
 
-#define FILENAME "cykelloeb-2017"
+#define FILENAME "cykelloeb-2017.txt"
 #define READMODE "r"
 #define LINELENGTH 150
 #define NAMELENGTH 50
@@ -18,17 +18,17 @@ typedef struct {
   int age;
   char team[NAMELENGTH];
   char nationality[NAMELENGTH]; /* 3-char */
-  int placement; /* 0 should reflect DNF*/
-  char raceTime[NAMELENGTH]; /* create function for representing secs as nicely formatted time */
+  int placement;
+  char raceTime[NAMELENGTH];
   int raceTimeSec;
   int points;
   int totalPoints;
 } entry;
 
 typedef struct {
-  char team[NAMELENGTH];
-  int unqualified; /* number of unqualifying riders */
-} teamEntry;
+  char nation[NAMELENGTH];
+  int points;
+} nationEntry;
 
 int countLines();
 void readData(entry data[]);
@@ -46,17 +46,10 @@ int compareTeams(const void * a, const void * b);
 int compareName(const void * a, const void * b);
 int compareTop(const void * a, const void * b);
 int compareRaces(const void * a, const void * b);
-void printTopUnqualified(entry data[], int entries);
+int compareNation(const void * a, const void * b);
+int comparePoints(const void * a, const void * b);
 void printMedianRacetime(entry data[], int entries);
-
-/*assignments
-  (X) find and print all BEL below 23 years
-  (X) find and print all danish racers that have attended one or more races. Sort these after teams, secondly alphabetically on firstName
-  (X) print the 10 highest scoring riders, sort by points, secondly by age (youngest), thirdly alphabetically on lastName
-  ( ) find, for each race, the team with most riders DNF or OTL
-  ( ) find the nation, that did best in the races. sort by own choice
-  (X) find, in each race, the meadian raceTime, without DNF or OTL, a higher time is preferred, relative to M, than a lower time.
-*/
+void printBestNation(entry data[], int entries, int top);
 
 int main(int argc, char *argv[]) {
   entry *data;
@@ -65,7 +58,6 @@ int main(int argc, char *argv[]) {
   data = (entry *)malloc(entries * sizeof(entry));
   readData(data);
   calculatePoints(data, entries);
-  printTopUnqualified(data, entries);
 
   if (argc > 2) {
     printf("Too many arguments supplied!\n");
@@ -74,13 +66,14 @@ int main(int argc, char *argv[]) {
       printRiderRange(data, entries, 23, "BEL");
       printAttendants(data, entries, "DEN");
       printTop(data, entries, 10);
+      printBestNation(data, entries, 1);
       printMedianRacetime(data, entries);
-
   } else {
     printf("1: Print all entries read from file\n");
     printf("2: Find racers by nationality and max-age\n");
     printf("3: Find racers by nationality\n");
     printf("4: Print top n racers\n");
+    printf("6: Print highest scoring nation\n");
     printf("7: Print median times for all races\n");
     printf("Choose an option: ");
     scanf(" %c", &option);
@@ -101,6 +94,10 @@ int main(int argc, char *argv[]) {
       printf("Choose number of top-scoring riders to show: ");
       scanf(" %d", &optTop);
       printTop(data, entries, optTop);
+    } if (option == '6') {
+      printf("Choose number of top-scoring nations to show: ");
+      scanf(" %d", &optTop);
+      printBestNation(data, entries, optTop);
     } if (option == '7') {
       printMedianRacetime(data, entries);
     }
@@ -172,7 +169,6 @@ void splitNames(char string[], char *firstName, char *lastName) {
     }
   }
 }
-
 
 void calculatePoints(entry data[], int entries) {
   int i=0, n=0, races=0, qualRiders=0, k=0;
@@ -288,28 +284,6 @@ int countUniqueRiders(entry data[], int entries) {
   return uniqueRiders;
 }
 
-int compareName(const void * a, const void * b) {
-  entry *rider1 = (entry *)a;
-  entry *rider2 = (entry *)b;
-  return strcmp((*rider1).fullName, (*rider2).fullName);
-}
-
-int compareTop(const void * a, const void * b) {
-  entry *rider1 = (entry *)a;
-  entry *rider2 = (entry *)b;
-  /* sorting by totalPoints, age and lastly lastName,
-  if given criteria is equal check next criteria, else return difference */
-  if ( (*rider1).totalPoints == (*rider2).totalPoints) {
-    if ( (*rider1).age == (*rider2).age ) {
-      return strcmp((*rider1).lastName, (*rider2).lastName);
-    } else {
-      return (*rider1).age - (*rider2).age;
-    }
-  } else {
-    return (*rider2).totalPoints - (*rider1).totalPoints;
-  }
-}
-
 void printMedianRacetime(entry data[], int entries) {
   int i, n=0, endPos[4], medianIndex, races=0, finishedRiders=0;
   /* allocating sufficient memory for race-array */
@@ -349,61 +323,50 @@ void printMedianRacetime(entry data[], int entries) {
   free(race);
 }
 
-  /*
-  create arrays for each races
-  create int-array for each team
-  for races, do
-    for length of race-array
-      if placement < 1
-        count up team
-    sort by size
-    print top n compare
-    */
-void printTopUnqualified(entry data[], int entries) {
-  int i, n=1, races=0;
-  int endPos[4];
-
+void printBestNation(entry data[], int entries, int top) {
+  int i, nations=0;
+  char particle[3];
   entry *copy;
-  teamEntry *team;
+  nationEntry *nation;
   copy = (entry *)malloc(entries * sizeof(entry));
-  team = (teamEntry *)malloc(200 * sizeof(entry));
+  nation = (nationEntry *)malloc(50 * sizeof(nationEntry));
 
   /* deep copy array */
   for (i=0; i<entries; i++) {
     copy[i] = data[i];
   }
 
-  qsort(copy, entries, sizeof(entry), compareRaces);
+  /* sort array by nation */
+  qsort(copy, entries, sizeof(entry), compareNation);
 
-  /* find unique races in sorted array and store their end-position in array */
+  /* find unique nations in sorted array */
   for (i=0; i<entries; i++) {
-    if (!strcmp(copy[i].raceName, copy[n].raceName) == 0) {
-      endPos[races] = n;
-      races++;
+    /* assigning name of nation to nation-arrays nation-member */
+    if (!strcmp(copy[i].nationality, copy[i+1].nationality) == 0) {
+      strcpy(nation[nations].nation, copy[i].nationality);
+      nations++;
+      /* else add points of current index in copy-array to nation-array */
+    } else {
+      nation[nations].points += copy[i].points;
     }
-    n++;
   }
+  /* sort nation-array by points, if equal alphabetically */
+  qsort(nation, nations, sizeof(nationEntry), comparePoints);
 
-
-  n=0;
-  /* for each race do */
-  for (i=0; i<races; i++) {
-
-    /* for in indexes in race do */
-    for (; n<endPos[i]; n++) {
-      if (!strcmp(copy[i].team, copy[n].team) == 0) {
-
-      }
-
+  /* print all existing nations if user chooses more than exists */
+  if (top>nations+1) top = nations;
+  for (i=0; i<top; i++) {
+    /* switching for proper particle on placement */
+    switch (i) {
+      case 0: strcpy(particle, "st"); break;
+      case 1: strcpy(particle, "nd"); break;
+      case 2: strcpy(particle, "rd"); break;
+      default: strcpy(particle, "th"); break;
     }
-    /* reset n to next races beginning, before calculating next race */
-    n=endPos[i];
+    printf("\nNation %s came %d%s place with %d points.\n", nation[i].nation, i+1, particle, nation[i].points);
   }
-  free(copy);
-  free(team);
-
+  free (copy);
 }
-
 
 /* for debug purposes only */
 void printData(entry data[], int entries) {
@@ -487,6 +450,40 @@ int compareRaces(const void * a, const void * b) {
     return strcmp((*rider1).team, (*rider2).team);
   }
   return strcmp((*rider1).raceName, (*rider2).raceName);
+}
+
+int compareName(const void * a, const void * b) {
+  entry *rider1 = (entry *)a;
+  entry *rider2 = (entry *)b;
+  return strcmp((*rider1).fullName, (*rider2).fullName);
+}
+
+int comparePoints(const void * a, const void * b) {
+  nationEntry *rider1 = (nationEntry *)a;
+  nationEntry *rider2 = (nationEntry *)b;
+  return (*rider2).points - (*rider1).points;
+}
+
+int compareNation(const void * a, const void * b) {
+  entry *rider1 = (entry *)a;
+  entry *rider2 = (entry *)b;
+  return strcmp((*rider1).nationality, (*rider2).nationality);
+}
+
+int compareTop(const void * a, const void * b) {
+  entry *rider1 = (entry *)a;
+  entry *rider2 = (entry *)b;
+  /* sorting by totalPoints, age and lastly lastName,
+  if given criteria is equal check next criteria, else return difference */
+  if ( (*rider1).totalPoints == (*rider2).totalPoints) {
+    if ( (*rider1).age == (*rider2).age ) {
+      return strcmp((*rider1).lastName, (*rider2).lastName);
+    } else {
+      return (*rider1).age - (*rider2).age;
+    }
+  } else {
+    return (*rider2).totalPoints - (*rider1).totalPoints;
+  }
 }
 
 /* convert formatted time to seconds */
